@@ -65,8 +65,13 @@ return function()
 				styles = { "bold" },
 				custom = {
 					all = {
-						buffer_visible = { bg = cp.base },
-						fill = { bg = cp.mantle },
+						-- Hint
+						hint = { fg = cp.rosewater },
+						hint_visible = { fg = cp.rosewater },
+						hint_selected = { fg = cp.rosewater },
+						hint_diagnostic = { fg = cp.rosewater },
+						hint_diagnostic_visible = { fg = cp.rosewater },
+						hint_diagnostic_selected = { fg = cp.rosewater },
 					},
 				},
 			}),

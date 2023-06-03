@@ -82,14 +82,10 @@ return function()
 		return ""
 	end
 
-	local colors = require("modules.utils").get_palette()
-	local custom_catppuccin = require("lualine.themes.catppuccin")
-	custom_catppuccin.normal.c.fg = colors.overlay0
-
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = custom_catppuccin,
+			theme = "auto",
 			disabled_filetypes = {},
 			component_separators = "",
 			section_separators = { left = "", right = "" },
