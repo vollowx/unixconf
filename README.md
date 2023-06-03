@@ -25,32 +25,6 @@
 
 </details>
 
-## Quick Start
-
-Core:
-
-```sh
-paru -S sway hyprland-git hyprpaper-git rofi-lbonn-wayland-git rofi-calc rofi-emoji\
-        mako waybar-hyprland-git swayidle swaylock grimblast hyprpicker\
-        light pamixer wlsunset network-manager-applet blueman\
-        zsh zoxide ripgrep fd duf exa bat dog foot libsixel\
-        mpd mpc ncmpcpp cava mpdscribble ranger nemo fastfetch
-sudo chmod +s /bin/light
-chsh -s /bin/zsh
-```
-
-QT:
-
-```sh
-paru -S qt6ct qt5-wayland qt6-wayland
-```
-
-Fcitx5:
-
-```sh
-paru -S fcitx5 fcitx5-chinese-addons fcitx5-anthy
-```
-
 ## Core/Desktop
 
 | ~          | name       | command                                               |
@@ -71,6 +45,7 @@ paru -S fcitx5 fcitx5-chinese-addons fcitx5-anthy
 | blue light | sunset     | `paru -S wlsunset`                                    |
 | tray       | nm-applet  | `paru -S network-manager-applet`                      |
 |            | blueman    | `paru -S blueman`                                     |
+| wayland    | ...        | `paru -S qt5-wayland qt6-wayland`                     |
 
 ## Core/Non Desktop
 
@@ -86,13 +61,14 @@ paru -S fcitx5 fcitx5-chinese-addons fcitx5-anthy
 
 ## Extra/Softwares
 
-| ~      | name         | command                                                                                                     |
-| ------ | ------------ | ----------------------------------------------------------------------------------------------------------- |
-| editor | NeoVim       | `paru -S neovim-nightly-bin lazygit zoxide ripgrep sqlite fd yarn lldb make unzip`                          |
-|        | VSCode       | `paru -S code code-features`                                                                                |
-| NPM    | pnpm         | `paru -S npm && sudo npm i -g pnpm && pnpm i -g pnpm && npm uninstall -g pnpm`                              |
-| music  | MPD          | `paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user --now mpdscribble.service mpd.service` |
-|        | yesplaymusic | `paru -S yesplaymusic`                                                                                      |
+| ~      | name         | command                                                                                     |
+| ------ | ------------ | ------------------------------------------------------------------------------------------- |
+| IME    | fcitx5       | `paru -S fcitx5 fcitx5-chinese-addons fcitx5-anthy`                                         |
+| editor | NeoVim       | `paru -S neovim-nightly-bin lazygit zoxide ripgrep sqlite fd yarn lldb make unzip`          |
+|        | VSCode       | `paru -S visual-studio-code-bin`                                                            |
+| NPM    | pnpm         | `paru -S pnpm`                                                                              |
+| music  | MPD          | `paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user --now mpdscribble mpd` |
+|        | yesplaymusic | `paru -S yesplaymusic`                                                                      |
 
 ## Extra/Theme
 
