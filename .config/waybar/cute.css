@@ -13,7 +13,7 @@ window#waybar {
 }
 
 tooltip {
-  background-color: @surface2;
+  background-color: @crust;
   border-radius: 12px;
 }
 
@@ -24,35 +24,41 @@ tooltip {
 #pulseaudio,
 #backlight,
 #cpu,
-#memory,
 #temperature,
+#memory,
 #battery,
 #clock {
-  padding: 0 10px;
+  padding-right: 10px;
   margin: 4px 2px 6px 2px;
   background-color: @base;
-  border-radius: 16px;
 }
 
+#mode,
+#workspaces,
+#mpd,
+#tray,
+#pulseaudio,
 #cpu,
-#network {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+#clock {
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
   margin-right: 0;
-  padding-right: 0;
+  padding-left: 10px;
 }
 #memory,
-#pulseaudio {
+#temperature {
   margin-left: 0;
   margin-right: 0;
-  border-radius: 0;
 }
-#temperature,
-#backlight {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+#mode,
+#workspaces,
+#tray,
+#mpd,
+#backlight,
+#battery {
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   margin-left: 0;
-  padding-left: 0;
 }
 
 #mode {
