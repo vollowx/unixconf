@@ -1,10 +1,29 @@
 # .arch
 
+> Dotfiles for Archlinux.
+
 ## Showcase
 
-| music (sway) | neovim (sway) | something (hyprland) | waybar themes (hyprland) |
-| - | - | - | - |
-| ![music](https://github.com/huge-pancake/.arch/assets/73375859/b1a6301a-8695-488d-828b-3af68acb5005) | ![image](https://github.com/huge-pancake/.arch/assets/73375859/b9f470bf-07ba-43d9-b522-81b22bcfab68) | ![image](https://user-images.githubusercontent.com/73375859/235142039-8b2a77da-af5b-4d2c-9cd2-04389adc5f06.png) | ![image](https://user-images.githubusercontent.com/73375859/235142126-cadcece8-522d-4d58-86fb-27b12820ccea.png) |
+<details>
+<summary>Music Playing</summary>
+
+![music-in-sway](https://github.com/huge-pancake/.arch/assets/73375859/b1a6301a-8695-488d-828b-3af68acb5005)
+
+</details>
+
+<details>
+<summary>NeoVim</summary>
+
+![neovim-in-sway](https://github.com/huge-pancake/.arch/assets/73375859/b9f470bf-07ba-43d9-b522-81b22bcfab68)
+
+</details>
+
+<details>
+<summary>WM Controller</summary>
+
+![windows-manager-controller](https://github.com/huge-pancake/.arch/assets/73375859/04822d4d-1862-478c-b8b6-c6f546e8387c)
+
+</details>
 
 ## Quick Start
 
