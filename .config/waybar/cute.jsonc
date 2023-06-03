@@ -93,6 +93,20 @@
   },
   "clock": {
     "format": "󰅐 {:%H:%M}",
-    "tooltip-format": "<big>{:%B %d}</big>\n<tt><small>{calendar}</small></tt>"
+    "format-alt": "󰅐 {:%H:%M, %d/%m, %a}",
+    "tooltip-format": "<small>{calendar}</small>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "format": {
+        "months": "<b>{}</b>",
+        "weeks": "<b>W{}</b>",
+        "today": "<b><u>{}</u></b>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode"
+    }
   }
 }
