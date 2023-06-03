@@ -64,14 +64,9 @@ return function()
 			highlights = require("catppuccin.groups.integrations.bufferline").get({
 				styles = { "bold" },
 				custom = {
-					mocha = {
-						-- Hint
-						hint = { fg = cp.rosewater },
-						hint_visible = { fg = cp.rosewater },
-						hint_selected = { fg = cp.rosewater },
-						hint_diagnostic = { fg = cp.rosewater },
-						hint_diagnostic_visible = { fg = cp.rosewater },
-						hint_diagnostic_selected = { fg = cp.rosewater },
+					all = {
+						buffer_visible = { bg = cp.base },
+						fill = { bg = cp.mantle },
 					},
 				},
 			}),
