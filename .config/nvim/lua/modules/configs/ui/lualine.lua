@@ -21,7 +21,7 @@ return function()
 		if rawget(vim, "lsp") then
 			for _, client in ipairs(vim.lsp.get_active_clients()) do
 				if client.attached_buffers[vim.api.nvim_get_current_buf()] and client.name ~= "null-ls" then
-					return (vim.o.columns > 100 and "%#St_LspStatus#" .. "󱕷 LSP ~ " .. client.name) or "󱕷 LSP"
+					return (vim.o.columns > 100 and "󱕷 LSP ~ " .. client.name) or "󱕷 LSP"
 				end
 			end
 		end
@@ -82,10 +82,14 @@ return function()
 		return ""
 	end
 
+	local colors = require("modules.utils").get_palette()
+	local custom_catppuccin = require("lualine.themes.catppuccin")
+	custom_catppuccin.normal.c.fg = colors.overlay0
+
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = "auto",
+			theme = custom_catppuccin,
 			disabled_filetypes = {},
 			component_separators = "",
 			section_separators = { left = "", right = "" },
