@@ -1,0 +1,31 @@
+# Core
+exec dbus-update-activation-environment --all
+exec /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+# Desktop Components
+exec swayidle -w \
+  timeout 300 'swaylock -f' \
+  timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+  before-sleep 'swaylock -f'
+exec hyprpaper
+bar {
+  swaybar_command waybar
+}
+exec mako
+exec wlsunset -l 39.9 -L 116.3
+
+# IME
+exec fcitx5 -d --replace
+
+# Clipboard
+exec wl-paste --watch cliphist store
+
+# Applets
+exec blueman-applet
+exec nm-applet
+
+# Environment startup
+exec sleep 1 && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
+# vim:ft=swayconfig

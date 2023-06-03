@@ -1,0 +1,99 @@
+@import "./mocha.css";
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 13pt;
+  font-weight: 500;
+}
+
+window#waybar {
+  background-color: @base;
+  color: @text;
+}
+
+#workspaces {
+  margin: 8px;
+  padding: 8px 0;
+  border-radius: 9999px;
+  background-color: @surface0;
+}
+
+#workspaces button {
+  margin: 4px 8px;
+  padding: 0;
+  border-radius: 9999px;
+  color: @subtext0;
+}
+#workspaces button.active {
+  color: @rosewater;
+}
+#workspaces button.urgent {
+  color: @peach;
+}
+#workspaces button:hover {
+  color: @mauve;
+}
+
+#mpd.paused,
+#mpd.stopped {
+  color: @subtext1;
+  font-style: italic;
+}
+
+#pulseaudio,
+#backlight,
+#battery {
+  margin: 0 8px;
+  border-radius: 9999px;
+}
+#pulseaudio {
+  margin-left: 10px;
+  color: @green;
+}
+#backlight {
+  color: @rosewater;
+}
+#battery {
+  color: @blue;
+}
+#battery.warning:not(.plugged),
+#battery.critical:not(.plugged) {
+  background-color: @red;
+  color: @base;
+}
+#battery.plugged {
+  background-color: @green;
+  color: @base;
+}
+
+#clock {
+  color: @text;
+  margin-bottom: 8px;
+}
+
+#submap,
+#custom-launch,
+#custom-out {
+  color: @base;
+  font-size: 1.2em;
+  border-radius: 12px;
+  padding: 8px 16px;
+  margin: 0px 8px;
+}
+
+#submap {
+  background-color: @rosewater;
+  margin-top: 8px;
+}
+#custom-launch {
+  background-color: @green;
+  margin-top: 8px;
+}
+#custom-out {
+  background-color: @red;
+  margin-bottom: 8px;
+}
+
+#custom-separator {
+  color: @surface1;
+}

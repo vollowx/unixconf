@@ -1,0 +1,69 @@
+:root {
+  --toolbarbutton-border-radius: 16px !important;
+  --lwt-sidebar-background-color: #11111b !important;
+  --toolbar-bgcolor: #11111b !important;
+}
+
+* {
+  font-family: Roboto, sans-serif;
+  font-size: 13pt;
+}
+
+#tabbrowser-tabpanels {
+  padding: 16px !important;
+}
+.browserStack > browser {
+  border-radius: 16px;
+}
+
+#navigator-toolbox {
+  --chrome-content-separator-color: transparent !important;
+}
+
+:is(menupopup, panel)[type="arrow"] {
+  --panel-border-color: #6c7086 !important;
+}
+
+.browserContainer {
+  background-color: var(
+    --lwt-accent-color-inactive,
+    var(--lwt-accent-color)
+  ) !important;
+  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
+  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
+  background-position: right top, var(--lwt-background-alignment) !important;
+}
+
+#sidebar-box {
+  padding-right: 16px;
+}
+.sidebar-splitter {
+  display: none;
+}
+#sidebar-box {
+  --sidebar-background-color: #11111b !important;
+}
+#sidebar-header {
+  margin: 16px 0;
+  background-color: #1e1e2e;
+  border-radius: 16px;
+  --sidebar-border-color: transparent !important;
+}
+
+/* remove top tabbar */
+#titlebar {
+  visibility: collapse !important;
+}
+/* hide horizontal tabs at the top of the window */
+#TabsToolbar > * {
+  visibility: collapse;
+}
+/* hide navigation bar when it is not focused, press A-d to get focus */
+#main-window:not([customizing])
+  #navigator-toolbox:not(:focus-within):not(:hover) {
+  margin-top: -40px;
+  opacity: 0;
+}
+#navigator-toolbox {
+  transition: 300ms ease;
+}

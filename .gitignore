@@ -1,0 +1,98 @@
+*
+
+!.config/
+!.config/chromium-flags.conf
+!.config/nighttab.json
+!.config/bat/
+!.config/bat/**/*
+!.config/cava/
+!.config/cava/**/*
+!.config/fcitx5/
+!.config/fcitx5/**/*
+!.config/firefox-chrome/
+!.config/firefox-chrome/**/*
+!.config/fontconfig/
+!.config/fontconfig/**/*
+!.config/foot/
+!.config/foot/**/*
+!.config/gtk-3.0/
+!.config/gtk-3.0/**/*
+!.config/hypr/
+!.config/hypr/**/*
+!.config/lazygit/
+!.config/lazygit/**/*
+.config/lazygit/state.yml
+!.config/mako/
+!.config/mako/**/*
+!.config/mpv/
+!.config/mpv/**/*
+!.config/nvim/
+!.config/nvim/**/*
+.config/nvim/lazy-lock.json
+!.config/obs-studio/
+!.config/obs-studio/themes
+!.config/obs-studio/themes/**/*
+!.config/paru/
+!.config/paru/**/*
+!.config/qt6ct/
+!.config/qt6ct/**/*
+!.config/rofi/
+!.config/rofi/**/*
+!.config/systemd/
+!.config/systemd/**/*
+!.config/sway/
+!.config/sway/**/*
+!.config/swaylock/
+!.config/swaylock/**/*
+!.config/waybar/
+!.config/waybar/**/*
+!.config/xsettingsd/
+!.config/xsettingsd/**/*
+!.config/zsh/
+!.config/zsh/.zshrc
+!.config/zsh/.zimrc
+!.config/zsh/modules/
+!.config/zsh/modules/**/*
+
+!.local/
+!.local/share/
+
+!.local/share/backgrounds/
+# Catppuccin
+!.local/share/backgrounds/Catppuccin.png
+!.local/share/backgrounds/Bridge.jpg
+!.local/share/backgrounds/Street.jpg
+!.local/share/backgrounds/SpookySpill.jpg
+!.local/share/backgrounds/CatLeaves.png
+# Anime
+!.local/share/backgrounds/Aqua.png
+# https://github.com/mashumarodesu/dots/blob/master/Assets/Aqua.png
+# Wallhaven
+# dgv23j (NachoNeko)
+# we52gr (NachoNeko)
+# zyxvqy (ACatUnderADroppingSun)
+# o59gvl (Flowers)
+# ym2q9k (Leaves)
+
+!.local/share/fcitx5/
+!.local/share/fcitx5/themes/
+!.local/share/fcitx5/themes/**/*
+
+!.mpd/
+!.mpd/**/**
+.mpd/log
+.mpd/state
+!.ncmpcpp/
+!.ncmpcpp/**/*
+.ncmpcpp/error.log
+
+!.gitconfig
+!.gitignore
+!.gitmodules
+!.npmrc
+
+!.zshenv
+!.bin/
+!.bin/**/*
+
+!README.md

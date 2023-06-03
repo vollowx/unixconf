@@ -1,0 +1,140 @@
+@import "./mocha.css";
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+window#waybar {
+  background-color: alpha(@base, 0.8);
+  color: @text;
+}
+
+tooltip {
+  background-color: @surface2;
+  border-radius: 12px;
+}
+
+#custom-divider,
+/* /// */
+#submap,
+#workspaces,
+#window,
+/* /// */
+#mpd,
+/* /// */
+#tray,
+#network,
+#pulseaudio,
+#backlight,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#clock {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* plain elements */
+#custom-divider,
+#mpd,
+#tray #network,
+#pulseaudio,
+#backlight,
+#cpu,
+#memory,
+#temperature {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+/* left element */
+#submap {
+  margin-left: 6px;
+  margin-right: -14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 14px;
+
+  background-color: @blue;
+  color: @base;
+}
+/* right element */
+#clock {
+  margin-left: -14px;
+  margin-right: 6px;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 14px;
+
+  background-color: @blue;
+  color: @base;
+}
+/* 2rd left element */
+#workspaces {
+  margin-right: 12px;
+  padding-left: 22px;
+  padding-right: 12px;
+  border-radius: 0 14px 14px 0;
+
+  background-color: @surface1;
+  color: @blue;
+}
+/* 2rd right element */
+#battery {
+  margin-left: 12px;
+  padding-left: 12px;
+  padding-right: 22px;
+  border-radius: 14px 0 0 14px;
+
+  background-color: @surface1;
+  color: @blue;
+}
+
+/* special settings */
+
+#workspaces button {
+  padding: 0;
+  color: @subtext0;
+  border-radius: 12px;
+}
+#workspaces button.active,
+#workspaces button.focused {
+  color: @blue;
+}
+#workspaces button.urgent {
+  color: @peach;
+}
+#workspaces button:hover {
+  color: @mauve;
+}
+
+#network {
+  color: @lavender;
+}
+#pulseaudio {
+  color: @sapphire;
+}
+#backlight {
+  color: @teal;
+}
+
+#cpu {
+  color: @yellow;
+}
+#memory {
+  color: @maroon;
+}
+#temperature {
+  color: @mauve;
+}
+
+#battery.charging,
+#battery.plugged {
+  color: @green;
+}
+#battery.warning:not(.charging),
+#battery.critical:not(.charging) {
+  color: @red;
+}

@@ -1,0 +1,112 @@
+{
+  "position": "left",
+  "layer": "top",
+  "modules-left": ["hyprland/submap", "custom/launch", "wlr/workspaces"],
+  "modules-center": ["mpd"],
+  "modules-right": [
+    "tray",
+    "custom/separator",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "custom/separator",
+    "clock",
+    "custom/out"
+  ],
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "󰎆",
+      "2": "󱠇",
+      "3": "󰥱",
+      "4": "",
+      "default": "󰝥"
+    },
+    "sort-by-number": true,
+    "on-click": "activate",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "mpd": {
+    "rotate": 90,
+    "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title} 󰝚 ",
+    "format-disconnected": "󰝛 ",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped 󰝚 ",
+    "title-len": 16,
+    "interval": 10,
+    "consume-icons": {
+      "on": " 󰆐" // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+      "off": "<span foreground='#a6adc8'>󰒝</span> ",
+      "on": "<span foreground='#f5e0dc'>󰒝</span> "
+    },
+    "repeat-icons": {
+      "off": "<span foreground='#a6adc8'>󰑖</span> ",
+      "on": "<span foreground='#f5e0dc'>󰑖</span> "
+    },
+    "single-icons": {
+      "off": "<span foreground='#a6adc8'>󰑘</span> ",
+      "on": "<span foreground='#f5e0dc'>󰑘</span> "
+    },
+    "state-icons": {
+      "paused": "󰐊",
+      "playing": "󰏤"
+    },
+    "on-scroll-up": "mpc seek +1",
+    "on-scroll-down": "mpc seek -1",
+    "on-click": "mpc toggle",
+    "on-click-middle": "mpc prev",
+    "on-click-right": "mpc next",
+    "tooltip-format": "{artist} - {album} - {title}",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+  "pulseaudio": {
+    "on-click": "pamixer -t",
+    "format": "{icon}",
+    "format-muted": "󰖁",
+    "format-icons": {
+      "headphone": "󰋋",
+      "phone": "󰏲",
+      "portable": "󰏲",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "tooltip-format": "{volume}%"
+  },
+  "backlight": {
+    "format": "{icon}",
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+    "tooltip-format": "{percent}%"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}",
+    "format-plugged": "{icon}",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{capacity}%, {time}"
+  },
+  "clock": {
+    "format": "{:%H\n%M}",
+    "tooltip-format": "<big>{:%B %d}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "custom/launch": {
+    "format": "󱓟",
+    "on-click": "~/.config/rofi/launcher.sh"
+  },
+  "custom/out": {
+    "format": "󰐥",
+    "on-click": "~/.config/rofi/powermenu.sh"
+  },
+  "custom/separator": {
+    "format": "────",
+    "tooltip": false
+  }
+}

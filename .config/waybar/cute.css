@@ -1,0 +1,134 @@
+@import "./mocha.css";
+
+* {
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 11pt;
+  font-weight: 500;
+}
+
+window#waybar {
+  background-color: @crust;
+  color: @text;
+  border-bottom: 2px solid @surface1;
+}
+
+tooltip {
+  background-color: @surface2;
+  border-radius: 12px;
+}
+
+#mode,
+#workspaces,
+#mpd,
+#tray,
+#pulseaudio,
+#backlight,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#clock {
+  padding: 0 10px;
+  margin: 4px 2px 6px 2px;
+  background-color: @base;
+  border-radius: 16px;
+}
+
+#cpu,
+#network {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-right: 0;
+  padding-right: 0;
+}
+#memory,
+#pulseaudio {
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+}
+#temperature,
+#backlight {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+#mode {
+  margin-left: 14px;
+  margin-right: -10px;
+  background-color: @sky;
+  font-weight: 900;
+  color: @base;
+}
+
+#workspaces {
+  margin-left: 14px;
+}
+#workspaces button {
+  margin: 0 -8px;
+  padding: 0;
+  color: @subtext0;
+  border-radius: 16px;
+}
+#workspaces button.active,
+#workspaces button.focused {
+  color: @rosewater;
+}
+#workspaces button.urgent {
+  color: @peach;
+}
+#workspaces button:hover {
+  color: @mauve;
+}
+
+#window {
+  padding: 0 10px;
+  margin: 4px 2px 6px 2px;
+  color: @subtext1;
+}
+
+#mpd.paused,
+#mpd.stopped {
+  color: @subtext1;
+  font-style: italic;
+}
+
+#pulseaudio {
+  color: @sapphire;
+}
+#backlight {
+  color: @rosewater;
+}
+
+#cpu {
+  color: @maroon;
+}
+#memory {
+  color: @sky;
+}
+#temperature {
+  color: @pink;
+}
+
+#battery {
+  color: @blue;
+}
+#battery.plugged {
+  background-color: @green;
+  font-weight: 900;
+  color: @base;
+}
+#battery.warning:not(.plugged),
+#battery.critical:not(.plugged) {
+  background-color: @red;
+  font-weight: 900;
+  color: @base;
+}
+
+#clock {
+  color: @rosewater;
+  font-weight: 900;
+  margin-right: 14px;
+}

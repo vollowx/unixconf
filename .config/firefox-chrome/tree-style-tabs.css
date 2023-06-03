@@ -1,0 +1,6 @@
+/* the following lines need to be added in TST options */
+
+/* catppuccin mocha */
+:root.sidebar #background {
+  background: #11111b;
+}
