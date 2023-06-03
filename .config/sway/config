@@ -35,6 +35,7 @@ input type:touchpad {
   accel_profile adaptive
   pointer_accel 0
   tap enabled
+  dwt disabled
   natural_scroll enabled
   middle_emulation enabled
 }
