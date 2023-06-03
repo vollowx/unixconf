@@ -7,14 +7,16 @@
 <details>
 <summary>Music Playing</summary>
 
-![music-in-sway](https://github.com/huge-pancake/.arch/assets/73375859/b1a6301a-8695-488d-828b-3af68acb5005)
+![music](https://github.com/huge-pancake/.arch/assets/73375859/b1a6301a-8695-488d-828b-3af68acb5005)
 
 </details>
 
 <details>
 <summary>NeoVim</summary>
 
-![neovim-in-sway](https://github.com/huge-pancake/.arch/assets/73375859/b9f470bf-07ba-43d9-b522-81b22bcfab68)
+![neovim-startup-screen](https://github.com/huge-pancake/.arch/assets/73375859/05f999e1-c91a-4c5c-9563-cc9e2fa0c77b)
+![neovim-package-manager](https://github.com/huge-pancake/.arch/assets/73375859/983e73b5-ca65-4b3b-96e4-956da21adc2b)
+![neovim-editing](https://github.com/huge-pancake/.arch/assets/73375859/b9f470bf-07ba-43d9-b522-81b22bcfab68)
 
 </details>
 
@@ -29,8 +31,8 @@
 
 | ~          | name       | command                                               |
 | ---------- | ---------- | ----------------------------------------------------- |
-| desktop    | Hyprland   | `paru -S hyprland`                                    |
-|            | Seay       | `paru -S sway`                                        |
+| desktop    | Sway       | `paru -S sway`                                        |
+|            | Hyprland   | `paru -S hyprland-git`                                |
 | wallpaper  | hyprpaper  | `paru -S hyprpaper`                                   |
 | launcher   | rofi       | `paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji` |
 | notify     | mako       | `paru -S mako`                                        |
