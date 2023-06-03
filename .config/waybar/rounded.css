@@ -78,7 +78,6 @@ tooltip {
   color: @subtext0;
   border-radius: 16px;
 }
-#workspaces button.active,
 #workspaces button.focused {
   color: @rosewater;
 }

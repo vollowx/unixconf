@@ -1,7 +1,7 @@
 {
   "position": "left",
   "layer": "top",
-  "modules-left": ["hyprland/submap", "custom/launch", "wlr/workspaces"],
+  "modules-left": ["sway/mode", "custom/launch", "sway/workspaces"],
   "modules-center": ["mpd"],
   "modules-right": [
     "tray",
@@ -13,7 +13,7 @@
     "clock",
     "custom/out"
   ],
-  "wlr/workspaces": {
+  "sway/workspaces": {
     "format": "{icon}",
     "format-icons": {
       "1": "󰎆",
@@ -22,10 +22,7 @@
       "4": "",
       "default": "󰝥"
     },
-    "sort-by-number": true,
-    "on-click": "activate",
-    "on-scroll-up": "hyprctl dispatch workspace e+1",
-    "on-scroll-down": "hyprctl dispatch workspace e-1"
+    "sort-by-number": true
   },
   "mpd": {
     "rotate": 90,
