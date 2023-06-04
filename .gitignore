@@ -1,6 +1,7 @@
 *
 
 !.config/
+!.config/code-flags.conf
 !.config/chromium-flags.conf
 !.config/nighttab.json
 !.config/bat/
