@@ -49,6 +49,12 @@
 |            | blueman    | `paru -S blueman`                                     |
 | wayland    | ...        | `paru -S qt5-wayland qt6-wayland`                     |
 
+## Core/Sway Only
+
+| ~        | name | command       |
+| -------- | ---- | ------------- |
+| overview | sov  | `paru -S sov` |
+
 ## Core/Non Desktop
 
 | ~         | name      | command                                     |

@@ -39,6 +39,8 @@
 !.config/qt6ct/**/*
 !.config/rofi/
 !.config/rofi/**/*
+!.config/sov/
+!.config/sov/**/*
 !.config/systemd/
 !.config/systemd/**/*
 !.config/sway/
