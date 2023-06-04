@@ -39,14 +39,14 @@ tooltip {
 #tray,
 #pulseaudio,
 #cpu,
+#battery,
 #clock {
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
   margin-right: 0;
   padding-left: 10px;
 }
-#memory,
-#temperature {
+#memory {
   margin-left: 0;
   margin-right: 0;
 }
@@ -55,6 +55,7 @@ tooltip {
 #tray,
 #mpd,
 #backlight,
+#temperature,
 #battery {
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
