@@ -1,0 +1,73 @@
+configuration {
+  show-icons: true;
+}
+
+@import "colors.rasi"
+
+window {
+  transparency: "real";
+  location: center;
+  width: 500px;
+
+  border: 1px solid;
+  border-color: @blue;
+  background-color: @mantle;
+}
+
+mainbox {
+  children: [ "inputbar", "listview", "message" ];
+}
+
+inputbar {
+  enabled: true;
+  spacing: -1px;
+  padding: 3em;
+  background-color: transparent;
+  background-image: url("~/.local/share/backgrounds/Bridge.jpg", width);
+  children: [ "textbox-prompt-colon", "prompt" ];
+}
+
+textbox-prompt-colon {
+  expand: false;
+  str: "󰤆";
+  padding: 15px;
+  border-radius: 100% 0 0 100%;
+  background-color: @blue;
+  text-color: @base;
+}
+prompt {
+  padding: 15px 30px 15px 15px;
+  border: 0px;
+  border-radius: 0 100% 100% 0;
+  background-color: @surface0;
+  text-color: @text;
+}
+
+listview {
+  columns: 6;
+  lines: 1;
+  spacing: -1px;
+  margin: 2em;
+  border-radius: 50px;
+  border: 1px;
+  border-color: @surface1;
+  text-color: @text;
+  background-color: @base;
+}
+
+element {
+  padding: -2px 8px 14px 2px;
+  border-radius: 50%;
+  orientation: vertical;
+  background-color: transparent;
+}
+element-text {
+  vertical-align:              0.5;
+  horizontal-align:            0.5;
+  font: "Roboto 32px";
+}
+element selected.normal {
+  background-color: @surface0;
+  border: 1px solid;
+  border-color: @blue;
+}

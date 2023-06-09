@@ -1,0 +1,6 @@
+configuration {
+  font: "Roboto 13px";
+  icon-theme: "Papirus-Dark";
+}
+
+@theme "~/.config/rofi/themes/catppuccin.rasi"

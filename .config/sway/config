@@ -1,5 +1,6 @@
-include conf.d/mocha
+include config.d/mocha.conf
 
+# Appearances
 # target                 title     bg    text   indicator  border
 client.focused           $blue     $base $text  $rosewater $blue
 client.focused_inactive  $overlay0 $base $text  $rosewater $base
@@ -16,6 +17,7 @@ font JetBrainsMono Nerd Font 10
 
 # Monitor
 output eDP-1 scale 1
+output * bg ~/.local/share/backgrounds/Bridge.jpg fill
 
 xwayland enabled
 seat * hide_cursor 8000
@@ -41,6 +43,6 @@ input type:touchpad {
   middle_emulation enabled
 }
 
-include conf.d/rules
-include conf.d/keymaps
-include conf.d/autostart
+include config.d/rules.conf
+include config.d/keymaps.conf
+include config.d/autostart.conf

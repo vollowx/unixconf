@@ -1,69 +1,41 @@
-:root {
-  --toolbarbutton-border-radius: 16px !important;
-  --lwt-sidebar-background-color: #11111b !important;
-  --toolbar-bgcolor: #11111b !important;
+/* Adjust spacer when window is floating */
+.titlebar-spacer[type="pre-tabs"],
+.titlebar-spacer[type="post-tabs"] {
+  width: 0 !important;
+}
+.toolbar-items {
+  padding-inline: 5px !important;
 }
 
-* {
-  font-family: Roboto, sans-serif;
-  font-size: 13pt;
+/* Fix tab color and shape */
+#tabbrowser-tabs {
+  --user-tab-rounding: 5px;
+  --tab-selected-bgcolor: var(--toolbar-bgcolor) !important;
+  --lwt-selected-tab-background-color: var(--toolbar-bgcolor) !important;
 }
 
-#tabbrowser-tabpanels {
-  padding: 16px !important;
-}
-.browserStack > browser {
-  border-radius: 16px;
+.tab-background {
+  border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important;
+  margin-block: 1px 0 !important;
 }
 
-#navigator-toolbox {
-  --chrome-content-separator-color: transparent !important;
+.tab-background[selected] {
+  outline: none !important;
 }
 
-:is(menupopup, panel)[type="arrow"] {
-  --panel-border-color: #6c7086 !important;
+/* Smaller tab */
+#TabsToolbar,
+#tabbrowser-tabs {
+  --tab-min-height: 30px !important;
 }
 
-.browserContainer {
-  background-color: var(
-    --lwt-accent-color-inactive,
-    var(--lwt-accent-color)
-  ) !important;
-  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
-  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
-  background-position: right top, var(--lwt-background-alignment) !important;
+/* Allow longer bookmark item */
+toolbarbutton.bookmark-item:not(.subviewbutton) {
+  max-width: 18em !important;
 }
 
-#sidebar-box {
-  padding-right: 16px;
-}
-.sidebar-splitter {
-  display: none;
-}
-#sidebar-box {
-  --sidebar-background-color: #11111b !important;
-}
-#sidebar-header {
-  margin: 16px 0;
-  background-color: #1e1e2e;
-  border-radius: 16px;
-  --sidebar-border-color: transparent !important;
-}
-
-/* remove top tabbar */
-#titlebar {
-  visibility: collapse !important;
-}
-/* hide horizontal tabs at the top of the window */
-#TabsToolbar > * {
-  visibility: collapse;
-}
-/* hide navigation bar when it is not focused, press A-d to get focus */
-#main-window:not([customizing])
-  #navigator-toolbox:not(:focus-within):not(:hover) {
-  margin-top: -40px;
-  opacity: 0;
-}
-#navigator-toolbox {
-  transition: 300ms ease;
+/* Remove blue outline */
+#urlbar[focused="true"]:not([suppress-focus-border]) > #urlbar-background,
+#searchbar:focus-within {
+  outline: none !important;
 }
