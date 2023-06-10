@@ -9,7 +9,7 @@ url(about:home) {
   }
 
   body {
-    background-image: url(newtab-bg.jpg);
+    background-image: url("../../../../.local/share/backgrounds/Bridge.jpg");
     background-size: cover;
     background-repeat: no-repeat;
   }
