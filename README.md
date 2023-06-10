@@ -7,7 +7,7 @@
 <details>
 <summary>Music Playing</summary>
 
-![music](https://github.com/huge-pancake/.arch/assets/73375859/b1a6301a-8695-488d-828b-3af68acb5005)
+![music](https://github.com/huge-pancake/.arch/assets/73375859/0429b031-f3a5-4af7-a436-9255d8acb7e9)
 
 </details>
 
@@ -23,7 +23,7 @@
 <details>
 <summary>WM Controller</summary>
 
-![windows-manager-controller](https://github.com/huge-pancake/.arch/assets/73375859/04822d4d-1862-478c-b8b6-c6f546e8387c)
+![wm-controller](https://github.com/huge-pancake/.arch/assets/73375859/dcfd46d6-e166-4056-973b-c8421923e98f)
 
 </details>
 
