@@ -1,6 +1,7 @@
 @import "./mocha.css";
 
 * {
+  all: unset;
   font-family: JetBrainsMono Nerd Font;
   font-size: 11pt;
   font-weight: 500;
@@ -17,82 +18,73 @@ tooltip {
   border-radius: 12px;
 }
 
-#mode,
-#workspaces,
-#mpd,
-#tray,
-#pulseaudio,
-#backlight,
-#cpu,
-#temperature,
-#memory,
-#battery,
-#clock {
-  padding-right: 10px;
-  margin: 4px 2px 6px 2px;
-  background-color: @base;
+.modules-left,
+.modules-right,
+.modules-center {
+  padding: 5px 0 8px;
+}
+
+.modules-left {
+  margin-left: 12px;
+}
+
+.modules-right {
+  margin-right: 12px;
 }
 
 #mode,
-#workspaces,
-#mpd,
 #tray,
+#mpd,
 #pulseaudio,
-#cpu,
-#battery,
-#clock {
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
-  margin-right: 0;
-  padding-left: 10px;
-}
-#memory {
-  margin-left: 0;
-  margin-right: 0;
-}
-#mode,
-#workspaces,
-#tray,
-#mpd,
 #backlight,
+#cpu,
+#memory,
 #temperature,
 #battery {
-  border-top-right-radius: 16px;
-  border-bottom-right-radius: 16px;
-  margin-left: 0;
+  padding: 2px 10px;
+  border-left: 2px solid @surface1;
+  border-radius: 0 10px 10px 0;
+  margin: 0 10px 0 0px;
+  background: @base;
+  color: @text;
 }
 
 #mode {
-  margin-left: 14px;
-  margin-right: -10px;
-  background-color: @sky;
+  background-color: @surface0;
   font-weight: 900;
-  color: @base;
+  color: @pink;
 }
 
 #workspaces {
-  margin-left: 14px;
+  padding: 0;
+  background-color: @base;
+  border-radius: 9999px;
 }
 #workspaces button {
-  margin: 0 -8px;
-  padding: 0;
+  padding: 0 8px;
   color: @subtext0;
   border-radius: 16px;
 }
 #workspaces button.focused {
-  color: @rosewater;
+  background-color: @rosewater;
+  color: @base;
 }
 #workspaces button.urgent {
-  color: @peach;
+  background-color: @peach;
+  color: @base;
 }
 #workspaces button:hover {
-  color: @mauve;
+  background-color: @surface0;
+}
+#workspaces button.focused:hover {
+  background-color: alpha(@rosewater, 0.84);
+}
+#workspaces button.urgent:hover {
+  background-color: alpha(@peach, 0.84);
 }
 
 #window {
   padding: 0 10px;
-  margin: 4px 2px 6px 2px;
-  color: @subtext1;
 }
 
 #mpd.paused,
@@ -102,39 +94,39 @@ tooltip {
 }
 
 #pulseaudio {
+  border-color: @sapphire;
   color: @sapphire;
 }
 #backlight {
+  border-color: @rosewater;
   color: @rosewater;
 }
 
 #cpu {
+  border-color: @maroon;
   color: @maroon;
 }
 #memory {
+  border-color: @sky;
   color: @sky;
 }
 #temperature {
+  border-color: @pink;
   color: @pink;
 }
 
 #battery {
+  border-color: @blue;
   color: @blue;
 }
 #battery.plugged {
-  background-color: @green;
+  background-color: @surface0;
   font-weight: 900;
-  color: @base;
+  color: @green;
 }
 #battery.warning:not(.plugged),
 #battery.critical:not(.plugged) {
   background-color: @red;
   font-weight: 900;
   color: @base;
-}
-
-#clock {
-  color: @rosewater;
-  font-weight: 900;
-  margin-right: 14px;
 }
