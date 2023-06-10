@@ -7,6 +7,7 @@ export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$PNPM_HOME:$PATH"
 export PATH="$HOME/go/bin:$PATH"
+export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
 
 # Others
 export EDITOR="nvim"

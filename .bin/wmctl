@@ -21,9 +21,9 @@ case "$choise" in
 	echo "  volume_toggle, vm:                  Toggle mute of the volume"
 	echo "  brightness_up, b+:                  Turn up the brightness"
 	echo "  brightness_down, b-:                Turn down the brightness"
-	echo "  screenshot_copy_area, sca:          Take a area screenshot and copy"
-	echo "  screenshot_copy_save_area, scsa:    Take a area screenshot, copy and save"
-	echo "  screenshot_copy_save_screen, scss:  Take a screen screenshot, copy and save"
+	echo "  screenshot_copy_area, sca:          Take a area screenshot copy"
+	echo "  screenshot_save_area, ssa:          Take a area screenshot, save"
+	echo "  screenshot_save_screen, sss:        Take a screen screenshot, save"
 	echo "  mako_toggle, mt:                    Toggle Mako's do-not-disturb mode"
 	echo "  sway_launch, s~                     Launch Sway"
 	echo "  sway_reload, sr                     Reload Sway and components under it"
@@ -52,16 +52,13 @@ case "$choise" in
 	notify-send "󰃠  Brightness" "Brightness: $(light)%" --hint="int:value:$(light)"
 	;;
 "screenshot_copy_area" | "sca")
-	grimblast copy area
-	notify-send '󰹑  Screenshot' 'Area copied'
+	grimpal copy area
 	;;
-"screenshot_copy_save_screen" | "scss")
-	grimblast copysave screen $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-	notify-send '󰹑  Screenshot' 'Screen copied and saved'
+"screenshot_save_area" | "ssa")
+	grimpal save area
 	;;
-"screenshot_copy_save_area" | "scsa")
-	grimblast copysave area $(xdg-user-dir PICTURES)/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png
-	notify-send '󰹑  Screenshot' 'Area copied and saved'
+"screenshot_save_screen" | "sss")
+	grimpal save screen
 	;;
 "mako_toggle" | "mt")
 	MAKO_MODE=$(makoctl mode)
@@ -75,6 +72,9 @@ case "$choise" in
 	fi
 	;;
 "sway_launch" | "s~")
+	# XDG
+	export XDG_CURRENT_DESKTOP=sway
+
 	# Wlroots
 	# export WLR_RENDERER=vulkan
 	export WLR_NO_HARDWARE_CURSORS=1
