@@ -1,7 +1,6 @@
 @import "./mocha.css";
 
 * {
-  all: unset;
   font-family: JetBrainsMono Nerd Font;
   font-size: 11pt;
   font-weight: 500;
@@ -64,6 +63,7 @@ tooltip {
   border-radius: 9999px;
 }
 #workspaces button {
+  all: unset;
   padding: 0 8px;
   color: @subtext0;
   border-radius: 16px;
