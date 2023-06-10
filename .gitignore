@@ -8,6 +8,8 @@
 !.config/bat/**/*
 !.config/cava/
 !.config/cava/**/*
+!.config/fastfetch/
+!.config/fastfetch/**/*
 !.config/fcitx5/
 !.config/fcitx5/**/*
 !.config/firefox-chrome/
