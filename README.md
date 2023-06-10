@@ -37,27 +37,28 @@
 
 ## Core/Desktop
 
-| ~          | name              | command                           |
-| ---------- | ----------------- | --------------------------------- |
-| desktop    | sway              | `paru -S sway`                    |
-|            | hyprland          | `paru -S hyprland-git`            |
-| wallpaper  | hyprpaper         | `paru -S hyprpaper`               |
-| launcher   | rofi              | `paru -S rofi-lbonn-wayland-git`  |
-|            | rofi (more)       | `paru -S rofi-calc rofi-emoji`    |
-| notify     | mako              | `paru -S mako`                    |
-| bar        | waybar            | `paru -S waybar-hyprland-git`     |
-| idle       | swayidle          | `paru -S swayidle`                |
-| locker     | swaylock          | `paru -S swaylock`                |
-| screenshot | grimblast         | `paru -S grimblast`               |
-| color pkr  | hyprpicker        | `paru -S hyprpicker`              |
-| controller | light             | `paru -S light`                   |
-|            | light (to enable) | `sudo chmod +s /bin/light`        |
-|            | pamixer           | `paru -S pamixer`                 |
-|            | qt6ct             | `paru -S qt6ct`                   |
-| blue light | sunset            | `paru -S wlsunset`                |
-| tray       | nm-applet         | `paru -S network-manager-applet`  |
-|            | blueman           | `paru -S blueman`                 |
-| wayland    | ...               | `paru -S qt5-wayland qt6-wayland` |
+| ~          | name                 | command                           |
+| ---------- | -------------------- | --------------------------------- |
+| desktop    | sway                 | `paru -S sway`                    |
+|            | hyprland             | `paru -S hyprland-git`            |
+| wallpaper  | hyprpaper            | `paru -S hyprpaper`               |
+| launcher   | rofi                 | `paru -S rofi-lbonn-wayland-git`  |
+|            | rofi (more)          | `paru -S rofi-calc rofi-emoji`    |
+| notify     | mako                 | `paru -S mako`                    |
+| bar        | waybar               | `paru -S waybar-hyprland-git`     |
+| idle       | swayidle             | `paru -S swayidle`                |
+| locker     | swaylock             | `paru -S swaylock`                |
+| screenshot | grimshot (sway)      | `paru -S grimshot`                |
+|            | grimblast (hyprland) | `paru -S grimblast`               |
+| color pkr  | hyprpicker           | `paru -S hyprpicker`              |
+| controller | light                | `paru -S light`                   |
+|            | light (to enable)    | `sudo chmod +s /bin/light`        |
+|            | pamixer              | `paru -S pamixer`                 |
+|            | qt6ct                | `paru -S qt6ct`                   |
+| blue light | sunset               | `paru -S wlsunset`                |
+| tray       | nm-applet            | `paru -S network-manager-applet`  |
+|            | blueman              | `paru -S blueman`                 |
+| wayland    | ...                  | `paru -S qt5-wayland qt6-wayland` |
 
 ## Core/Sway Only
 
