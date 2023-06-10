@@ -37,25 +37,27 @@
 
 ## Core/Desktop
 
-| ~          | name       | command                                               |
-| ---------- | ---------- | ----------------------------------------------------- |
-| desktop    | Sway       | `paru -S sway`                                        |
-|            | Hyprland   | `paru -S hyprland-git`                                |
-| wallpaper  | hyprpaper  | `paru -S hyprpaper`                                   |
-| launcher   | rofi       | `paru -S rofi-lbonn-wayland-git rofi-calc rofi-emoji` |
-| notify     | mako       | `paru -S mako`                                        |
-| bar        | waybar     | `paru -S waybar-hyprland-git`                         |
-| idle       | swayidle   | `paru -S swayidle`                                    |
-| locker     | swaylock   | `paru -S swaylock`                                    |
-| screenshot | grimblast  | `paru -S grimblast`                                   |
-| color pkr  | hyprpicker | `paru -S hyprpicker`                                  |
-| ctrlers    | light      | `paru -S light && sudo chmod +s /bin/light`           |
-|            | pamixer    | `paru -S pamixer`                                     |
-|            | qt6ct      | `paru -S qt6ct`                                       |
-| blue light | sunset     | `paru -S wlsunset`                                    |
-| tray       | nm-applet  | `paru -S network-manager-applet`                      |
-|            | blueman    | `paru -S blueman`                                     |
-| wayland    | ...        | `paru -S qt5-wayland qt6-wayland`                     |
+| ~          | name              | command                           |
+| ---------- | ----------------- | --------------------------------- |
+| desktop    | sway              | `paru -S sway`                    |
+|            | hyprland          | `paru -S hyprland-git`            |
+| wallpaper  | hyprpaper         | `paru -S hyprpaper`               |
+| launcher   | rofi              | `paru -S rofi-lbonn-wayland-git`  |
+|            | rofi (more)       | `paru -S rofi-calc rofi-emoji`    |
+| notify     | mako              | `paru -S mako`                    |
+| bar        | waybar            | `paru -S waybar-hyprland-git`     |
+| idle       | swayidle          | `paru -S swayidle`                |
+| locker     | swaylock          | `paru -S swaylock`                |
+| screenshot | grimblast         | `paru -S grimblast`               |
+| color pkr  | hyprpicker        | `paru -S hyprpicker`              |
+| controller | light             | `paru -S light`                   |
+|            | light (to enable) | `sudo chmod +s /bin/light`        |
+|            | pamixer           | `paru -S pamixer`                 |
+|            | qt6ct             | `paru -S qt6ct`                   |
+| blue light | sunset            | `paru -S wlsunset`                |
+| tray       | nm-applet         | `paru -S network-manager-applet`  |
+|            | blueman           | `paru -S blueman`                 |
+| wayland    | ...               | `paru -S qt5-wayland qt6-wayland` |
 
 ## Core/Sway Only
 
@@ -65,26 +67,30 @@
 
 ## Core/Non Desktop
 
-| ~         | name      | command                                     |
-| --------- | --------- | ------------------------------------------- |
-| shell     | zsh       | `paru -S zsh && chsh -s /bin/zsh`           |
-| units     |           | `paru -S zoxide ripgrep fd duf exa bat dog` |
-| terminal  | foot      | `paru -S foot libsixel`                     |
-| music     | mpd       | `paru -S mpd mpc ncmpcpp cava mpdscribble`  |
-| file mgr  | ranger    | `paru -S ranger`                            |
-|           | nemo      | `paru -S nemo`                              |
-| sys fetch | fastfetch | `paru -S fastfetch`                         |
+| ~         | name            | command                                     |
+| --------- | --------------- | ------------------------------------------- |
+| shell     | zsh             | `paru -S zsh`                               |
+|           | zsh (to enable) | `chsh -s /bin/zsh`                          |
+| units     |                 | `paru -S zoxide ripgrep fd duf exa bat dog` |
+| terminal  | foot            | `paru -S foot libsixel`                     |
+| music     | mpd             | `paru -S mpd mpc ncmpcpp cava mpdscribble`  |
+| file mgr  | ranger          | `paru -S ranger`                            |
+|           | nemo            | `paru -S nemo`                              |
+| sys fetch | fastfetch       | `paru -S fastfetch`                         |
 
 ## Extra/Softwares
 
-| ~      | name         | command                                                                                     |
-| ------ | ------------ | ------------------------------------------------------------------------------------------- |
-| IME    | fcitx5       | `paru -S fcitx5 fcitx5-chinese-addons fcitx5-anthy`                                         |
-| editor | NeoVim       | `paru -S neovim-nightly-bin lazygit zoxide ripgrep sqlite fd yarn lldb make unzip`          |
-|        | VSCode       | `paru -S visual-studio-code-bin`                                                            |
-| NPM    | pnpm         | `paru -S pnpm`                                                                              |
-| music  | MPD          | `paru -S mpd mpc ncmpcpp cava mpdscribble && systemctl enable --user --now mpdscribble mpd` |
-|        | yesplaymusic | `paru -S yesplaymusic`                                                                      |
+| ~      | name            | command                                                         |
+| ------ | --------------- | --------------------------------------------------------------- |
+| IME    | fcitx5          | `paru -S fcitx5 fcitx5-chinese-addons fcitx5-anthy`             |
+| editor | neovim          | `paru -S neovim-nightly-bin`                                    |
+|        | neovim (more)   | `paru -S lazygit zoxide ripgrep sqlite fd yarn lldb make unzip` |
+|        | neovim (GUI)    | `paru -S neovide-git-wayland`                                   |
+|        | vscode          | `paru -S visual-studio-code-bin`                                |
+| NPM    | pnpm            | `paru -S pnpm`                                                  |
+| music  | mpd             | `paru -S mpd mpc ncmpcpp cava mpdscribble`                      |
+|        | mpd (to enable) | `systemctl enable --user --now mpdscribble mpd`                 |
+|        | yesplaymusic    | `paru -S yesplaymusic`                                          |
 
 ## Extra/Theme
 
