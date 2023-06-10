@@ -1,12 +1,16 @@
 #!/usr/bin/env bash
-
-bold="\e[29;1m"
+# SPDX-License-Identifer: MIT
+#
+# wmctl - a small script aim to control WM and WM components in one place with shorter commands
+#
+# homepage: https://github.com/huge-pancake/.arch
+#
 
 choise="$1"
 
 case "$choise" in
 "--help" | "-h")
-	echo $'\e[29;1mUsage:  wm-do.sh [OPTIONS] [COMMAND]\e[0m'
+	echo $'\e[29;1mUsage:  wmctl [OPTIONS] [COMMAND]\e[0m'
 	echo ""
 	echo $'\e[29;1mOptions:\e[0m'
 	echo "  -h, --help:                         Show this help text"
@@ -22,6 +26,8 @@ case "$choise" in
 	echo "  screenshot_copy_save_screen, scss:  Take a screen screenshot, copy and save"
 	echo "  mako_toggle, mt:                    Toggle Mako's do-not-disturb mode"
 	echo "  sway_launch, s~                     Launch Sway"
+	echo "  sway_reload, sr                     Reload Sway and components under it"
+	echo "  hyprland_launch, h~                 Launch Hyprland"
 	echo "  hyprland_reload, hr:                Reload Hyprland and components under it"
 	echo "  hyprland_low_toggle, hlt:           Toggle Hyprland's low graphics quality mode"
 	;;
@@ -99,6 +105,18 @@ case "$choise" in
 	export QT_IM_MODULE=fcitx
 
 	sway -V
+	;;
+"sway_reload" | "sr")
+	pkill mako
+	pkill wl-sunset
+	swaymsg reload
+	fc-cache
+	mako &
+	wlsunset -l 39.9 -L 116.3 &
+	notify-send "󱂬  Sway" "Reloaded successful"
+	;;
+"hyprland_launch" | "h~")
+	Hyprland
 	;;
 "hyprland_reload" | "hr")
 	pkill mako

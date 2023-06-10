@@ -51,8 +51,9 @@ tooltip {
 
 #mode {
   background-color: @surface0;
-  font-weight: 900;
+  border-color: @pink;
   color: @pink;
+  font-weight: 900;
 }
 
 #workspaces {
@@ -121,12 +122,14 @@ tooltip {
 }
 #battery.plugged {
   background-color: @surface0;
-  font-weight: 900;
+  border-color: @green;
   color: @green;
+  font-weight: 900;
 }
 #battery.warning:not(.plugged),
 #battery.critical:not(.plugged) {
-  background-color: @red;
+  background-color: @surface0;
+  border-color: @red;
+  color: @red;
   font-weight: 900;
-  color: @base;
 }
