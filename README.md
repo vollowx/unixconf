@@ -5,6 +5,14 @@
 ## Showcase
 
 <details>
+<summary>Rofi</summary>
+
+![rofi-launcher](https://github.com/huge-pancake/.arch/assets/73375859/74151c82-fae1-4bac-8d27-b92b48ea74ec)
+![rofi-session](https://github.com/huge-pancake/.arch/assets/73375859/ad8d85e6-6a37-4315-a438-74c944582b59)
+
+</details>
+
+<details>
 <summary>Music Playing</summary>
 
 ![music](https://github.com/huge-pancake/.arch/assets/73375859/0429b031-f3a5-4af7-a436-9255d8acb7e9)
