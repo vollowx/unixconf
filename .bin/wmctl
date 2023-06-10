@@ -21,9 +21,6 @@ case "$choise" in
 	echo "  volume_toggle, vm:                  Toggle mute of the volume"
 	echo "  brightness_up, b+:                  Turn up the brightness"
 	echo "  brightness_down, b-:                Turn down the brightness"
-	echo "  screenshot_copy_area, sca:          Take a area screenshot copy"
-	echo "  screenshot_save_area, ssa:          Take a area screenshot, save"
-	echo "  screenshot_save_screen, sss:        Take a screen screenshot, save"
 	echo "  mako_toggle, mt:                    Toggle Mako's do-not-disturb mode"
 	echo "  sway_launch, s~                     Launch Sway"
 	echo "  sway_reload, sr                     Reload Sway and components under it"
@@ -50,15 +47,6 @@ case "$choise" in
 "brightness_down" | "b-")
 	light -U 5
 	notify-send "󰃠  Brightness" "Brightness: $(light)%" --hint="int:value:$(light)"
-	;;
-"screenshot_copy_area" | "sca")
-	grimpal copy area
-	;;
-"screenshot_save_area" | "ssa")
-	grimpal save area
-	;;
-"screenshot_save_screen" | "sss")
-	grimpal save screen
 	;;
 "mako_toggle" | "mt")
 	MAKO_MODE=$(makoctl mode)
