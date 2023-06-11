@@ -17,15 +17,15 @@ return function()
 		end
 	end
 
-	local function lsp_status()
+	local function lsp_servers()
 		if rawget(vim, "lsp") then
-			for _, client in ipairs(vim.lsp.get_active_clients()) do
-				if client.attached_buffers[vim.api.nvim_get_current_buf()] and client.name ~= "null-ls" then
-					return (vim.o.columns > 100 and "󱕷 LSP ~ " .. client.name) or "󱕷 LSP"
-				end
+			local names = {}
+			for _, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+				table.insert(names, server.name)
 			end
+			return "󱜙 [" .. table.concat(names, ", ") .. "]"
 		end
-		return "󱕷 No LSP"
+		return "󱚧"
 	end
 
 	local function get_cwd()
@@ -39,23 +39,6 @@ return function()
 		end
 		return icons.ui.RootFolderOpened .. cwd
 	end
-
-	local mini_sections = {
-		lualine_a = { "filetype" },
-		lualine_b = {},
-		lualine_c = {},
-		lualine_x = {},
-		lualine_y = {},
-		lualine_z = {},
-	}
-	local outline = {
-		sections = mini_sections,
-		filetypes = { "lspsagaoutline" },
-	}
-	local diffview = {
-		sections = mini_sections,
-		filetypes = { "DiffviewFiles" },
-	}
 
 	local function python_venv()
 		local function env_cleanup(venv)
@@ -82,16 +65,29 @@ return function()
 		return ""
 	end
 
-	local colors = require("modules.utils").get_palette()
-	local custom_catppuccin = require("lualine.themes.catppuccin")
-	custom_catppuccin.normal.c.fg = colors.overlay0
+	local mini_sections = {
+		lualine_a = { "filetype" },
+		lualine_b = {},
+		lualine_c = {},
+		lualine_x = {},
+		lualine_y = {},
+		lualine_z = {},
+	}
+	local outline = {
+		sections = mini_sections,
+		filetypes = { "lspsagaoutline" },
+	}
+	local diffview = {
+		sections = mini_sections,
+		filetypes = { "DiffviewFiles" },
+	}
 
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
-			theme = custom_catppuccin,
+			theme = "auto",
 			disabled_filetypes = {},
-			component_separators = "",
+			component_separators = "|",
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
@@ -104,14 +100,9 @@ return function()
 				},
 			},
 			lualine_b = {
-				{ "filetype", colored = false, icon_only = true, padding = { left = 1 } },
-				{ "filename" },
-			},
-			lualine_c = {
-				{ "branch", icon = string.sub(icons.git.Branch, 1, 4), padding = { left = 1 } },
+				{ "branch", icon = string.sub(icons.git.Branch, 1, 4) },
 				{
 					"diff",
-					colored = false,
 					symbols = {
 						added = icons.git.Add,
 						modified = icons.git.Mod,
@@ -119,15 +110,14 @@ return function()
 					},
 					source = diff_source,
 				},
+			},
+			lualine_c = {
 				-- This can make things after this in section c centered
 				function()
 					return "%="
 				end,
-				{
-					"searchcount",
-					maxcount = 999,
-					timeout = 500,
-				},
+				{ get_cwd, color = "LualineCWD" },
+				{ python_venv },
 			},
 			lualine_x = {
 				{
@@ -141,11 +131,18 @@ return function()
 						hint = icons.diagnostics.Hint,
 					},
 				},
-				lsp_status,
+				{ lsp_servers, color = "LualineLSP" },
 			},
 			lualine_y = {
-				get_cwd,
-				python_venv,
+				{ "filetype" },
+				{
+					"fileformat",
+					symbols = {
+						unix = "LF",
+						dos = "CRLF",
+						mac = "CR",
+					},
+				},
 			},
 			lualine_z = {
 				{ "location" },

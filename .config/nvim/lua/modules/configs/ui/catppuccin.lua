@@ -216,6 +216,10 @@ return function()
 					DevIconSvelte = { fg = cp.red },
 					DevIconTxt = { fg = cp.green },
 					DevIconVue = { fg = cp.green },
+
+					-- For lualine
+					LualineCWD = { fg = cp.overlay2, bg = cp.mantle },
+					LualineLSP = { fg = cp.green, bg = cp.mantle },
 				}
 			end,
 		},
