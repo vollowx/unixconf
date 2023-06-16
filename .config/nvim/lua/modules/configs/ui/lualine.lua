@@ -116,8 +116,7 @@ return function()
 				function()
 					return "%="
 				end,
-				{ get_cwd, color = "LualineCWD" },
-				{ python_venv },
+				{ lsp_servers, color = "LualineLSP" },
 			},
 			lualine_x = {
 				{
@@ -131,7 +130,8 @@ return function()
 						hint = icons.diagnostics.Hint,
 					},
 				},
-				{ lsp_servers, color = "LualineLSP" },
+				{ get_cwd, color = "LualineCWD" },
+				{ python_venv },
 			},
 			lualine_y = {
 				{ "filetype" },
