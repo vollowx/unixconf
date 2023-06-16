@@ -31,10 +31,9 @@ settings["format_disabled_dirs"] = {
 	home .. "/format_disabled_dir_under_home",
 }
 
--- NOTE: The startup time will be slowed down when it's true.
 -- Set it to false if you don't use nvim to open big files.
 ---@type boolean
-settings["load_big_files_faster"] = false
+settings["load_big_files_faster"] = true
 
 -- Change the colors of the global palette here.
 -- Settings will complete their replacement at initialization.
@@ -108,6 +107,16 @@ settings["null_ls_deps"] = {
 	"shfmt",
 	"stylua",
 	"vint",
+}
+
+-- Set the Debug Adapter Protocol (DAP) clients that will be installed and configured during bootstrap here.
+-- Check the below link for all supported DAPs:
+-- https://github.com/jay-babu/mason-nvim-dap.nvim/blob/main/lua/mason-nvim-dap/mappings/source.lua
+---@type string[]
+settings["dap_deps"] = {
+	"codelldb", -- C-Family
+	"delve", -- Go
+	"python", -- Python (debugpy)
 }
 
 return settings
