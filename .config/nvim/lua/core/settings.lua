@@ -86,12 +86,10 @@ settings["lsp_deps"] = {
 	"bashls",
 	"clangd",
 	"cssls",
-	-- "gopls",
 	"html",
 	"jsonls",
 	"lua_ls",
 	"pylsp",
-	"rust_analyzer",
 	"volar",
 }
 
