@@ -218,8 +218,9 @@ return function()
 					DevIconVue = { fg = cp.green },
 
 					-- For lualine
-					LualineCWD = { fg = cp.overlay2, bg = cp.mantle },
+					LualineBranch = { fg = cp.subtext0, bg = cp.mantle },
 					LualineLSP = { fg = cp.green, bg = cp.mantle },
+					LualineSeparator = { fg = cp.surface1, bg = cp.mantle },
 				}
 			end,
 		},

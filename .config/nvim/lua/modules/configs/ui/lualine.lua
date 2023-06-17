@@ -69,6 +69,14 @@ return function()
 		return ""
 	end
 
+	local separator = {
+		function()
+			return "│"
+		end,
+		padding = {},
+		color = "LualineSeparator",
+	}
+
 	local mini_sections = {
 		lualine_a = { "filetype" },
 		lualine_b = {},
@@ -91,20 +99,17 @@ return function()
 			icons_enabled = true,
 			theme = "auto",
 			disabled_filetypes = {},
-			component_separators = "|",
+			component_separators = "",
 			section_separators = { left = "", right = "" },
 		},
 		sections = {
 			lualine_a = {
-				{
-					"mode",
-					fmt = function(name)
-						return icons.misc.ManUp .. name
-					end,
-				},
+				"mode",
 			},
 			lualine_b = {
-				{ "branch" },
+				"branch",
+			},
+			lualine_c = {
 				{
 					"diff",
 					symbols = {
@@ -113,14 +118,15 @@ return function()
 						removed = icons.git.Remove,
 					},
 					source = diff_source,
+					separator = "",
 				},
-			},
-			lualine_c = {
-				-- This can make things after this in section c centered
-				function()
+
+				--[[ function()
 					return "%="
-				end,
-				{ lsp_servers, color = "LualineLSP" },
+				end, ]]
+			},
+			lualine_x = {
+				{ lsp_servers, color = "LualineLSP", separator = "" },
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
@@ -132,25 +138,15 @@ return function()
 						hint = icons.diagnostics.Hint,
 					},
 				},
-			},
-			lualine_x = {
-				{ get_cwd, color = "LualineCWD" },
-				{ python_venv },
+				separator,
+				"filetype",
 			},
 			lualine_y = {
-				{ "filetype" },
-				{ "encoding" },
-				{
-					"fileformat",
-					symbols = {
-						unix = "LF",
-						dos = "CRLF",
-						mac = "CR",
-					},
-				},
+				python_venv,
+				get_cwd,
 			},
 			lualine_z = {
-				{ "location" },
+				"location",
 			},
 		},
 		inactive_sections = {
