@@ -172,7 +172,6 @@ return function()
 					["@keyword.return"] = { fg = cp.pink, style = clear },
 
 					-- For lualine
-					LualineBranch = { fg = cp.subtext0, bg = cp.mantle },
 					LualineLSP = { fg = cp.green, bg = cp.mantle },
 					LualineSeparator = { fg = cp.surface1, bg = cp.mantle },
 				}
