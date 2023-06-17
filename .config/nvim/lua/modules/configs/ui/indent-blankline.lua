@@ -1,11 +1,10 @@
 return function()
 	require("indent_blankline").setup({
 		char = "│",
+		context_char = "┃",
 		show_first_indent_level = true,
 		filetype_exclude = {
 			"", -- for all buffers without a file type
-			"NvimTree",
-			"TelescopePrompt",
 			"dashboard",
 			"dotooagenda",
 			"flutterToolsOutline",
@@ -16,17 +15,19 @@ return function()
 			"json",
 			"log",
 			"markdown",
+			"NvimTree",
 			"peekaboo",
 			"startify",
+			"TelescopePrompt",
 			"todoist",
 			"txt",
+			"undotree",
 			"vimwiki",
 			"vista",
 		},
 		buftype_exclude = { "terminal", "nofile" },
 		show_trailing_blankline_indent = false,
 		show_current_context = true,
-		show_current_context_start = true,
 		context_patterns = {
 			"^if",
 			"^table",
