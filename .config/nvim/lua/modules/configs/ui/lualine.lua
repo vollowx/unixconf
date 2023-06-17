@@ -20,10 +20,14 @@ return function()
 	local function lsp_servers()
 		if rawget(vim, "lsp") then
 			local names = {}
-			for _, server in pairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
-				table.insert(names, server.name)
+			local lsp_exist = false
+			for _, client in ipairs(vim.lsp.get_active_clients()) do
+				if client.attached_buffers[vim.api.nvim_get_current_buf()] and client.name ~= "null-ls" then
+					table.insert(names, client.name)
+					lsp_exist = true
+				end
 			end
-			return "󱜙 [" .. table.concat(names, ", ") .. "]"
+			return lsp_exist and "󱜙 [" .. table.concat(names, ", ") .. "]" or "󱚧"
 		end
 		return "󱚧"
 	end
@@ -100,7 +104,7 @@ return function()
 				},
 			},
 			lualine_b = {
-				{ "branch", icon = string.sub(icons.git.Branch, 1, 4) },
+				{ "branch" },
 				{
 					"diff",
 					symbols = {
@@ -117,8 +121,6 @@ return function()
 					return "%="
 				end,
 				{ lsp_servers, color = "LualineLSP" },
-			},
-			lualine_x = {
 				{
 					"diagnostics",
 					sources = { "nvim_diagnostic" },
@@ -130,11 +132,14 @@ return function()
 						hint = icons.diagnostics.Hint,
 					},
 				},
+			},
+			lualine_x = {
 				{ get_cwd, color = "LualineCWD" },
 				{ python_venv },
 			},
 			lualine_y = {
 				{ "filetype" },
+				{ "encoding" },
 				{
 					"fileformat",
 					symbols = {
