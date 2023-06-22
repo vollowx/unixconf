@@ -1,9 +1,18 @@
 local editor = {}
 
-editor["rmagatti/auto-session"] = {
+editor["olimorris/persisted.nvim"] = {
 	lazy = true,
-	cmd = { "SessionSave", "SessionRestore", "SessionDelete" },
-	config = require("editor.auto-session"),
+	cmd = {
+		"SessionToggle",
+		"SessionStart",
+		"SessionStop",
+		"SessionSave",
+		"SessionLoad",
+		"SessionLoadLast",
+		"SessionLoadFromFile",
+		"SessionDelete",
+	},
+	config = require("editor.persisted"),
 }
 editor["m4xshen/autoclose.nvim"] = {
 	lazy = true,
