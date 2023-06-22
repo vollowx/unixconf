@@ -1,4 +1,7 @@
 set shell zsh
+set icons true
+set mouse true
 set hidden true
 set ignorecase true
-set icons true
+
+set previewer ~/.config/lf/pv.sh
