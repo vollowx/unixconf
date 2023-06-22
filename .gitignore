@@ -25,6 +25,8 @@
 !.config/lazygit/
 !.config/lazygit/**/*
 .config/lazygit/state.yml
+!.config/lf/
+!.config/lf/**/*
 !.config/mako/
 !.config/mako/**/*
 !.config/mpv/
