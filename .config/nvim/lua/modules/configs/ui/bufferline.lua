@@ -21,7 +21,7 @@ return function()
 			show_tab_indicators = true,
 			enforce_regular_tabs = true,
 			persist_buffer_sort = true,
-			always_show_bufferline = true,
+			always_show_bufferline = false,
 			separator_style = "none",
 			diagnostics = "nvim_lsp",
 			diagnostics_indicator = function(_, _, diagnostics_dict, _)
