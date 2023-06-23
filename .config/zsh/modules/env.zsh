@@ -11,9 +11,10 @@ export XDG_SCREENSHOTS_DIR="$HOME/Pictures/Screenshots"
 
 # Others
 export EDITOR="nvim"
-export BROWSER="firefox-developer-edition"
+export BROWSER="firefox-nightly"
 export TERMINAL="foot"
 export LANG="en_US.UTF-8"
 
 export BAT_THEME="Catppuccin-mocha"
 export EXA_ICON_SPACING=2
+export NEOVIDE_VSYNC=false
