@@ -31,6 +31,8 @@
 !.config/mako/**/*
 !.config/mpv/
 !.config/mpv/**/*
+!.config/nvim/
+!.config/nvim/**/*
 !.config/obs-studio/
 !.config/obs-studio/themes
 !.config/obs-studio/themes/**/*
