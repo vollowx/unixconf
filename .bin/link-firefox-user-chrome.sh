@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 FIREFOX_PROFILE_FOLDER="$1"
 

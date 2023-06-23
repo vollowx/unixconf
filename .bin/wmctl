@@ -3,7 +3,7 @@
 #
 # wmctl - a small script aim to control WM and WM components in one place with shorter commands
 #
-# homepage: https://github.com/huge-pancake/.arch
+# homepage: https://github.com/volpan/.arch
 #
 
 choise="$1"
@@ -22,9 +22,7 @@ case "$choise" in
 	echo "  brightness_up, b+:                  Turn up the brightness"
 	echo "  brightness_down, b-:                Turn down the brightness"
 	echo "  mako_toggle, mt:                    Toggle Mako's do-not-disturb mode"
-	echo "  sway_launch, s~                     Launch Sway"
 	echo "  sway_reload, sr                     Reload Sway and components under it"
-	echo "  hyprland_launch, h~                 Launch Hyprland"
 	echo "  hyprland_reload, hr:                Reload Hyprland and components under it"
 	echo "  hyprland_low_toggle, hlt:           Toggle Hyprland's low graphics quality mode"
 	;;
@@ -45,6 +43,7 @@ case "$choise" in
 	notify-send "󰃠  Brightness" "Brightness: $(light)%" --hint="int:value:$(light)"
 	;;
 "brightness_down" | "b-")
+	wmctl
 	light -U 5
 	notify-send "󰃠  Brightness" "Brightness: $(light)%" --hint="int:value:$(light)"
 	;;
@@ -59,41 +58,6 @@ case "$choise" in
 		makoctl set-mode do-not-disturb
 	fi
 	;;
-"sway_launch" | "s~")
-	# XDG
-	export XDG_CURRENT_DESKTOP=sway
-
-	# Wlroots
-	# export WLR_RENDERER=vulkan
-	export WLR_NO_HARDWARE_CURSORS=1
-
-	# Wayland
-	export QT_QPA_PLATFORM=wayland
-	export SDL_VIDEODRIVER=wayland
-	export CLUTTER_BACKEND=wayland
-
-	# Firefox
-	export MOZ_ENABLE_WAYLAND=1
-	export MOZ_WEBRENDER=1
-
-	# QT
-	export QT_AUTO_SCREEN_SCALE_FACTOR=1
-	export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-	export QT_QPA_PLATFORMTHEME=qt6ct
-
-	# Java
-	export _JAVA_AWT_WM_NONREPARENTING=1
-
-	# FCITX
-	export GLFW_IM_MODULE=fcitx
-	export GTK_IM_MODULE=fcitx
-	export INPUT_METHOD=fcitx
-	export XMODIFIERS=@im=fcitx
-	export IMSETTINGS_MODULE=fcitx
-	export QT_IM_MODULE=fcitx
-
-	sway -V
-	;;
 "sway_reload" | "sr")
 	pkill mako
 	pkill wl-sunset
@@ -102,9 +66,6 @@ case "$choise" in
 	mako &
 	wlsunset -l 39.9 -L 116.3 &
 	notify-send "󱂬  Sway" "Reloaded successful"
-	;;
-"hyprland_launch" | "h~")
-	Hyprland
 	;;
 "hyprland_reload" | "hr")
 	pkill mako
