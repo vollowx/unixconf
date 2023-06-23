@@ -66,9 +66,7 @@ local disable_distribution_plugins = function()
 	vim.g.editorconfig = 1
 
 	-- Disable remote plugins
-	-- NOTE: Disabling rplugin.vim will show error for `wilder.nvim` in :checkhealth,
-	-- NOTE:  but since it's config doesn't require python rtp, it's fine to ignore.
-	-- vim.g.loaded_remote_plugins = 1
+	vim.g.loaded_remote_plugins = 1
 end
 
 local leader_map = function()
@@ -78,7 +76,7 @@ local leader_map = function()
 end
 
 local neovide_config = function()
-	vim.api.nvim_set_option_value("guifont", "JetBrainsMono Nerd Font:h15", {})
+	vim.api.nvim_set_option_value("guifont", "JetBrainsMono Nerd Font:h7", {})
 	vim.g.neovide_refresh_rate = 120
 	vim.g.neovide_cursor_vfx_mode = "railgun"
 	vim.g.neovide_no_idle = true
