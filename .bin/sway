@@ -36,4 +36,4 @@ export QT_IM_MODULE=fcitx
 
 ## Launch!
 
-/usr/bin/sway -V
+/usr/bin/sway $@

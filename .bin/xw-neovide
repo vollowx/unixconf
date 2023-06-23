@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+## Environment && Launch!
+
+env -u WAYLAND_DISPLAY neovide --novsync --multigrid $@

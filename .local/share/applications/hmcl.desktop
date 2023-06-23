@@ -2,9 +2,7 @@
 Type=Application
 Exec=hmcl
 Icon=minecraft
-Terminal=false
-Categories=Game;
-Keywords=game
-
 Name=HMCL
+Keywords=game
+Categories=Game;
 Comment=A Minecraft Launcher which is multi-functional, cross-platform and popular
