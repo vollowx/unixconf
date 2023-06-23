@@ -1,9 +1,9 @@
 {
   "position": "top",
   "layer": "top",
-  "height": 40,
-  "modules-left": ["sway/mode", "sway/workspaces", "sway/window"],
-  "modules-center": ["mpd"],
+  "height": 36,
+  "modules-left": ["sway/mode", "sway/workspaces", "sway/window", "mpd"],
+  "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "pulseaudio",
@@ -12,7 +12,6 @@
     "memory",
     "temperature",
     "battery",
-    "clock",
   ],
   "sway/workspaces": {
     "sort-by-name": true
@@ -49,6 +48,23 @@
     "on-click-right": "mpc next",
     "tooltip-format": "{artist} - {album} - {title}",
     "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "clock": {
+    "format": "{:%A, %b %d | %I:%M %p}",
+    "tooltip-format": "<small>{calendar}</small>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "format": {
+        "months": "<b>{}</b>",
+        "weeks": "<b>W{}</b>",
+        "today": "<b><u>{}</u></b>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode"
+    }
   },
   "tray": {
     "icon-size": 14,
@@ -90,22 +106,5 @@
     "format-charging": "󱈑 {capacity}%",
     "format-plugged": "󱈑 {capacity}%",
     "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-  },
-  "clock": {
-    "format": "󱑒 {:%A, %b %d | %I:%M %p}",
-    "tooltip-format": "<small>{calendar}</small>",
-    "calendar": {
-      "mode": "year",
-      "mode-mon-col": 3,
-      "weeks-pos": "right",
-      "format": {
-        "months": "<b>{}</b>",
-        "weeks": "<b>W{}</b>",
-        "today": "<b><u>{}</u></b>"
-      }
-    },
-    "actions": {
-      "on-click-right": "mode"
-    }
   },
 }
