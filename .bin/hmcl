@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+## Environment
+
+cd ~/Minecraft/
+
+## Launch!
+
+java -jar ./hmcl.jar

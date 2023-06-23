@@ -64,6 +64,9 @@
 !.local/
 !.local/share/
 
+!.local/share/applications/
+!.local/share/applications/**/*
+
 !.local/share/backgrounds/
 # Catppuccin
 !.local/share/backgrounds/Catppuccin.png
