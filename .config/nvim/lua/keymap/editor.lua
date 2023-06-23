@@ -70,6 +70,53 @@ local plug_map = {
 	["nv|<leader>c"] = map_cmd("<Cmd>HopChar1<CR>"):with_noremap():with_desc("jump: Goto one char"),
 	["nv|<leader>cc"] = map_cmd("<Cmd>HopChar2<CR>"):with_noremap():with_desc("jump: Goto two chars"),
 
+	-- Plugin: search-replace
+	-- SearchReplaceSingleBuffer
+	["n|<leader>rs"] = map_cu("SearchReplaceSingleBufferSelections")
+		:with_noremap()
+		:with_desc("edit: Show search-repacle menu in current buffer"),
+	["n|<leader>ro"] = map_cu("SearchReplaceSingleBufferOpen")
+		:with_noremap()
+		:with_desc("edit: Search-repacle in current buffer"),
+	["n|<leader>rw"] = map_cu("SearchReplaceSingleBufferCWord")
+		:with_noremap()
+		:with_desc("edit: Search-repacle current buffer CWord"),
+	["n|<leader>rW"] = map_cu("SearchReplaceSingleBufferCWORD")
+		:with_noremap()
+		:with_desc("edit: Search-repacle current buffer CWORD"),
+	["n|<leader>re"] = map_cu("SearchReplaceSingleBufferCExpr")
+		:with_noremap()
+		:with_desc("edit: Search-repacle current buffer CExpr"),
+	["n|<leader>rf"] = map_cu("SearchReplaceSingleBufferCFile")
+		:with_noremap()
+		:with_desc("edit: Search-repacle current buffer CFile"),
+	-- SearchReplaceMultiBuffer
+	["n|<leader>rbs"] = map_cu("SearchReplaceMultiBufferSelections")
+		:with_noremap()
+		:with_desc("edit: Show search-repacle menu for multi buffer"),
+	["n|<leader>rbo"] = map_cu("SearchReplaceMultiBufferOpen")
+		:with_noremap()
+		:with_desc("edit: Search-repacle in multi buffers"),
+	["n|<leader>rbw"] = map_cu("SearchReplaceMultiBufferCWord")
+		:with_noremap()
+		:with_desc("edit: Search-repacle multi buffers CWord"),
+	["n|<leader>rbW"] = map_cu("SearchReplaceMultiBufferCWORD")
+		:with_noremap()
+		:with_desc("edit: Search-repacle multi buffers CWORD"),
+	["n|<leader>rbe"] = map_cu("SearchReplaceMultiBufferCExpr")
+		:with_noremap()
+		:with_desc("edit: Search-repacle multi buffers CExpr"),
+	["n|<leader>rbf"] = map_cu("SearchReplaceMultiBufferCFile")
+		:with_noremap()
+		:with_desc("edit: Search-repacle multi buffers CFile"),
+	-- Visual Mode
+	["v|<C-r>"] = map_cu("SearchReplaceSingleBufferVisualSelection")
+		:with_noremap()
+		:with_desc("edit: Search-replace with selection within one line"),
+	["v|<C-w>"] = map_cu("SearchReplaceWithinVisualSelectionCWord")
+		:with_noremap()
+		:with_desc("edit: Search-replace with selection within one line CWord"),
+
 	-- Plugin: treehopper
 	["o|m"] = map_cu("lua require('tsht').nodes()"):with_silent():with_desc("jump: Operate across syntax tree"),
 

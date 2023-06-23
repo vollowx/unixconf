@@ -66,6 +66,11 @@ editor["romainl/vim-cool"] = {
 	lazy = true,
 	event = { "CursorMoved", "InsertEnter" },
 }
+editor["roobert/search-replace.nvim"] = {
+	lazy = true,
+	event = "BufReadPost",
+	config = require("editor.search-replace"),
+}
 editor["lambdalisue/suda.vim"] = {
 	lazy = true,
 	cmd = { "SudaRead", "SudaWrite" },
