@@ -1,1 +1,0 @@
-return { "-style=file" }
