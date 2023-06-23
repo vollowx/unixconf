@@ -29,7 +29,7 @@ alias gpl="git pull $@"
 alias xw="env -u WAYLAND_DISPLAY"
 
 alias nv="nvim $@"
-alias nvd="neovide --novsync $@"
+alias nvd="neovide $@"
 
 alias nc="ncmpcpp $@"
 

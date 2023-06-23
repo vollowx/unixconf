@@ -6,4 +6,4 @@ cd ~/Minecraft/
 
 ## Launch!
 
-java -jar ./hmcl.jar -V
+java -jar ./hmcl.jar $@
