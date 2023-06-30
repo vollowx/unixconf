@@ -97,7 +97,7 @@
 
 | ~      | name       | command                              |
 | ------ | ---------- | ------------------------------------ |
-| cursor | Catppuccin | `paru -S catppuccin-cursors-mocha`   |
+| cursor | MacOS      | `paru -S apple_cursor`               |
 | gtk    | Catppuccin | `paru -S catppuccin-gtk-theme-mocha` |
 | icons  | Papirus    | `paru -S papirus-icon-theme`         |
 | qt     | (not yet)  | `paru -S ...`                        |

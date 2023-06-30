@@ -1,6 +1,5 @@
 # X
-export XCURSOR_THEME=Catppuccin-Mocha-Dark-Cursors
-export XCURSOR_SIZE=32
+export XCURSOR_THEME=MacOS-Monterey
 
 # Path
 export PNPM_HOME="$HOME/.local/share/pnpm"
