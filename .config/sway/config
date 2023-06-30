@@ -2,17 +2,17 @@ include config.d/mocha.conf
 
 # Appearances
 # target                 title     bg    text   indicator  border
-client.focused           $blue     $base $text  $rosewater $blue
-client.focused_inactive  $overlay0 $base $text  $rosewater $base
-client.unfocused         $overlay0 $base $text  $rosewater $base
+client.focused           $pink     $base $text  $rosewater $pink
+client.focused_inactive  $surface0 $base $text  $rosewater $surface0
+client.unfocused         $surface0 $base $text  $rosewater $surface0
 client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $base
+client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
 default_border pixel 3
 default_floating_border pixel 3
-gaps inner 5
-gaps outer 5
+gaps inner 3
+gaps outer 3
 
 # Monitor
 output eDP-1 scale 1
