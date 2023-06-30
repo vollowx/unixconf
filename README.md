@@ -92,6 +92,7 @@
 | music  | mpd             | `paru -S mpd mpc ncmpcpp cava mpdscribble`                      |
 |        | mpd (to enable) | `systemctl enable --user --now mpdscribble mpd`                 |
 |        | yesplaymusic    | `paru -S yesplaymusic`                                          |
+| calc   | qalculate       | `paru -S qalculate-gtk`                                         |
 
 ## Extra/Theme
 
