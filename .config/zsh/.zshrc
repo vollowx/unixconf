@@ -49,9 +49,3 @@ ZSH_AUTOSUGGEST_MANUAL_REBIND=1
 source ~/.config/zsh/modules/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 eval "$(zoxide init zsh)"
-
-# -------
-# Configs
-# -------
-
-[ "$(tty)" = "/dev/tty1" ] && exec sway

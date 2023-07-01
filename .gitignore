@@ -59,6 +59,7 @@
 !.config/zsh/
 !.config/zsh/.zshrc
 !.config/zsh/.zimrc
+!.config/zsh/.zlogin
 !.config/zsh/modules/
 !.config/zsh/modules/**/*
 
