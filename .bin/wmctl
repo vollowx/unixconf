@@ -62,6 +62,7 @@ case "$choise" in
 	pkill mako
 	pkill wl-sunset
 	swaymsg reload
+	load-gtk-settings.sh
 	fc-cache
 	mako &
 	wlsunset -l 39.9 -L 116.3 &
@@ -73,6 +74,7 @@ case "$choise" in
 	pkill hyprpaper
 	pkill wl-sunset
 	hyprctl reload
+	load-gtk-settings.sh
 	fc-cache
 	mako &
 	waybar &
