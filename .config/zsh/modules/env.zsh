@@ -1,6 +1,3 @@
-# X
-export XCURSOR_THEME=macOS-Monterey
-
 # Path
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$HOME/.bin:$PATH"

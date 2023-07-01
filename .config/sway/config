@@ -21,6 +21,7 @@ output * bg ~/.local/share/backgrounds/Bridge.jpg fill
 xwayland enabled
 seat * hide_cursor 8000
 seat * hide_cursor when-typing enable
+seat * xcursor_theme macOS-Monterey 24
 
 bindswitch --reload --locked lid:on output eDP-1 disable
 bindswitch --reload --locked lid:off output eDP-1 enable

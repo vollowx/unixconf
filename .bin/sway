@@ -3,6 +3,7 @@
 ## Environment
 
 # XDG
+export WLR_RENDERER=vulkan
 export XDG_CURRENT_DESKTOP=sway
 
 # Wlroots
