@@ -6,7 +6,7 @@
 export XDG_CURRENT_DESKTOP=sway
 
 # Wlroots
-export WLR_RENDERER=vulkan
+# export WLR_RENDERER=vulkan
 export WLR_NO_HARDWARE_CURSORS=1
 
 # Wayland
