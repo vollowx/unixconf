@@ -11,8 +11,8 @@ client.background        $base
 
 default_border pixel 3
 default_floating_border pixel 3
-gaps inner 3
-gaps outer 3
+gaps inner 6
+gaps outer 0
 
 # Monitor
 output eDP-1 scale 1
