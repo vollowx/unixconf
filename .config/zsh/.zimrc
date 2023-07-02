@@ -8,6 +8,12 @@ zmodule termtitle
 zmodule utility
 
 #
+# Async
+#
+
+zmodule mafredri/zsh-async --source async.zsh
+
+#
 # Completion
 #
 
