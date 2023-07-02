@@ -14,3 +14,4 @@ export LANG="en_US.UTF-8"
 export BAT_THEME="Catppuccin-mocha"
 export EXA_ICON_SPACING=2
 export NEOVIDE_VSYNC=false
+export NEOVIDE_MULTIGRID=true
