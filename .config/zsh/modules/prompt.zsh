@@ -1,24 +1,3 @@
-# autoload -Uz vcs_info
-# setopt PROMPT_SUBST
-
-# # add-zsh-hook precmd vcs_info
-# precmd() { vcs_info }
-
-# # enable checking for (un)staged changes, enabling use of %u and %c
-# zstyle ':vcs_info:*' check-for-changes true
-
-# # set custom symbol for unstaged changes (*)
-# # and staged changes (+)
-# zstyle ':vcs_info:*' unstagedstr '%F{yellow}󰎂%f'
-# zstyle ':vcs_info:*' stagedstr '%F{green}󰐕%f'
-
-# # format git string
-# zstyle ':vcs_info:git:*' formats '%F{blue}%f %b %u%c'
-
-# # set prompt
-# PROMPT='%(?.%F{green}󰁔.%F{red}󰁔)%f  %B%F{blue}%1~%f%b  '
-# RPROMPT='%B${vcs_info_msg_0_}%b'
-
 async_init
 
 declare -Ag prompt_color_mappings=(
@@ -145,12 +124,11 @@ prompt_git_status() {
     fi
 
     if [[ "$prompt_is_ahead" == true && "$prompt_is_behind" == true ]]; then
-      # diverged
-      prompt_git_status_display+=" %F{$prompt_colors[git_status_diverged]}~"
+      prompt_git_status_display+=" %F{$prompt_colors[git_status_diverged]}󱦲󱦳"
     elif [[ "$prompt_is_ahead" == true ]]; then
-      prompt_git_status_display+=" %F{$prompt_colors[git_status_ahead]}|•"
+      prompt_git_status_display+=" %F{$prompt_colors[git_status_ahead]}󱦲"
     elif [[ "$prompt_is_behind" == true ]]; then
-      prompt_git_status_display+=" %F{$prompt_colors[git_status_behind]}•|"
+      prompt_git_status_display+=" %F{$prompt_colors[git_status_behind]}󱦳"
     fi
 
     # stashed
@@ -270,29 +248,23 @@ prompt_async_init_tasks() {
   local prompt_current_pwd="$PWD"
   async_worker_eval prompt_worker builtin cd -q $prompt_current_pwd
 
-  local prompt_git_hide_status="$(git config --get oh-my-zsh.hide-status 2>/dev/null)"
-  if [[ "$prompt_git_hide_status" != "1" ]]; then
-    local prompt_git_toplevel="$(git rev-parse --show-toplevel 2>/dev/null)"
+  local prompt_git_toplevel="$(git rev-parse --show-toplevel 2>/dev/null)"
 
-    if [[ "$prompt_current_pwd" != $prompt_prompt_data[prompt_current_pwd] ]]; then
-      async_flush_jobs prompt_worker
-      prompt_prompt_data[prompt_git_home]=
-    fi;
+  if [[ "$prompt_current_pwd" != $prompt_prompt_data[prompt_current_pwd] ]]; then
+    async_flush_jobs prompt_worker
+    prompt_prompt_data[prompt_git_home]=
+  fi;
 
-    if [[ "$prompt_git_toplevel" != $prompt_prompt_data[prompt_git_toplevel] ]]; then
-      async_flush_jobs prompt_worker
-      prompt_prompt_data[prompt_git_branch]=
-      prompt_prompt_data[prompt_git_status]=
-    fi;
-
-    prompt_prompt_data[prompt_git_toplevel]="$prompt_git_toplevel"
-    prompt_prompt_data[prompt_current_pwd]="$prompt_current_pwd"
-    async_job prompt_worker prompt_git_branch
-    async_job prompt_worker prompt_git_status
-  else
+  if [[ "$prompt_git_toplevel" != $prompt_prompt_data[prompt_git_toplevel] ]]; then
+    async_flush_jobs prompt_worker
     prompt_prompt_data[prompt_git_branch]=
     prompt_prompt_data[prompt_git_status]=
   fi;
+
+  prompt_prompt_data[prompt_git_toplevel]="$prompt_git_toplevel"
+  prompt_prompt_data[prompt_current_pwd]="$prompt_current_pwd"
+  async_job prompt_worker prompt_git_branch
+  async_job prompt_worker prompt_git_status
 
   prompt_redraw
 }
