@@ -1,3 +1,8 @@
+# Firefox Configs
+
+You should add these code after all in Tab Center Reborn
+
+```css
 :root {
   /* These colours are (mainly) used by the
      Container Tabs Plugin */
@@ -132,3 +137,4 @@ body:hover #tablist-wrapper .tab-title-wrapper {
 #bottomshadow {
   display: none;
 }
+```
