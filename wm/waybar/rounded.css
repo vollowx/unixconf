@@ -9,7 +9,7 @@
 window#waybar {
   background-color: @base;
   color: @text;
-  border-bottom: 2px solid @surface1;
+  border-bottom: 1px solid @surface1;
 }
 
 tooltip {

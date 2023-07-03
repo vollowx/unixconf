@@ -1,22 +1,8 @@
-include config.d/mocha.conf
-
-# Appearances
-# target                 title     bg    text   indicator  border
-client.focused           $pink     $base $text  $rosewater $pink
-client.focused_inactive  $surface0 $base $text  $rosewater $surface0
-client.unfocused         $surface0 $base $text  $rosewater $surface0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-client.background        $base
-
-default_border pixel 3
-default_floating_border pixel 3
-gaps inner 6
-gaps outer 0
+include config.d/appearance.conf
 
 # Monitor
 output eDP-1 scale 1
-output * bg ~/.local/share/backgrounds/CherryBlossom.png fill
+output * bg ~/.local/share/backgrounds/StarWars.jpg fill
 
 xwayland enabled
 seat * hide_cursor 8000

@@ -10,11 +10,11 @@ width=400
 margin=20
 padding=16
 border-radius=0
-border-size=2
+border-size=1
 
 background-color=#11111b
 text-color=#cdd6f4
-border-color=#89b4fa
+border-color=#f5c2e7
 progress-color=over #1e1e2e
 
 [urgency=high]
