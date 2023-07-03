@@ -35,6 +35,10 @@
 
 </details>
 
+## Installations
+
+See [nullxception/dotfiles](https://github.com/nullxception/dotfiles)
+
 ## Core/Desktop
 
 | ~          | name                 | command                           |
