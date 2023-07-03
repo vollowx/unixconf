@@ -37,9 +37,19 @@ Usage :
 Options:
 
   -h, --help        Show this help text.
+  -l, --list        Show all modules.
   --dry-run         Perform a trial run with no changes made
 
 EOF
+}
+
+list() {
+	mod_list=$(find . -name .install)
+	while read -r line; do
+		line="${line#./}"
+		line="${line%/.install}"
+		echo "$line"
+	done <<<"$mod_list"
 }
 
 comm_prefix_gen() {
@@ -100,7 +110,7 @@ deploy() {
 		f_dest="$(printf ${f_src%/*} | sed "s|$src|$dest|")"
 		fr_src="$(simplify_path src "$f_src")"
 		fr_dest="$(simplify_path dst "$f_dest")"
-		log "copying ${c4}$fr_src${cR} to ${c4}$fr_dest"
+		log "copying ${c4}$fr_src${cR} => ${c4}$fr_dest"
 		if [ $dry_run != true ]; then
 			[ -d "$f_dest" ] || $comm_prefix mkdir -p "$f_dest"
 			$comm_prefix cp "$f_src" "$f_dest"
@@ -173,7 +183,7 @@ main() {
 
 dry_run=false
 ignored_files=(.install README.md)
-parsed=$(getopt --options=h --longoptions=help,dry-run --name "$0" -- "$@")
+parsed=$(getopt --options=h,l --longoptions=help,dry-run,list --name "$0" -- "$@")
 if [ $? -ne 0 ]; then
 	log 'Invalid argument, exiting.' >&2
 	exit 1
@@ -185,6 +195,10 @@ while true; do
 	case "$1" in
 	"-h" | "--help")
 		usage
+		exit
+		;;
+	"-l" | "--list")
+		list
 		exit
 		;;
 	"--dry-run")
