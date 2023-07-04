@@ -119,6 +119,11 @@ deploy() {
 }
 
 install_mod() {
+	if [ $1 == "all" ]; then
+		install_all_mod
+		return
+	fi
+
 	local target="$(realpath $1)"
 	local name=$(basename $(realpath $target))
 	local inst="$target/.install"
@@ -159,6 +164,14 @@ install_mod() {
 			dot_postinstall
 		fi
 	fi
+}
+
+install_all_mod() {
+	modules=$(list)
+
+	while read -r line; do
+		install_mod "$line"
+	done <<<"$modules"
 }
 
 main() {
