@@ -2,7 +2,7 @@ include config.d/appearance.conf
 
 # Monitor
 output eDP-1 scale 1
-output * bg ~/.local/share/backgrounds/StarWars.jpg fill
+output * bg ~/.local/share/backgrounds/CherryBlossom.png fill
 
 xwayland enabled
 seat * hide_cursor 8000
