@@ -1,6 +1,6 @@
-# .arch
+# .unix
 
-> Dotfiles for Archlinux.
+> Dotfiles for *nix systems.
 
 ## Showcase
 
