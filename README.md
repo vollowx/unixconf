@@ -39,6 +39,8 @@
 
 See [nullxception/dotfiles](https://github.com/nullxception/dotfiles)
 
+For NeoVim configs, see [vollowx/.nvim](https://github.com/vollowx/.nvim)
+
 ## Core/Desktop
 
 | ~          | name                 | command                           |
