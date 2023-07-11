@@ -3,5 +3,5 @@
 selection="$(cliphist list | rofi -dmenu -display-columns 2)"
 
 if [[ ! -z $selection ]]; then
-	echo "$selection" | cliphist decode | wl-copy
+  echo "$selection" | cliphist decode | wl-copy
 fi
