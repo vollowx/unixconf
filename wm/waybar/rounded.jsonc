@@ -2,7 +2,7 @@
   "position": "top",
   "layer": "top",
   "height": 40,
-  "modules-left": ["sway/mode", "sway/workspaces", "sway/window"],
+  "modules-left": ["sway/mode", "sway/workspaces"],
   "modules-center": ["mpd"],
   "modules-right": [
     "tray",
