@@ -4,34 +4,34 @@
 
 ## Showcase
 
+![sway](https://github.com/vollowx/.unix/assets/73375859/ae2e2173-9f5a-4958-85b1-02238917ed5e)
+
 <details>
 <summary>Rofi</summary>
 
-![rofi-launcher](https://github.com/huge-pancake/.arch/assets/73375859/74151c82-fae1-4bac-8d27-b92b48ea74ec)
-![rofi-session](https://github.com/huge-pancake/.arch/assets/73375859/ad8d85e6-6a37-4315-a438-74c944582b59)
+![rofi-launcher](https://github.com/vollowx/.unix/assets/73375859/52487b0f-3466-488c-a977-c7a2e3802133)
+![rofi-session](https://github.com/vollowx/.unix/assets/73375859/5409195f-4c57-4303-b83c-5ef4e26955ef)
 
 </details>
 
 <details>
 <summary>Music Playing</summary>
 
-![music](https://github.com/huge-pancake/.arch/assets/73375859/0429b031-f3a5-4af7-a436-9255d8acb7e9)
+![musicfox](https://github.com/vollowx/.unix/assets/73375859/02e2a60a-53ca-4ed3-b50a-d0354bf346f5)
 
 </details>
 
 <details>
 <summary>NeoVim</summary>
 
-![neovim-startup-screen](https://github.com/huge-pancake/.arch/assets/73375859/05f999e1-c91a-4c5c-9563-cc9e2fa0c77b)
-![neovim-package-manager](https://github.com/huge-pancake/.arch/assets/73375859/983e73b5-ca65-4b3b-96e4-956da21adc2b)
-![neovim-editing](https://github.com/huge-pancake/.arch/assets/73375859/b9f470bf-07ba-43d9-b522-81b22bcfab68)
+![neovim-lsp](https://github.com/vollowx/.unix/assets/73375859/15735ff9-5559-4c3d-818d-db08d5e02d4a)
 
 </details>
 
 <details>
 <summary>WM Controller</summary>
 
-![wm-controller](https://github.com/huge-pancake/.arch/assets/73375859/dcfd46d6-e166-4056-973b-c8421923e98f)
+![wmctl](https://github.com/vollowx/.unix/assets/73375859/4ab2dd63-5e0b-4b51-aa29-a16c24e9bda9)
 
 </details>
 
@@ -39,13 +39,24 @@
 
 See [nullxception/dotfiles](https://github.com/nullxception/dotfiles)
 
-For NeoVim configs, see [vollowx/.nvim](https://github.com/vollowx/.nvim)
+<small>* For NeoVim configs, see [vollowx/.nvim](https://github.com/vollowx/.nvim)</small>
 
-## Core/Desktop
+<small>* Waybar's theme is switchable, check their names at `wm/waybar/*.css,*.jsonc`, use `select-waybar-theme.sh [THEME_NAME]` (need `bin` module installed) to switch, and reload WM</small>
+
+## Plans
+
+- [ ] Add diff, sync back features for `dots.sh`
+- [ ] Try `NixOS` at [vollowx/.nix](https://github.com/vollowx/.nix) in order to get easier environment configuating experiences
+- [ ] Try `EWW`
+- [ ] Replace `Rofi` with `Wofi`/`Tofi` or something else natively support `Wayland`
+
+## Package List
+
+### Core/Desktop
 
 | ~          | name                 | command                           |
 | ---------- | -------------------- | --------------------------------- |
-| desktop    | sway                 | `paru -S sway`                    |
+| desktop    | sway (fx)            | `paru -S swayfx`                  |
 |            | hyprland             | `paru -S hyprland-git`            |
 | wallpaper  | hyprpaper            | `paru -S hyprpaper`               |
 | launcher   | rofi                 | `paru -S rofi-lbonn-wayland-git`  |
@@ -66,13 +77,13 @@ For NeoVim configs, see [vollowx/.nvim](https://github.com/vollowx/.nvim)
 |            | blueman              | `paru -S blueman`                 |
 | wayland    | ...                  | `paru -S qt5-wayland qt6-wayland` |
 
-## Core/Sway Only
+### Core/Sway Only
 
 | ~        | name | command       |
 | -------- | ---- | ------------- |
 | overview | sov  | `paru -S sov` |
 
-## Core/Non Desktop
+### Core/Non Desktop
 
 | ~         | name            | command                                     |
 | --------- | --------------- | ------------------------------------------- |
@@ -85,7 +96,7 @@ For NeoVim configs, see [vollowx/.nvim](https://github.com/vollowx/.nvim)
 |           | nemo            | `paru -S nemo`                              |
 | sys fetch | fastfetch       | `paru -S fastfetch`                         |
 
-## Extra/Softwares
+### Extra/Softwares
 
 | ~      | name            | command                                                         |
 | ------ | --------------- | --------------------------------------------------------------- |
@@ -100,7 +111,7 @@ For NeoVim configs, see [vollowx/.nvim](https://github.com/vollowx/.nvim)
 |        | yesplaymusic    | `paru -S yesplaymusic`                                          |
 | calc   | qalculate       | `paru -S qalculate-gtk`                                         |
 
-## Extra/Theme
+### Extra/Theme
 
 | ~      | name       | command                              |
 | ------ | ---------- | ------------------------------------ |
@@ -109,7 +120,7 @@ For NeoVim configs, see [vollowx/.nvim](https://github.com/vollowx/.nvim)
 | icons  | Papirus    | `paru -S papirus-icon-theme`         |
 | qt     | (not yet)  | `paru -S ...`                        |
 
-## Extra/Others
+### Extra/Others
 
 | ~         | name | command                                                              |
 | --------- | ---- | -------------------------------------------------------------------- |
