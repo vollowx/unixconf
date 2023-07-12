@@ -1,7 +1,8 @@
 {
   "position": "left",
   "layer": "top",
-  "modules-left": ["sway/mode", "custom/launch", "sway/workspaces"],
+  "width": 40,
+  "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["mpd"],
   "modules-right": [
     "tray",
@@ -11,18 +12,16 @@
     "battery",
     "custom/separator",
     "clock",
-    "custom/out"
   ],
   "sway/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": "󰎆",
-      "2": "󱠇",
-      "3": "󰥱",
-      "4": "",
       "default": "󰝥"
     },
     "sort-by-number": true
+  },
+  "sway/mode": {
+    "rotate": 90,
   },
   "mpd": {
     "rotate": 90,
@@ -59,7 +58,7 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "tray": {
-    "icon-size": 16,
+    "icon-size": 14,
     "spacing": 8
   },
   "pulseaudio": {
@@ -93,14 +92,6 @@
   "clock": {
     "format": "{:%H\n%M}",
     "tooltip-format": "<big>{:%B %d}</big>\n<tt><small>{calendar}</small></tt>"
-  },
-  "custom/launch": {
-    "format": "󱓟",
-    "on-click": "~/.config/rofi/launcher.sh"
-  },
-  "custom/out": {
-    "format": "󰐥",
-    "on-click": "~/.config/rofi/powermenu.sh"
   },
   "custom/separator": {
     "format": "────",
