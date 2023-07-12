@@ -72,7 +72,7 @@ case "$choise" in
   pkill mako
   pkill waybar
   pkill hyprpaper
-  pkill wl-sunset
+  pkill wlsunset
   hyprctl reload
   import-gsettings.sh
   fc-cache
