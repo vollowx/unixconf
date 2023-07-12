@@ -41,6 +41,8 @@ See [nullxception/dotfiles](https://github.com/nullxception/dotfiles)
 
 <small>* For NeoVim configs, see [vollowx/.nvim](https://github.com/vollowx/.nvim)</small>
 
+<small>* For more backgrounds, see [vollowx/.backgrounds](https://github.com/vollowx/.backgrounds)</small>
+
 <small>* Waybar's theme is switchable, check their names at `wm/waybar/*.css,*.jsonc`, use `select-waybar-theme.sh [THEME_NAME]` (need `bin` module installed) to switch, and reload WM</small>
 
 ## Plans
