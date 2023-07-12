@@ -1,3 +1,5 @@
+gui:
+  border: rounded
 theme:
   lightTheme: false
   activeBorderColor:
