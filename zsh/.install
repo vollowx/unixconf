@@ -1,5 +1,0 @@
-module_target="$HOME/.config/zsh"
-
-dot_postinstall() {
-  echo 'ZDOTDIR="$HOME/.config/zsh"' > $HOME/.zshenv
-}

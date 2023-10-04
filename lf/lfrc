@@ -1,8 +1,0 @@
-set shell zsh
-set icons true
-set mouse true
-set hidden true
-set ignorecase true
-
-set previewer ~/.config/lf/previewer
-set cleaner ~/.config/lf/cleaner

@@ -1,5 +1,0 @@
-module_target="$HOME/.mpd"
-
-dot_postinstall() {
-  systemctl enable --user --now mpd
-}
