@@ -99,6 +99,7 @@ bindsym $mod+r mode "resize"
 # NOTE: Consider to remove
 # bindsym $mod+q exec ~/.config/sway/scripts/status-general.sh
 bindsym $mod+Shift+v exec ~/.config/tofi/scripts/clipboard.sh
+bindsym $mod+Escape exec ~/.config/tofi/scripts/powermenu.sh
 bindsym $mod+o exec hyprpicker
 bindsym $mod+x exec swaylock -f
 

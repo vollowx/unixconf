@@ -9,18 +9,22 @@ font-size = 10
 
 # style
 horizontal = true
-anchor = bottom
-margin-bottom = 16
+anchor = top
+margin-top = 16
 width = 1000
 height = 40
-result-spacing = 8
+result-spacing = 16
 outline-width = 0
 border-width = 2
 corner-radius = 8
+min-input-width = 200
 
 # mocha
-text-color = #cdd6f4
-prompt-color = #bac2de
-selection-color = #f9e2af
 background-color = #181825
+text-color = #9399b2
+prompt-color = #bac2de
+input-color = #b4befe
+selection-color = #9399b2
+selection-background = #2a2b3d
+selection-match-color = #cdd6f4
 border-color = #f5c2e7
