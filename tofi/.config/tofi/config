@@ -1,0 +1,24 @@
+# general
+drun-launch = true
+history = false
+
+# font
+font = monospace
+font-size = 10
+
+# style
+horizontal = true
+anchor = top
+width = 1000
+height = 40
+margin-top = 16
+result-spacing = 8
+outline-width = 0
+border-width = 0
+corner-radius = 8
+
+# mocha
+text-color = #cdd6f4
+prompt-color = #f38ba8
+selection-color = #f9e2af
+background-color = #1e1e2e

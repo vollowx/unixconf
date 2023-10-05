@@ -8,7 +8,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu wofi --show drun
+set $menu tofi-drun
 
 ### Input configuration
 input "type:keyboard" {
@@ -123,6 +123,7 @@ client.background        $base
 
 gaps inner 5
 default_border pixel 2
+default_floating_border pixel 2
 
 seat * hide_cursor 8000
 seat * hide_cursor when-typing enable
@@ -130,3 +131,5 @@ seat * xcursor_theme macOS-Monterey 24
 
 output * bg ~/.local/share/backgrounds/BeachAndGirl.jpg fill
 output eDP-1 scale 1.25
+
+for_window [title="."] floating true
