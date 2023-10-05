@@ -97,8 +97,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym $mod+q exec ~/.config/sway/scripts/status-general.sh
-# TODO: Switch to tofi from wofi
-bindsym $mod+Shift+v exec clipman pick --tool=wofi
+bindsym $mod+Shift+v exec ~/.config/tofi/scripts/clipboard.sh
 bindsym $mod+o exec hyprpicker
 bindsym $mod+x exec swaylock -f
 
