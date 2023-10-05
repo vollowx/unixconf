@@ -96,7 +96,8 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym $mod+q exec ~/.config/sway/scripts/status-general.sh
+# NOTE: Consider to remove
+# bindsym $mod+q exec ~/.config/sway/scripts/status-general.sh
 bindsym $mod+Shift+v exec ~/.config/tofi/scripts/clipboard.sh
 bindsym $mod+o exec hyprpicker
 bindsym $mod+x exec swaylock -f
@@ -129,7 +130,25 @@ seat * hide_cursor 8000
 seat * hide_cursor when-typing enable
 seat * xcursor_theme macOS-Monterey 24
 
-output * bg ~/.local/share/backgrounds/BeachAndGirl.jpg fill
+output * bg ~/.local/share/backgrounds/Blossom.png fill
 output eDP-1 scale 1.25
 
 for_window [title="."] floating true
+
+bar {
+  status_command i3status
+  position bottom
+  mode hide
+  tray_output primary
+  strip_workspace_numbers yes
+  colors {
+    background $crust
+    statusline $text
+    separator $surface2
+    focused_workspace $surface1 $surface1 $text
+    active_workspace $surface0 $surface0 $subtext1
+    inactive_workspace $surface0 $surface0 $subtext0
+    urgent_workspace $peach $peach $base
+    binding_mode $pink $pink $base
+  }
+}
