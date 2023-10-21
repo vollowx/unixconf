@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+/bin/linuxqq \
+  --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations $@

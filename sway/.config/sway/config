@@ -139,7 +139,6 @@ for_window [title="."] floating true
 bar {
   status_command i3status
   position bottom
-  mode hide
   tray_output primary
   strip_workspace_numbers yes
   colors {
