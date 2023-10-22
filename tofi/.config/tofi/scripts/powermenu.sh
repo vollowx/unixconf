@@ -22,7 +22,7 @@ if [ ! -z "$selected" ]; then
     systemctl hibernate
     ;;
   "Logout")
-    swaymsg exit
+    loginctl terminate-session $XDG_SESSION_ID
     ;;
   esac
 fi
