@@ -96,16 +96,13 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# NOTE: Consider to remove
-# bindsym $mod+q exec ~/.config/sway/scripts/status-general.sh
+bindsym $mod+q exec ~/.config/sway/scripts/status-general.sh
 bindsym $mod+Shift+v exec ~/.config/tofi/scripts/clipboard.sh
-bindsym $mod+Escape exec ~/.config/tofi/scripts/powermenu.sh
 bindsym $mod+o exec hyprpicker
-bindsym $mod+x exec swaylock -f
+bindsym $mod+x exec ~/.config/tofi/scripts/powermenu.sh
 
-bindsym --no-repeat Print exec grimshot --notify copy anything
-bindsym --no-repeat Ctrl+Print exec grimshot --notify save screen
-bindsym --no-repeat Shift+Print exec grimshot --notify save anything
+bindsym --no-repeat Print exec wl-copy < $(grimshot --notify save screen)
+bindsym --no-repeat Shift+Print exec wl-copy < $(grimshot --notify save anything)
 
 bindsym --locked XF86AudioMute exec ~/.config/sway/scripts/status-volume.sh -t
 bindsym --locked XF86AudioMicMute exec ~/.config/sway/scripts/status-microphone.sh -t

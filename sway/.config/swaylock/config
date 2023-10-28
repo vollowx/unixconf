@@ -2,7 +2,7 @@ ignore-empty-password
 
 indicator-thickness=2
 
-color=00000000
+color=000000ff
 separator-color=00000000
 
 bs-hl-color=f38ba8
