@@ -22,7 +22,7 @@ if [ ! -z "$selected" ]; then
     systemctl hibernate
     ;;
   "Logout")
-    loginctl terminate-session $XDG_SESSION_ID
+    pkill -KILL -u $USER
     ;;
   esac
 fi
