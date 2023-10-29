@@ -1,5 +1,4 @@
 # general
-drun-launch = true
 history = false
 prompt-text = ":run "
 
@@ -11,8 +10,8 @@ font-size = 10
 horizontal = true
 anchor = top-left
 margin-top = 32
-margin-left = 35%
-width = 30%
+margin-left = 55%
+width = 50%
 height = 40
 result-spacing = 16
 outline-width = 0
@@ -22,9 +21,9 @@ corner-radius = 8
 # mocha
 background-color = #181825
 text-color = #9399b2
-prompt-color = #bac2de
-input-color = #b4befe
+prompt-color = #cba6f7
+input-color = #cdd6f4
 selection-color = #9399b2
 selection-background = #2a2b3d
 selection-match-color = #cdd6f4
-border-color = #f5c2e7
+border-color = #cba6f7

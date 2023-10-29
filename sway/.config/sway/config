@@ -8,7 +8,7 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu tofi-drun
+set $menu $(tofi-drun)
 
 ### Input configuration
 input "type:keyboard" {
