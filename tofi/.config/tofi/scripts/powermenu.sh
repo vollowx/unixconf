@@ -22,8 +22,8 @@ if [ ! -z "$selected" ]; then
     systemctl hibernate
     ;;
   "Logout")
-    wayland-logout # Wayfire
     swaymsg exit   # Sway
+    wayland-logout # Wayfire
     ;;
   esac
 fi
