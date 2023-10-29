@@ -22,7 +22,8 @@ if [ ! -z "$selected" ]; then
     systemctl hibernate
     ;;
   "Logout")
-    pkill -KILL -u $USER
+    wayland-logout # Wayfire
+    swaymsg exit   # Sway
     ;;
   esac
 fi
