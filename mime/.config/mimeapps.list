@@ -13,6 +13,7 @@ application/pdf=org.pwmt.zathura.desktop
 text/plain=neovide.desktop
 application/json=neovide.desktop
 image/png=imv-dir.desktop
+image/jpeg=imv-dir.desktop
 
 [Added Associations]
 x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop;
@@ -28,3 +29,4 @@ application/x-extension-xht=org.qutebrowser.qutebrowser.desktop;
 text/plain=neovide.desktop;
 application/json=neovide.desktop;
 image/png=imv-dir.desktop;
+image/jpeg=imv-dir.desktop;
