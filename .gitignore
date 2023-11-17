@@ -1,0 +1,10 @@
+# qutebrowser
+__pycache__
+
+# mpd
+mpd.db
+mpd.log
+mpdstate
+
+# ncmpcpp
+error.log
