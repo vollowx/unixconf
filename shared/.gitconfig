@@ -1,0 +1,7 @@
+[user]
+  email = vollowx@proton.me
+  name = vollowx
+[init]
+  defaultBranch = main
+[push]
+  default = current
