@@ -1,4 +1,7 @@
 export EDITOR="nvim"
+export VISUAL="nvim"
+export SUDO_EDITOR=$EDITOR
+export MANPAGER="nvim +Man!"
 export BROWSER="qutebrowser"
 export TERMINAL="kitty"
 
