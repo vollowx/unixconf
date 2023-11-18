@@ -6,7 +6,6 @@ right_format = '$cmd_duration$git_status'
 
 [character]
 success_symbol = '[](green bold)'
-vicmd_symbol = '[](rosewater bold)'
 error_symbol = '[](pink)'
 
 [directory]

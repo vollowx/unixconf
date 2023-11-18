@@ -1,12 +1,5 @@
 set fish_greeting
 
-fish_vi_key_bindings
-set -g fish_vi_force_cursor
-set -g fish_cursor_default block
-set -g fish_cursor_insert underscore
-set -g fish_cursor_replace_one underscore
-set -g fish_cursor_visual block
-
 starship init fish | source
 zoxide init fish | source
 
