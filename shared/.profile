@@ -11,9 +11,10 @@ export SDL_VIDEODRIVER="wayland,x11"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export MOZ_ENABLE_WAYLAND=1
 
+export GTK2_RC_FILES=~/.config/gtk-2.0/gtkrc
+
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export QT_STYLE_OVERRIDE="kvantum"
+export QT_QPA_PLATFORMTHEME=gtk2
 
 export XMODIFIERS=@im=fcitx
 export GTK_IM_MODULE=fcitx
