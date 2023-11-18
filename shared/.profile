@@ -22,6 +22,9 @@ export QT_IM_MODULE=fcitx
 
 export BAT_THEME="Catppuccin-mocha"
 export NEOVIDE_MULTIGRID=true
+export PF_ASCII="Catppuccin"
+export PF_COL1=9
+export PF_COL3=5
 export PF_INFO="ascii title os host kernel uptime pkgs memory de shell editor palette"
 
 export PATH="$HOME/.local/bin:$PATH"
