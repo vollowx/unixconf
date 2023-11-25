@@ -4,7 +4,7 @@ prompt-text = ":run "
 
 # font
 font = monospace
-font-size = 9
+font-size = 10
 
 # style
 horizontal = true
