@@ -1,5 +1,8 @@
 # qutebrowser
 __pycache__
+bookmarks
+quickmarks
+qsettings
 
 # mpd
 mpd.db
