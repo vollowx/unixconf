@@ -7,8 +7,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $term kitty
-set $menu $(tofi-drun)
+set $term foot
+set $menu anyrun
 
 ### Input configuration
 input "type:keyboard" {
@@ -99,7 +99,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+q exec ~/.config/sway/scripts/status-general.sh
 bindsym $mod+Shift+v exec ~/.config/tofi/scripts/clipboard.sh
 bindsym $mod+o exec hyprpicker
-bindsym $mod+x exec ~/.config/tofi/scripts/powermenu.sh
+bindsym $mod+x exec wlogout
 
 bindsym --no-repeat Print exec wl-copy < $(grimshot --notify save screen)
 bindsym --no-repeat Shift+Print exec wl-copy < $(grimshot --notify save anything)
