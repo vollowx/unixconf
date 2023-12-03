@@ -99,7 +99,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+q exec ~/.config/sway/scripts/status-general.sh
 bindsym $mod+Shift+v exec ~/.config/tofi/scripts/clipboard.sh
 bindsym $mod+o exec hyprpicker -an
-bindsym $mod+x exec wlogout -p layer-shell
+bindsym $mod+x exec wlogout -p layer-shell -b 6 -c 20 -R 1920 -B 1080 -L 500 -T 800
 
 bindsym --no-repeat Print exec wl-copy < $(grimshot --notify save screen)
 bindsym --no-repeat Shift+Print exec wl-copy < $(grimshot --notify save anything)
