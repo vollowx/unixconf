@@ -3,7 +3,7 @@ export VISUAL="nvim"
 export SUDO_EDITOR=$EDITOR
 export MANPAGER="nvim +Man!"
 export BROWSER="qutebrowser"
-export TERMINAL="alacritty"
+export TERMINAL="foot"
 
 export QT_QPA_PLATFORM="wayland;xcb"
 export CLUTTER_BACKEND=wayland
