@@ -1,5 +1,6 @@
 set fish_greeting
 
+cat ~/.profile | source
 starship init fish | source
 zoxide init fish | source
 
