@@ -9,7 +9,7 @@ success_symbol = '[](green bold)'
 error_symbol = '[](pink)'
 
 [directory]
-format = '[$path](bg:base fg:lavender bold)'
+format = '[$path](fg:lavender bold)'
 
 [git_branch]
 format = '[#](fg:surface2)[$branch](fg:subtext0)'
