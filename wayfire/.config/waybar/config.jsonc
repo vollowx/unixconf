@@ -23,7 +23,8 @@
     "tooltip": false
   },
   "backlight": {
-    "format": "<span font_desc='CommitMono Nerd Font Bold Italic' color='#cba6f7'>bri</span> {percent}%"
+    "format": "<span font_desc='CommitMono Nerd Font Bold Italic' color='#cba6f7'>bri</span> {percent}%",
+    "tooltip": false
   },
   "wlr/taskbar": {
     "format": "{icon} {title:.8}",
