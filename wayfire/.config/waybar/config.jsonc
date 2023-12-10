@@ -26,7 +26,7 @@
     "format": "<span font_desc='CommitMono Nerd Font Bold Italic' color='#cba6f7'>bri</span> {percent}%"
   },
   "wlr/taskbar": {
-    "format": "{icon} {title}",
+    "format": "{icon} {title:.8}",
     "icon-size": 14,
     "all-outputs": false,
     "on-click": "activate",
