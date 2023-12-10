@@ -1,10 +1,10 @@
 Config(
   x: Fraction(0.5),
   y: Absolute(40),
-  width: Absolute(480),
+  width: Absolute(500),
   height: Absolute(0),
   hide_icons: false,
-  ignore_exclusive_zones: false,
+  ignore_exclusive_zones: true,
   layer: Overlay,
   hide_plugin_info: false,
   close_on_click: false,
