@@ -14,6 +14,7 @@ export MOZ_ENABLE_WAYLAND=1
 
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export QT_QPA_PLATFORMTHEME="gtk3"
+export QT_STYLE_OVERRIDE="kvantum"
 
 export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE="fcitx"
