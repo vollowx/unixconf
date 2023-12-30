@@ -2,7 +2,6 @@ gtk-theme-name                   = "Catppuccin-Mocha-Compact-Mauve-Dark"
 gtk-icon-theme-name              = "Papirus-Dark"
 gtk-cursor-theme-name            = "macOS-Monterey"
 gtk-font-name                    = "ComicShannsMono Nerd Font 10"
-
 gtk-button-images                = 0
 gtk-menu-images                  = 0
 gtk-enable-event-sounds          = 0
