@@ -1,42 +1,21 @@
 #!/usr/bin/env bash
 
-[ ! -d "$HOME/.cache/lf" ] && mkdir --parents "$HOME/.cache/lf"
+file=$1
+w=$2
+h=$3
+x=$4
+y=$5
 
-CACHE="$HOME/.cache/lf/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' \
-  -- "$(readlink -f "$1")" | sha256sum | awk '{print $1}'))"
+mime=$(file -Lb --mime-type "$file")
 
-_image() {
-  chafa "$1" -f sixel -s "$4x"
-}
+if [[ "$mime" =~ ^image ]]; then
+  kitty +kitten icat --silent --stdin no --transfer-mode file --place "${w}x${h}@${x}x${y}" "$file" </dev/null >/dev/tty
+	exit 1
+fi
 
-_file() {
-  bat --color=always --style=plain --pager=never "$1" "$@"
-}
+if [[ "$mime" =~ ^text ]]; then
+	bat --color=always --style=plain --paging=never "$file"
+	exit 1
+fi
 
-case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
-*.tgz | *.tar.gz) tar tzf "$1" ;;
-*.tar.bz2 | *.tbz2) tar tjf "$1" ;;
-*.tar.txz | *.txz) xz --list "$1" ;;
-*.tar) tar tf "$1" ;;
-*.zip | *.jar | *.war | *.ear | *.oxt) unzip -l "$1" ;;
-*.gz) gzip -l "$1" ;;
-*.rar) unrar l "$1" ;;
-*.7z) 7z l "$1" ;;
-*.[1-8]) man "$1" | col -b ;;
-*.o) nm "$1" ;;
-*.avi | *.mp4 | *.wmv | *.dat | *.3gp | *.ogv | *.mkv | *.mpg | *.mpeg | *.vob | *.fl[icv] | *.m2v | *.mov | *.webm | *.ts | *.mts | *.m4v | *.r[am] | *.qt | *.divx)
-  [ ! -f "${CACHE}.jpg" ] &&
-    ffmpegthumbnailer -i "$1" -o "${CACHE}.jpg" -s 0 -q 5
-  _image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
-  ;;
-*.bmp | *.jpg | *.jpeg | *.png | *.xpm | *.webp | *.tiff | *.gif | *.jfif | *.ico)
-  _image "$1" "$2" "$3" "$4" "$5"
-  ;;
-*.svg)
-  [ ! -f "${CACHE}.jpg" ] && convert "$1" "${CACHE}.jpg"
-  _image "${CACHE}.jpg" "$2" "$3" "$4" "$5"
-  ;;
-*.ino) _file --language=cpp "$1" ;;
-*) file -ibL "$1" | grep -q text && _file "$1" || file -Lb "$1" ;;
-esac
-exit 0
+printf "$mime"

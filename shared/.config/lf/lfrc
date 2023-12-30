@@ -7,3 +7,4 @@ set scrolloff 4
 set sixel true
 
 set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
