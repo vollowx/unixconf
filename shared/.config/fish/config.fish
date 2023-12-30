@@ -26,4 +26,4 @@ alias top='htop'
 alias vi='nvim'
 alias vim='nvim'
 
-[ $(tty) = '/dev/tty1' ] && exec wayfire
+# [ $(tty) = '/dev/tty1' ] && exec wayfire
