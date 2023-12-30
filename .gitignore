@@ -11,3 +11,6 @@ mpdstate
 
 # ncmpcpp
 error.log
+
+# lazygit
+state.yml
