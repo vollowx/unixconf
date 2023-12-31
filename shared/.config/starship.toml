@@ -1,54 +1,32 @@
 palette = 'catppuccin_mocha'
 
 add_newline = false
-format = '[\[](subtext0)$username[@](subtext1)$hostname $directory[\]](subtext0)$character'
+format = ' $character$directory'
+right_format = '$git_status$git_branch'
 
 [character]
-success_symbol = '[\$](bold green)'
-error_symbol = '[\$](bold red)'
-
-[username]
-format = '[$user]($style)'
-style_root = 'red'
-style_user = 'rosewater'
-show_always = true
-
-[hostname]
-format = """
-[w](lavender)\
-[i](blue)\
-[n](sapphire)\
-[t](sky)\
-[e](teal)\
-[r](green)\
-"""
-style = 'subtext0'
-ssh_only = false
+success_symbol = '[λ](green)'
+error_symbol = '[λ](red)'
 
 [directory]
-format = '[$path]($style)[$read_only]($read_only_style)'
+format = '[$path]($style) '
 style = 'bold lavender'
-read_only = '[RO]'
-read_only_style = 'red'
-truncation_length = 1
 
 [git_branch]
-format = '[$branch](fg:subtext0)'
+format = '[ $branch](bold blue) '
 
 [git_status]
-format = '[$all_status$ahead_behind](bg:base fg:mauve)'
-style = 'bg:none fg:base'
-conflicted = '='
-ahead =	'⇡${count}'
-behind = '⇣${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-up_to_date = '^'
-untracked = '?${count}'
-stashed = '\\$'
-modified = '!${count}'
-staged = '+${count}'
-renamed = '»${count}'
-deleted = '-${count}'
+format = '[[(󰛄$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)'
+style = 'mauve'
+conflicted = '​'
+untracked = '​'
+modified = '​'
+staged = '​'
+renamed = '​'
+deleted = '​'
+ahead = '󰜝 '
+behind = '󰜚 '
+stashed = '󱕅 '
 
 [palettes.catppuccin_mocha]
 rosewater = '#f5e0dc'
