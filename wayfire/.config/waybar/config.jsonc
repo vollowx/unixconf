@@ -7,23 +7,23 @@
   "modules-center": ["wlr/taskbar"],
   "modules-right": ["wireplumber", "backlight", "battery", "clock"],
   "clock": {
-    "format": "<span font_desc='ComicShannsMono Nerd Font Bold Italic' color='#cba6f7' text_transform='lowercase'>{:%A, %d %B %H:%M}</span>"
+    "format": "<span font_desc='JetBrainsMono Nerd Font Bold Italic' color='#cba6f7' text_transform='lowercase'>{:%A, %d %B %H:%M}</span>"
   },
   "battery": {
-    "format": "<span font_desc='ComicShannsMono Nerd Font Bold Italic' color='#cba6f7'>bat</span> {capacity}%",
-    "format-critical": "<span font_desc='ComicShannsMono Nerd Font Bold Italic' color='#f38ba8'>bat</span> {capacity}%",
-    "format-charging": "<span font_desc='ComicShannsMono Nerd Font Bold Italic' color='#cba6f7'>bat [ac]</span> {capacity}%",
+    "format": "<span font_desc='JetBrainsMono Nerd Font Bold Italic' color='#cba6f7'>bat</span> {capacity}%",
+    "format-critical": "<span font_desc='JetBrainsMono Nerd Font Bold Italic' color='#f38ba8'>bat</span> {capacity}%",
+    "format-charging": "<span font_desc='JetBrainsMono Nerd Font Bold Italic' color='#cba6f7'>bat [ac]</span> {capacity}%",
     "states": { "critical": 20 },
     "interval": 5,
     "tooltip": false
   },
   "wireplumber": {
-    "format": "<span font_desc='ComicShannsMono Nerd Font Bold Italic' color='#cba6f7'>vol</span> {volume}%",
-    "format-muted": "<span font_desc='ComicShannsMono Nerd Font Bold Italic' color='#cba6f7'>vol</span> muted",
+    "format": "<span font_desc='JetBrainsMono Nerd Font Bold Italic' color='#cba6f7'>vol</span> {volume}%",
+    "format-muted": "<span font_desc='JetBrainsMono Nerd Font Bold Italic' color='#cba6f7'>vol</span> muted",
     "tooltip": false
   },
   "backlight": {
-    "format": "<span font_desc='ComicShannsMono Nerd Font Bold Italic' color='#cba6f7'>bri</span> {percent}%",
+    "format": "<span font_desc='JetBrainsMono Nerd Font Bold Italic' color='#cba6f7'>bri</span> {percent}%",
     "tooltip": false
   },
   "wlr/taskbar": {
