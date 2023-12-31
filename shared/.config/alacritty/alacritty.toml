@@ -1,0 +1,37 @@
+import = [
+  "~/.config/alacritty/themes/catppuccin-mocha.toml"
+]
+
+[colors]
+draw_bold_text_with_bright_colors = true
+transparent_background_colors = true
+
+[env]
+TERM = "alacritty"
+
+[font.bold]
+family = "Jetbrains Mono NF"
+style = "Regular"
+
+[font.bold_italic]
+family = "Jetbrains Mono NF"
+style = "Italic"
+
+[font.italic]
+family = "Jetbrains Mono NF Light"
+style = "Italic"
+
+[font.normal]
+family = "Jetbrains Mono NF Light"
+
+[window]
+dynamic_padding = true
+opacity = 1
+
+[window.dimensions]
+columns = 72
+lines = 20
+
+[window.padding]
+x = 8
+y = 8

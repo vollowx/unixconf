@@ -1,21 +1,39 @@
 palette = 'catppuccin_mocha'
 
 add_newline = false
-format = '$directory$git_branch $character'
-right_format = '$cmd_duration$git_status'
+format = '[\[](subtext0)$username[@](subtext1)$hostname $directory[\]](subtext0)$character'
 
 [character]
-success_symbol = '[](green bold)'
-error_symbol = '[](pink)'
+success_symbol = '[\$](bold green)'
+error_symbol = '[\$](bold red)'
+
+[username]
+format = '[$user]($style)'
+style_root = 'red'
+style_user = 'rosewater'
+show_always = true
+
+[hostname]
+format = """
+[w](lavender)\
+[i](blue)\
+[n](sapphire)\
+[t](sky)\
+[e](teal)\
+[r](green)\
+"""
+style = 'subtext0'
+ssh_only = false
 
 [directory]
-format = '[$path](fg:lavender bold)'
+format = '[$path]($style)[$read_only]($read_only_style)'
+style = 'bold lavender'
+read_only = '[RO]'
+read_only_style = 'red'
+truncation_length = 1
 
 [git_branch]
-format = '[#](fg:surface2)[$branch](fg:subtext0)'
-
-[cmd_duration]
-format = '[$duration](fg:subtext1) '
+format = '[$branch](fg:subtext0)'
 
 [git_status]
 format = '[$all_status$ahead_behind](bg:base fg:mauve)'

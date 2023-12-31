@@ -2,8 +2,8 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR=$EDITOR
 export MANPAGER="nvim +Man!"
+export TERM="alacritty"
 export BROWSER="qutebrowser"
-export TERMINAL="kitty"
 
 export XDG_SESSION_TYPE="wayland"
 export QT_QPA_PLATFORM="wayland;xcb"
