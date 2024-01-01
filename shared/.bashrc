@@ -1,8 +1,8 @@
-set fish_greeting
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-cat ~/.profile | source
-starship init fish | source
-zoxide init fish | source
+eval "$(starship init bash)"
+eval "$(zoxide init bash)"
 
 alias cp='cp -r'
 alias rm='rm -r'
@@ -26,5 +26,3 @@ alias lla='ll -a'
 alias top='htop'
 alias vi='nvim'
 alias vim='nvim'
-
-# [ $(tty) = '/dev/tty1' ] && exec wayfire
