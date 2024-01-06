@@ -19,7 +19,7 @@ export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
 
-export BAT_THEME="Catppuccin-mocha"
+export BAT_THEME="Catppuccin-latte"
 export NEOVIDE_MULTIGRID=true
 export PF_ASCII="Catppuccin"
 export PF_COL1=9

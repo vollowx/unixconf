@@ -1,5 +1,5 @@
-gtk-theme-name                   = "Catppuccin-Mocha-Compact-Mauve-Dark"
-gtk-icon-theme-name              = "Papirus-Dark"
+gtk-theme-name                   = "Catppuccin-Latte-Compact-Mauve-Light"
+gtk-icon-theme-name              = "Papirus"
 gtk-cursor-theme-name            = "macOS-Monterey"
 gtk-font-name                    = "JetBrainsMono Nerd Font 10"
 gtk-button-images                = 0
