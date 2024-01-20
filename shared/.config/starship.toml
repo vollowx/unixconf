@@ -1,4 +1,4 @@
-palette = 'catppuccin_latte'
+palette = 'catppuccin_mocha'
 
 add_newline = false
 format = ' $character$directory'

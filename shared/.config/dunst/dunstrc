@@ -1,6 +1,6 @@
 [global]
 width = 320
-origin = "top-left"
+origin = "bottom-right"
 notification_limit = 0
 offset = "16x16"
 line_height = 0
@@ -19,24 +19,24 @@ mouse_middle_click = "close_all"
 mouse_right_click = "close_current"
 ellipsize = "end"
 markup = "full"
-frame_color = "#9ca0b0"
+frame_color = "#6c7086"
 font = "monospace 10"
-format = "<span weight='bold' foreground='#5c5f77'><i>%a</i></span>\n%s\n%b"
+format = "<span weight='bold' foreground='#bac2de'><i>%a</i></span>\n%s\n%b"
 
 [urgency_low]
 timeout = 3
-background = "#eff1f5"
-foreground = "#4c4f69"
-highlight = "#8839ef"
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+highlight = "#cba6f7"
 
 [urgency_normal]
 timeout = 6
-background = "#eff1f5"
-foreground = "#4c4f69"
-highlight = "#8839ef"
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+highlight = "#cba6f7"
 
 [urgency_critical]
 timeout = 0
-background = "#eff1f5"
-foreground = "#4c4f69"
-highlight  = "#d20f39"
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+highlight  = "#f38ba8"

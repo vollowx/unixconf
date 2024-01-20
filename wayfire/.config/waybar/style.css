@@ -1,4 +1,4 @@
-@import './latte.css';
+@import './mocha.css';
 
 window#waybar {
   font-family: monospace;

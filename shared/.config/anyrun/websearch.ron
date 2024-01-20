@@ -1,4 +1,4 @@
 Config(
-  prefix: "?",
+  prefix: "/",
   engines: [DuckDuckGo, Google, Bing]
 )

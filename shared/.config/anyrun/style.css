@@ -1,10 +1,12 @@
-#window {
-  background-color: rgba(0, 0, 0, 0);
+window#window {
+  background-color: transparent;
 }
 
 box#main {
-  border-radius: 6px;
-  background-color: @insensitive_base_color;
+  padding: 8px;
+  border: 1px solid @borders;
+  border-radius: 16px;
+  background-color: @theme_base_color;
 
   box-shadow:
     0 1px 2px 0 rgba(0, 0, 0, 0.15),
@@ -13,19 +15,33 @@ box#main {
     inset 0 1px rgba(255, 255, 255, 0.1);
 }
 
-list#main {
-  background-color: rgba(0, 0, 0, 0);
+
+entry#entry {
   border-radius: 10px;
+  box-shadow: none;
 }
 
-list#plugin {
-  background-color: rgba(0, 0, 0, 0);
+list#main {
+  background-color: transparent;
+}
+
+list#main > row       { padding: 0 }
+list#main > row:hover { box-shadow: none }
+
+row#match {
+  border-radius: 10px;
+  padding: 6px 8px;
+}
+row#match:first-child {
+  margin-top: 8px;
+}
+
+label#match-title {
+  font-weight: bold;
 }
 
 label#match-desc {
   font-size: 10px;
-}
-
-label#plugin {
-  font-size: 14px;
+  font-weight: bold;
+  opacity: 0.8;
 }
