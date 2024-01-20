@@ -2,18 +2,18 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export SUDO_EDITOR=$EDITOR
 export MANPAGER="nvim +Man!"
-export TERM="alacritty"
+export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
 
 export XDG_SESSION_TYPE="wayland"
-export QT_QPA_PLATFORM="wayland;xcb"
+export QT_QPA_PLATFORM="wayland"
 export CLUTTER_BACKEND="wayland"
 export SDL_VIDEODRIVER="wayland"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export MOZ_ENABLE_WAYLAND=1
 
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-export QT_QPA_PLATFORMTHEME="gtk2"
+export QT_QPA_PLATFORMTHEME="gtk3"
 
 export XMODIFIERS="@im=fcitx"
 export GTK_IM_MODULE="fcitx"
