@@ -1,32 +1,32 @@
 palette = 'catppuccin_mocha'
 
-add_newline = false
-format = ' $character$directory'
-right_format = '$git_status$git_branch'
+add_newline = true
+format = '''[$directory$git_branch$git_status$cmd_duration](fg:7)
 
-[character]
-success_symbol = '[λ](green)'
-error_symbol = '[λ](red)'
+'''
 
 [directory]
-format = '[$path]($style) '
-style = 'bold lavender'
+format = '$path '
 
 [git_branch]
-format = '[ $branch](bold blue) '
+format = 'git:\($branch\) '
 
 [git_status]
-format = '[[(󰛄$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)'
-style = 'mauve'
-conflicted = '​'
-untracked = '​'
-modified = '​'
-staged = '​'
-renamed = '​'
-deleted = '​'
-ahead = '󰜝 '
-behind = '󰜚 '
-stashed = '󱕅 '
+format = '$all_status$ahead_behind'
+ahead = '↑ '
+behind = '↓ '
+diverged = '↕ '
+up_to_date = ''
+stashed = '$ '
+untracked = '+$count '
+deleted = '-$count '
+modified = '~$count '
+renamed = '→$count '
+staged = '±$count '
+
+[cmd_duration]
+format = '\($duration\) '
+min_time = 1
 
 [palettes.catppuccin_latte]
 rosewater = "#dc8a78"
