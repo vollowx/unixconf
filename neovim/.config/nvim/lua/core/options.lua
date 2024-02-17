@@ -14,6 +14,7 @@ o.foldmethod     = 'expr'
 o.foldtext       = ''
 o.formatexpr     = 'v:lua.vim.lsp.formatexpr()'
 o.helpheight     = 10
+o.jumpoptions    = 'stack'
 o.laststatus     = 3
 o.number         = g.settings.number ~= 'hidden'
 o.pumheight      = 16
