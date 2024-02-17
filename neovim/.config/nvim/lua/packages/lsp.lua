@@ -19,7 +19,7 @@ return {
     init = function()
       -- Configure hovering window style
       local opts_override_floating_preview = {
-        border = vim.g.settings.ui.border_preview,
+        border = settings.ui.border_preview,
         max_width = math.max(80, math.ceil(vim.go.columns * 0.75)),
         max_height = math.max(20, math.ceil(vim.go.lines * 0.4)),
         close_events = {
@@ -59,10 +59,10 @@ return {
         virtual_text = false,
         signs = {
           text = {
-            [vim.diagnostic.severity.ERROR] = vim.g.icons.diagnostics.DiagnosticSignError,
-            [vim.diagnostic.severity.WARN] = vim.g.icons.diagnostics.DiagnosticSignWarn,
-            [vim.diagnostic.severity.INFO] = vim.g.icons.diagnostics.DiagnosticSignInfo,
-            [vim.diagnostic.severity.HINT] = vim.g.icons.diagnostics.DiagnosticSignHint,
+            [vim.diagnostic.severity.ERROR] = icons.diagnostics.DiagnosticSignError,
+            [vim.diagnostic.severity.WARN] = icons.diagnostics.DiagnosticSignWarn,
+            [vim.diagnostic.severity.INFO] = icons.diagnostics.DiagnosticSignInfo,
+            [vim.diagnostic.severity.HINT] = icons.diagnostics.DiagnosticSignHint,
           },
           numhl = {
             [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',

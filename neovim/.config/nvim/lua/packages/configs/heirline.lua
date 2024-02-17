@@ -154,10 +154,10 @@ local git_status = {
 
 local diagnostics = {
   static = {
-    error_icon = vim.g.icons.diagnostics.DiagnosticSignError,
-    warn_icon = vim.g.icons.diagnostics.DiagnosticSignWarn,
-    info_icon = vim.g.icons.diagnostics.DiagnosticSignInfo,
-    hint_icon = vim.g.icons.diagnostics.DiagnosticSignHint,
+    error_icon = icons.diagnostics.DiagnosticSignError,
+    warn_icon = icons.diagnostics.DiagnosticSignWarn,
+    info_icon = icons.diagnostics.DiagnosticSignInfo,
+    hint_icon = icons.diagnostics.DiagnosticSignHint,
   },
 
   init = function(self)

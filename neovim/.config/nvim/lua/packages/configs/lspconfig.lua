@@ -1,4 +1,4 @@
-require('lspconfig.ui.windows').default_options.border = vim.g.settings.ui.border
+require('lspconfig.ui.windows').default_options.border = settings.ui.border
 
 vim.api.nvim_create_autocmd('VimResized', {
   desc = 'Reload LspInfo floating window on VimResized.',
@@ -19,7 +19,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local shared_config = {
   capabilities = capabilities,
   on_attach = function(_, bufnr)
-    vim.lsp.inlay_hint.enable(bufnr, vim.g.settings.lsp.display_inlay_hints)
+    vim.lsp.inlay_hint.enable(bufnr, settings.lsp.display_inlay_hints)
   end,
 }
 

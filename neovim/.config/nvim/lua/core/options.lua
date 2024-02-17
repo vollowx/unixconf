@@ -7,7 +7,7 @@ o.breakindent    = true
 o.completeopt    = 'menuone'
 o.cursorline     = true
 o.cursorlineopt  = 'number'
-o.foldcolumn     = g.settings.ui.display_fold and 'auto' or '0'
+o.foldcolumn     = settings.ui.display_fold and 'auto' or '0'
 o.foldexpr       = 'nvim_treesitter#foldexpr()'
 o.foldlevelstart = 99
 o.foldmethod     = 'expr'
@@ -16,10 +16,10 @@ o.formatexpr     = 'v:lua.vim.lsp.formatexpr()'
 o.helpheight     = 10
 o.jumpoptions    = 'stack'
 o.laststatus     = 3
-o.number         = g.settings.number ~= 'hidden'
+o.number         = settings.number ~= 'hidden'
 o.pumheight      = 16
-o.relativenumber = g.settings.number == 'relative'
-o.scrolloff      = g.settings.scrolloff
+o.relativenumber = settings.number == 'relative'
+o.scrolloff      = settings.scrolloff
 o.showmode       = false
 o.sidescrolloff  = 5
 o.signcolumn     = 'yes:1'
@@ -63,16 +63,16 @@ o.fillchars = {
 if g.has_gui then
   o.listchars:append({ nbsp = '␣' })
   o.fillchars:append({
-    foldopen = vim.trim(g.icons.ui.AngleDown),
-    foldclose = vim.trim(g.icons.ui.AngleRight),
+    foldopen = vim.trim(icons.ui.AngleDown),
+    foldclose = vim.trim(icons.ui.AngleRight),
     diff = '╱',
   })
 end
 
 -- stylua: ignore start
-o.ts          = g.settings.editor.tab_size
-o.softtabstop = g.settings.editor.tab_size
-o.shiftwidth  = g.settings.editor.tab_size
+o.ts          = settings.editor.tab_size
+o.softtabstop = settings.editor.tab_size
+o.shiftwidth  = settings.editor.tab_size
 o.expandtab   = true
 o.smartindent = true
 o.autoindent  = true

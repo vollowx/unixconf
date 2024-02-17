@@ -11,7 +11,7 @@ require('core.autocmds')
 require('core.packages')
 
 if vim.g.has_gui then
-  vim.cmd.colorscheme(vim.g.settings.ui.theme)
+  vim.cmd.colorscheme(settings.ui.theme)
 else
   vim.o.termguicolors = false
 end

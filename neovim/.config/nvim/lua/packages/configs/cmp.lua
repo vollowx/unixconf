@@ -130,9 +130,9 @@ cmp.setup({
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
     format = function(entry, cmp_item)
-      cmp_item.kind = entry.source.name == 'cmdline' and vim.g.icons.ui.Diamond
-        or entry.source.name == 'calc' and vim.g.icons.ui.Calculator
-        or vim.g.icons.kinds[cmp_item.kind]
+      cmp_item.kind = entry.source.name == 'cmdline' and icons.ui.Diamond
+        or entry.source.name == 'calc' and icons.ui.Calculator
+        or icons.kinds[cmp_item.kind]
         or ''
       return cmp_item
     end,

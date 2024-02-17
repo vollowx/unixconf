@@ -68,25 +68,25 @@ local function setup_lazy(module_names)
     checker = { enabled = false },
     change_detection = { notify = false },
     ui = {
-      border = vim.g.settings.ui.border,
+      border = settings.ui.border,
       size = { width = 0.7, height = 0.74 },
       icons = {
-        cmd = vim.g.icons.ui.Cmd,
-        config = vim.g.icons.ft.Config,
-        event = vim.g.icons.kinds.Event,
-        ft = vim.g.icons.kinds.File,
-        init = vim.g.icons.ft.Config,
-        import = vim.g.icons.ui.ArrowLeft,
-        keys = vim.g.icons.ui.Keyboard,
-        lazy = vim.g.icons.ui.Lazy .. ' ',
-        loaded = vim.g.icons.ui.CircleFilled,
-        not_loaded = vim.g.icons.ui.CircleOutline,
-        plugin = vim.g.icons.kinds.Module,
-        runtime = vim.g.icons.kinds.File,
-        require = vim.g.icons.ui.Lua,
-        source = vim.g.icons.kinds.Method,
-        start = vim.g.icons.ui.Play,
-        task = vim.g.icons.ui.Ok,
+        cmd = icons.ui.Cmd,
+        config = icons.ft.Config,
+        event = icons.kinds.Event,
+        ft = icons.kinds.File,
+        init = icons.ft.Config,
+        import = icons.ui.ArrowLeft,
+        keys = icons.ui.Keyboard,
+        lazy = icons.ui.Lazy .. ' ',
+        loaded = icons.ui.CircleFilled,
+        not_loaded = icons.ui.CircleOutline,
+        plugin = icons.kinds.Module,
+        runtime = icons.kinds.File,
+        require = icons.ui.Lua,
+        source = icons.kinds.Method,
+        start = icons.ui.Play,
+        task = icons.ui.Ok,
         list = { '' },
       },
     },
@@ -117,4 +117,4 @@ if not bootstrap() then
   return
 end
 
-setup_lazy(vim.g.vscode and vim.g.settings.modules.vscode or vim.g.settings.modules.all)
+setup_lazy(vim.g.vscode and settings.modules.vscode or settings.modules.all)

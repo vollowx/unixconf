@@ -11,8 +11,8 @@ local layout_dropdown = {
 telescope.setup({
   defaults = {
     mappings = { i = { ['<Esc>'] = require('telescope.actions').close } },
-    prompt_prefix = vim.g.icons.ui.Magnify,
-    selection_caret = vim.g.icons.ui.AngleRight,
+    prompt_prefix = icons.ui.Magnify,
+    selection_caret = icons.ui.AngleRight,
     layout_config = {
       width = 0.8,
       height = 0.8,

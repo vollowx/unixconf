@@ -1,4 +1,4 @@
-vim.g.settings = {
+_G.settings = {
   number = 'normal',
   scrolloff = 5,
   editor = {
@@ -287,4 +287,4 @@ local icons_ascii       = {
 }
 -- stylua: ignore end
 
-vim.g.icons = vim.g.has_gui and icons_nerd or icons_ascii
+_G.icons = vim.g.has_gui and icons_nerd or icons_ascii
