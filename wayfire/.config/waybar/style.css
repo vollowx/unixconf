@@ -1,39 +1,120 @@
-@import './mocha.css';
+@import "mocha.css";
+@import "animation.css";
+
+* {
+  /* all: unset; */
+  font-size: 14px;
+  font-family: monospace;
+}
 
 window#waybar {
-  font-family: monospace;
-  font-size: 1rem;
-  background-color: @mantle;
-  border-radius: 0px;
-  color: @overlay0;
+  /* border-radius: 15px; */
+  /* color: @text; */
+  background: transparent;
 }
 
-#tray {
-  margin-left: 12px;
+#network,
+#clock,
+#battery,
+#pulseaudio,
+#workspaces,
+#mpd,
+#backlight,
+#memory,
+#tray,
+#custom-weather {
+  padding: 4px 10px;
+  background: shade(alpha(@base, 0.9), 1);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.377);
+  color: @lavender;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  box-shadow: 1px 2px 2px @crust;
+  border-radius: 8px;
 }
 
-#clock {
-  margin-right: 12px;
+#workspaces {
+  padding: 0px
 }
 
-button {
-  border: none;
-  border-radius: 0;
-}
-button:hover {
-  box-shadow: inherit;
-  text-shadow: inherit;
-  background: inherit;
-}
-
-#taskbar button {
-  padding: 0 6px;
-  color: @overlay0;
-  background-color: transparent;
-  border: none;
+#workspaces button {
+  padding: 0 4px;
+  color: @text;
+  font-size: 14px;
+  font-weight: bolder;
+  border-radius: 8px;
+  /* transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68); */
 }
 
-#taskbar button.active {
-  color: @mauve;
-  font-weight: 900;
+#custom-media,
+#workspaces button.active,
+#workspaces button.focused {
+  color: @base;
+  /* background: rgb(203, 166, 247); */
+  background: radial-gradient(
+      circle,
+      rgba(203, 166, 247, 1) 0%,
+      rgba(193, 168, 247, 1) 12%,
+      rgba(249, 226, 175, 1) 19%,
+      rgba(189, 169, 247, 1) 20%,
+      rgba(182, 171, 247, 1) 24%,
+      rgba(198, 255, 194, 1) 36%,
+      rgba(177, 172, 247, 1) 37%,
+      rgba(170, 173, 248, 1) 48%,
+      rgba(255, 255, 255, 1) 52%,
+      rgba(166, 174, 248, 1) 52%,
+      rgba(160, 175, 248, 1) 59%,
+      rgba(148, 226, 213, 1) 66%,
+      rgba(155, 176, 248, 1) 67%,
+      rgba(152, 177, 248, 1) 68%,
+      rgba(205, 214, 244, 1) 77%,
+      rgba(148, 178, 249, 1) 78%,
+      rgba(144, 179, 250, 1) 82%,
+      rgba(180, 190, 254, 1) 83%,
+      rgba(141, 179, 250, 1) 90%,
+      rgba(137, 180, 250, 1) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradient_f 40s ease-in-out infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.urgent {
+  color: @teal;
+}
+
+#workspaces button.visible {
+  color: @surface1;
+}
+
+#battery {
+  background: @green;
+  /* background: linear-gradient(118deg, @lavender 0%, @mauve 25%, @lavender 50%, @mauve 75%, @lavender 100%); */
+  /* background: linear-gradient(118deg, @lavender 5%, @mauve 5%, @mauve 20%, @lavender 20%, @lavender 40%, @mauve 40%, @mauve 60%, @lavender 60%, @lavender 80%, @mauve 80%, @mauve 95%, @lavender 95%);  */
+  background: linear-gradient(118deg, @red 5%, @mauve 5%, @mauve 20%, @red 20%, @red 40%, @mauve 40%, @mauve 60%, @red 60%, @red 80%, @mauve 80%, @mauve 95%, @red 95%); 
+  background-size: 200% 300%;
+  animation: gradient_f_nh 4s linear infinite;
+  color: @surface0;
+}
+
+#battery.charging, #battery.plugged {
+  background: linear-gradient(118deg, @green 5%, @yellow 5%, @yellow 20%, @green 20%, @green 40%, @yellow 40%, @yellow 60%, @green 60%, @green 80%, @yellow 80%, @yellow 95%, @green 95%); 
+  background-size: 200% 300%; 
+  animation: gradient_rv 4s linear infinite;
+}
+
+#battery.full {
+  background: linear-gradient(118deg, @green 5%, @yellow 5%, @yellow 20%, @green 20%, @green 40%, @yellow 40%, @yellow 60%, @green 60%, @green 80%, @yellow 80%, @yellow 95%, @green 95%); 
+  background-size: 200% 300%; 
+  animation: gradient_rv 20s linear infinite;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
 }

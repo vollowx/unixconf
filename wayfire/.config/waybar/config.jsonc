@@ -1,45 +1,143 @@
 {
-  "layer": "top",
   "position": "top",
-  "height": 28,
-  "spacing": 12,
-  "modules-left": ["tray", "cava"],
-  "modules-center": ["wlr/taskbar"],
-  "modules-right": ["wireplumber", "backlight", "battery", "clock"],
-  "clock": {
-    "format": "<span font_desc='FiraCode Nerd Font Bold Italic' color='#cba6f7' text_transform='lowercase'>{:%A, %d %B %H:%M}</span>"
+  "layer": "top",
+  "modules-left": [
+    "wlr/workspaces",
+    "tray"
+  ],
+  "modules-center": [
+    "clock",
+    "memory"
+  ],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "backlight",
+    "battery"
+  ],
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/Ningbo?format=%c%t' &",
+    "interval": 3600,
+    "on-click": "xdg-open https://wttr.in/Wuhan",
+    "max-length": 10
   },
-  "battery": {
-    "format": "<span font_desc='FiraCode Nerd Font Bold Italic' color='#cba6f7'>bat</span> {capacity}%",
-    "format-critical": "<span font_desc='FiraCode Nerd Font Bold Italic' color='#f38ba8'>bat</span> {capacity}%",
-    "format-charging": "<span font_desc='FiraCode Nerd Font Bold Italic' color='#cba6f7'>bat [ac]</span> {capacity}%",
-    "states": { "critical": 20 },
-    "interval": 5,
-    "tooltip": false
+  "wlr/workspaces": {
+    "format": " {icon} ",
+    // "on-click": "activate",
+    "format-icons": {
+      "1": "一",
+      "2": "二",
+      "3": "三",
+      "4": "四",
+      "5": "五",
+      "6": "六",
+      "7": "七",
+      "8": "八",
+      "9": "九",
+      "10": "十",
+      "default": "",
+      "focused": ""
+    },
+    "sort-by-number": true
   },
-  "wireplumber": {
-    "format": "<span font_desc='FiraCode Nerd Font Bold Italic' color='#cba6f7'>vol</span> {volume}%",
-    "format-muted": "<span font_desc='FiraCode Nerd Font Bold Italic' color='#cba6f7'>vol</span> muted",
-    "tooltip": false
+  "mpd": {
+    "format": "{stateIcon}{consumeIcon} {randomIcon}{repeatIcon}{singleIcon}{title}({elapsedTime:%M:%S}/{totalTime:%M:%S}) 󰝚",
+    "format-disconnected": "Disconnected 󰝛",
+    "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped 󰝛",
+    "title-len": 20,
+    "interval": 10,
+    "consume-icons": {
+      "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+      "off": "<span color='#cdd6f4'>󰒝</span> ", // Icon grayed out when "random" is off
+      "on": "<span color='#cba6f7'>󰒝</span> "
+    },
+    "repeat-icons": {
+      "off": "<span color='#cdd6f4'>󰑖</span> ",
+      "on": "<span color='#cba6f7'>󰑖</span> "
+    },
+    "single-icons": {
+      "off": "<span color='#cdd6f4'>󰑘</span> ",
+      "on": "<span color='#cba6f7'>󰑘</span> "
+    },
+    "state-icons": {
+      "paused": "󰏤",
+      "playing": "󰐊"
+    },
+    "on-scroll-up": "mpc seek +1",
+    "on-scroll-down": "mpc seek -1",
+    "on-click": "mpc toggle",
+    "on-click-middle": "mpc prev",
+    "on-click-right": "mpc next",
+    "tooltip-format": "{artist} - {album} - {title}",
+    "tooltip-format-disconnected": "MPD (disconnected)"
+  },
+  "memory": {
+    "interval": 30,
+    "format": "<span foreground='#cba6f7'> </span>{used:0.1f}G/{total:0.1f}G"
   },
   "backlight": {
-    "format": "<span font_desc='FiraCode Nerd Font Bold Italic' color='#cba6f7'>bri</span> {percent}%",
-    "tooltip": false
-  },
-  "wlr/taskbar": {
-    "format": "{icon} {title:.8}",
-    "icon-size": 14,
-    "all-outputs": false,
-    "on-click": "activate",
-    "on-click-middle": "close"
-  },
-  "cava": {
-    "bars": 12,
-    "bar_delimiter": 0,
-    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+    "device": "intel_backlight",
+    "format": "<span size='13000' foreground='#89B4FA'>{icon} </span>{percent}%",
+    "format-icons": [
+      "󰖔",
+      "󰖙"
+    ]
   },
   "tray": {
-    "icon-size": 14,
-    "spacing": 8
+    "icon-size": 16,
+    "spacing": 10
+  },
+  "clock": {
+    "format": "<span foreground='#cba6f7'> </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "<span size='13000' foreground='#f5c2e7'>{icon}  </span>{capacity}%",
+    "format-warning": "<span size='13000' foreground='#f5c2e7'>{icon}  </span>{capacity}%",
+    "format-critical": "<span size='13000' foreground='#f38ba8'>{icon}  </span>{capacity}%",
+    "format-charging": "<span size='13000' foreground='#f5c2e7'>  </span>{capacity}%",
+    "format-plugged": "<span size='13000' foreground='#f5c2e7'>  </span>{capacity}%",
+    "format-alt": "<span size='13000' foreground='#f5c2e7'>{icon} </span>{time}",
+    "format-full": "<span size='13000' foreground='#f5c2e7'>  </span>{capacity}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip-format": "{time}",
+    "interval": 5
+  },
+  "network": {
+    "format-wifi": "<span size='13000' foreground='#f5e0dc'>󰖩 </span>{essid}",
+    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰈀 </span>Connected",
+    "format-linked": "{ifname} (No IP) 󰖩",
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'> </span>Disconnected",
+    "tooltip-format-wifi": "Signal Strenght: {signalStrength}%"
+  },
+  "pulseaudio": {
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "format": "<span size='13000' foreground='#f9e2af'>{icon} </span>{volume}%",
+    "format-muted": "<span size='14000' foreground='#f9e2af'>󰝟 </span>Muted",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    }
   }
 }

@@ -1,0 +1,29 @@
+add_newline = false
+format = '''$character$directory'''
+right_format = '''$git_branch$git_status'''
+
+[character]
+success_symbol = '[▲](bold green)'
+error_symbol = '[▲](bold red)'
+vimcmd_symbol = '[▼](bold green)'
+vimcmd_replace_one_symbol = '[▼](bold purple)'
+vimcmd_replace_symbol = '[▼](bold purple)'
+vimcmd_visual_symbol = '[▼](bold yellow)'
+
+[directory]
+format = '[$path]($style) '
+style = 'bold blue'
+
+[git_branch]
+format = "[$branch]($style)"
+style = "bold bright-black"
+
+[git_status]
+format = "[(*$conflicted$untracked$modified$staged$renamed$deleted)]($style)"
+style = "bold cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
