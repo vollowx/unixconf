@@ -71,7 +71,7 @@ local function setup_lazy(module_names)
       border = vim.g.settings.ui.border,
       size = { width = 0.7, height = 0.74 },
       icons = {
-        cmd = vim.g.icons.kinds.Cmd,
+        cmd = vim.g.icons.ui.Cmd,
         config = vim.g.icons.ft.Config,
         event = vim.g.icons.kinds.Event,
         ft = vim.g.icons.kinds.File,

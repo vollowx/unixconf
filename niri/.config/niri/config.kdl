@@ -193,9 +193,13 @@ binds {
     Mod+D { spawn "anyrun"; }
     Ctrl+Alt+L { spawn "swaylock"; }
 
-    // Example volume keys mappings for PipeWire & WirePlumber.
-    XF86AudioRaiseVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1+"; }
-    XF86AudioLowerVolume { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
+    // Check https://cgit.freedesktop.org/xorg/proto/x11proto/tree/XF86keysym.h
+    XF86AudioMute         { spawn "swayosd-client" "--output-volume=mute-toggle"; }
+    XF86AudioRaiseVolume  { spawn "swayosd-client" "--output-volume=raise"; }
+    XF86AudioLowerVolume  { spawn "swayosd-client" "--output-volume=lower"; }
+    XF86AudioMicMute      { spawn "swayosd-client" "--input-volume=mute-toggle"; }
+    XF86MonBrightnessUp   { spawn "swayosd-client" "--brightness=raise"; }
+    XF86MonBrightnessDOWN { spawn "swayosd-client" "--brightness=lower"; }
 
     Mod+Q { close-window; }
 
