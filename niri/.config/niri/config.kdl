@@ -285,6 +285,16 @@ binds {
 
     Mod+Q { close-window; }
 
+    Mod+Ctrl+H     { focus-monitor-left; }
+    Mod+Ctrl+J     { focus-monitor-down; }
+    Mod+Ctrl+K     { focus-monitor-up; }
+    Mod+Ctrl+L     { focus-monitor-right; }
+
+    Mod+Shift+Ctrl+H { move-window-to-monitor-left; }
+    Mod+Shift+Ctrl+J { move-window-to-monitor-down; }
+    Mod+Shift+Ctrl+K { move-window-to-monitor-up; }
+    Mod+Shift+Ctrl+L { move-window-to-monitor-right; }
+
     Mod+H          { focus-column-left; }
     Mod+J          { focus-window-or-workspace-down; }
     Mod+K          { focus-window-or-workspace-up; }
@@ -327,7 +337,7 @@ binds {
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
 
-    Mod+E { switch-preset-column-width; }
+    Mod+R { switch-preset-column-width; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }

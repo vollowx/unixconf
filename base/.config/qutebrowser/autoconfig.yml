@@ -22,8 +22,6 @@ settings:
     https://mail.proton.me: true
   content.register_protocol_handler:
     https://mail.proton.me#mailto=%25s: true
-  fonts.web.family.sans_serif:
-    global: URW Gothic
   qt.highdpi:
     global: true
   tabs.position:
