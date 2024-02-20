@@ -281,7 +281,7 @@ binds {
     XF86AudioLowerVolume  { spawn "swayosd-client" "--output-volume=lower"; }
     XF86AudioMicMute      { spawn "swayosd-client" "--input-volume=mute-toggle"; }
     XF86MonBrightnessUp   { spawn "swayosd-client" "--brightness=raise"; }
-    XF86MonBrightnessDOWN { spawn "swayosd-client" "--brightness=lower"; }
+    XF86MonBrightnessDown { spawn "swayosd-client" "--brightness=lower"; }
 
     Mod+Q { close-window; }
 
