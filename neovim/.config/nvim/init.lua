@@ -7,6 +7,7 @@ vim.g.has_gui = vim.g.has_ui
 require('core.settings')
 require('core.options')
 require('core.keymaps')
+require('core.commands')
 require('core.autocmds')
 require('core.packages')
 

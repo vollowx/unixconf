@@ -2,20 +2,20 @@ return {
   {
     'dgagn/diagflow.nvim',
     event = 'LspAttach',
-    config = C('diagflow'),
+    config = load_pkg('diagflow'),
   },
 
   {
     'Wansmer/symbol-usage.nvim',
     event = 'LspAttach',
-    config = C('symbol-usage'),
+    config = load_pkg('symbol-usage'),
   },
 
   {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspStart' },
-    config = C('lspconfig', true),
+    config = load_pkg('lspconfig', true),
     init = function()
       -- Configure hovering window style
       local opts_override_floating_preview = {

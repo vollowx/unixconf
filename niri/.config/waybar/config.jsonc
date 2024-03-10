@@ -2,6 +2,7 @@
   "position": "top",
   "layer": "top",
   "modules-left": [
+    "sway/workspaces",
     "wlr/workspaces",
     "tray"
   ],
@@ -21,7 +22,7 @@
     "on-click": "xdg-open https://wttr.in/Wuhan",
     "max-length": 10
   },
-  "wlr/workspaces": {
+  "sway/workspaces": {
     "format": " {icon} ",
     // "on-click": "activate",
     "format-icons": {
@@ -75,7 +76,7 @@
   },
   "memory": {
     "interval": 30,
-    "format": "<span foreground='#cba6f7'> </span>{used:0.1f}G/{total:0.1f}G"
+    "format": "<span foreground='#cba6f7'>󰍜 </span>{used:0.1f}G/{total:0.1f}G"
   },
   "backlight": {
     "device": "intel_backlight",
@@ -90,7 +91,7 @@
     "spacing": 10
   },
   "clock": {
-    "format": "<span foreground='#cba6f7'> </span>{:%a %d %H:%M}",
+    "format": "<span foreground='#cba6f7'>󰥔 </span>{:%a %d %H:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   },
   "battery": {

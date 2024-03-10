@@ -1,18 +1,12 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    config = C('cmp'),
+    config = load_pkg('cmp'),
   },
 
   {
     'hrsh7th/cmp-calc',
     event = 'InsertEnter',
-    dependencies = 'hrsh7th/nvim-cmp',
-  },
-
-  {
-    'hrsh7th/cmp-cmdline',
-    event = 'CmdlineEnter',
     dependencies = 'hrsh7th/nvim-cmp',
   },
 
@@ -30,13 +24,13 @@ return {
 
   {
     'hrsh7th/cmp-path',
-    event = { 'CmdlineEnter', 'InsertEnter' },
+    event = 'InsertEnter',
     dependencies = 'hrsh7th/nvim-cmp',
   },
 
   {
     'hrsh7th/cmp-buffer',
-    event = { 'CmdlineEnter', 'InsertEnter' },
+    event = 'InsertEnter',
     dependencies = 'hrsh7th/nvim-cmp',
   },
 
@@ -44,6 +38,7 @@ return {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
     event = 'InsertEnter',
-    config = C('copilot'),
+    config = load_pkg('copilot'),
+    enabled = settings.editor.completion.copilot,
   },
 }

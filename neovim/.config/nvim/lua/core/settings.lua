@@ -3,9 +3,13 @@ _G.settings = {
   scrolloff = 5,
   editor = {
     tab_size = 2,
+    completion = {
+      copilot = true,
+    },
   },
   git = {
     display_blame = true,
+    display_signs = true,
   },
   indent_guides = {
     render = true,
@@ -30,7 +34,7 @@ _G.settings = {
     vscode = { 'lib', 'treesitter', 'editing' },
   },
   ui = {
-    border = 'single',
+    border = 'shadow',
     border_preview = 'solid',
     border_input = 'rounded',
     display_fold = false,

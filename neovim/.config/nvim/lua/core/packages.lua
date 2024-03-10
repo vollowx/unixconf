@@ -4,9 +4,9 @@ end
 
 ---Load configuration for a specified package
 ---@param path string
----@param schedule boolean|nil
-C = function(path, schedule)
-  return schedule
+---@param schedule_wrapped boolean|nil
+_G.load_pkg = function(path, schedule_wrapped)
+  return schedule_wrapped
       and function()
         vim.schedule(function()
           require('packages.configs.' .. path)
@@ -59,62 +59,6 @@ local function bootstrap()
   return true
 end
 
----@param module_names string[]
-local function setup_lazy(module_names)
-  local config = {
-    root = vim.g.package_path,
-    lockfile = vim.g.package_lock,
-    defaults = { lazy = true },
-    checker = { enabled = false },
-    change_detection = { notify = false },
-    ui = {
-      border = settings.ui.border,
-      size = { width = 0.7, height = 0.74 },
-      icons = {
-        cmd = icons.ui.Cmd,
-        config = icons.ft.Config,
-        event = icons.kinds.Event,
-        ft = icons.kinds.File,
-        init = icons.ft.Config,
-        import = icons.ui.ArrowLeft,
-        keys = icons.ui.Keyboard,
-        lazy = icons.ui.Lazy .. ' ',
-        loaded = icons.ui.CircleFilled,
-        not_loaded = icons.ui.CircleOutline,
-        plugin = icons.kinds.Module,
-        runtime = icons.kinds.File,
-        require = icons.ui.Lua,
-        source = icons.kinds.Method,
-        start = icons.ui.Play,
-        task = icons.ui.Ok,
-        list = { '' },
-      },
-    },
-    install = { colorscheme = { 'catppuccin' } },
-    performance = {
-      rtp = {
-        disabled_plugins = {
-          'gzip',
-          'matchit',
-          'matchparen',
-          'netrwPlugin',
-          'tarPlugin',
-          'tohtml',
-          'tutor',
-          'zipPlugin',
-        },
-      },
-    },
-  }
-  local modules = {}
-  for _, module_name in ipairs(module_names) do
-    vim.list_extend(modules, require('packages.' .. module_name))
-  end
-  require('lazy').setup(modules, config)
+if bootstrap() then
+  load_pkg('lazy')()
 end
-
-if not bootstrap() then
-  return
-end
-
-setup_lazy(vim.g.vscode and settings.modules.vscode or settings.modules.all)

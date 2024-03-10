@@ -75,15 +75,11 @@ local mode = {
     hl = function()
       return {
         fg = vim.bo.modified and colors.rosewater or colors.mauve,
-        bg = colors.surface1,
+        bg = colors.surface0,
         bold = true,
       }
     end,
     update = { 'ModeChanged', 'BufModifiedSet' },
-  },
-  {
-    provider = '',
-    hl = { fg = colors.surface1, bg = colors.surface0 },
   },
 }
 
@@ -96,11 +92,6 @@ local file_name = {
       end
       return filename == '' and '' or (' %s '):format(filename)
     end,
-    hl = { bg = colors.surface0 },
-  },
-  {
-    provider = '',
-    hl = { fg = colors.surface0, bg = colors.mantle },
   },
 }
 
@@ -118,7 +109,7 @@ local git_status = {
         self.status_dict.head == '' and '~' or self.status_dict.head
       )
     end,
-    hl = { fg = colors.overlay0 },
+    hl = { fg = colors.overlay2 },
   },
   {
     provider = function(self)
@@ -282,7 +273,6 @@ heirline.setup({
     hl = { fg = colors.text, bg = colors.mantle },
     mode,
     file_name,
-    space,
     git_status,
     align,
     show_cmd,

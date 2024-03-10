@@ -2,13 +2,19 @@ return {
   {
     'rebelot/heirline.nvim',
     event = 'UIEnter',
-    config = C('heirline'),
+    config = load_pkg('heirline'),
   },
 
   {
     'rainbowhxch/beacon.nvim',
     event = 'UIEnter',
-    config = C('beacon'),
+    config = load_pkg('beacon'),
+  },
+
+  {
+    'andymass/vim-matchup',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = load_pkg('matchup', true),
   },
 
   {
@@ -16,6 +22,6 @@ return {
     branch = 'current-indent',
     main = 'ibl',
     event = { 'BufReadPost', 'BufNewFile' },
-    config = C('ibl'),
+    config = load_pkg('ibl'),
   },
 }

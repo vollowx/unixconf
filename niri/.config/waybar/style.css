@@ -1,15 +1,11 @@
-@import "mocha.css";
+@import "oxocarbon.css";
 @import "animation.css";
 
 * {
-  /* all: unset; */
-  font-size: 14px;
-  font-family: monospace;
+  font-weight: bold;
 }
 
 window#waybar {
-  /* border-radius: 15px; */
-  /* color: @text; */
   background: transparent;
 }
 
@@ -45,14 +41,11 @@ window#waybar {
   font-size: 14px;
   font-weight: bolder;
   border-radius: 8px;
-  /* transition: all 0.5s cubic-bezier(.55,-0.68,.48,1.68); */
 }
 
-#custom-media,
 #workspaces button.active,
 #workspaces button.focused {
   color: @base;
-  /* background: rgb(203, 166, 247); */
   background: radial-gradient(
       circle,
       rgba(203, 166, 247, 1) 0%,
@@ -91,8 +84,6 @@ window#waybar {
 
 #battery {
   background: @green;
-  /* background: linear-gradient(118deg, @lavender 0%, @mauve 25%, @lavender 50%, @mauve 75%, @lavender 100%); */
-  /* background: linear-gradient(118deg, @lavender 5%, @mauve 5%, @mauve 20%, @lavender 20%, @lavender 40%, @mauve 40%, @mauve 60%, @lavender 60%, @lavender 80%, @mauve 80%, @mauve 95%, @lavender 95%);  */
   background: linear-gradient(118deg, @red 5%, @mauve 5%, @mauve 20%, @red 20%, @red 40%, @mauve 40%, @mauve 60%, @red 60%, @red 80%, @mauve 80%, @mauve 95%, @red 95%); 
   background-size: 200% 300%;
   animation: gradient_f_nh 4s linear infinite;

@@ -29,84 +29,66 @@ cmp.setup({
       vim.snippet.expand(args.body)
     end,
   },
-  mapping = {
-    ['<S-Tab>'] = {
-      ['c'] = function()
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          cmp.complete()
-        end
-      end,
-      ['i'] = function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif vim.snippet.jumpable(-1) then
-          vim.snippet.jump(-1)
-        else
-          fallback()
-        end
-      end,
-    },
-    ['<Tab>'] = {
-      ['c'] = function()
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          cmp.complete()
-        end
-      end,
-      ['i'] = function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif vim.snippet.jumpable(1) then
-          vim.snippet.jump(1)
-        elseif has_words_before() then
-          cmp.complete()
-        else
-          fallback()
-        end
-      end,
-    },
-    ['<C-p>'] = {
-      ['c'] = cmp.mapping.select_prev_item(),
-      ['i'] = function()
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          cmp.complete()
-        end
-      end,
-    },
-    ['<C-n>'] = {
-      ['c'] = cmp.mapping.select_next_item(),
-      ['i'] = function()
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          cmp.complete()
-        end
-      end,
-    },
-    ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
-    ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
-    ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    ['<C-e>'] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.abort()
-      else
-        fallback()
+  mapping = cmp.mapping.preset.insert({
+    -- ['<S-Tab>'] = {
+    --   ['c'] = function()
+    --     if cmp.visible() then
+    --       cmp.select_prev_item()
+    --     else
+    --       cmp.complete()
+    --     end
+    --   end,
+    --   ['i'] = function(fallback)
+    --     if cmp.visible() then
+    --       cmp.select_prev_item()
+    --     elseif vim.snippet.jumpable(-1) then
+    --       vim.snippet.jump(-1)
+    --     else
+    --       fallback()
+    --     end
+    --   end,
+    -- },
+    -- ['<Tab>'] = {
+    --   ['c'] = function()
+    --     if cmp.visible() then
+    --       cmp.select_next_item()
+    --     else
+    --       cmp.complete()
+    --     end
+    --   end,
+    --   ['i'] = function(fallback)
+    --     if cmp.visible() then
+    --       cmp.select_next_item()
+    --     elseif vim.snippet.jumpable(1) then
+    --       vim.snippet.jump(1)
+    --     elseif has_words_before() then
+    --       cmp.complete()
+    --     else
+    --       fallback()
+    --     end
+    --   end,
+    -- },
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+    ['<C-y>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
+    ['<C-Space>'] = cmp.mapping.complete(),
+
+    ['<Tab>'] = cmp.mapping(function()
+      if vim.snippet.jumpable(1) then
+        vim.snippet.jump(1)
       end
-    end, { 'i', 'c' }),
-    ['<C-y>'] = cmp.mapping(
-      cmp.mapping.confirm({
-        behavior = cmp.ConfirmBehavior.Replace,
-        select = false,
-      }),
-      { 'i', 'c' }
-    ),
-  },
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function()
+      if vim.snippet.jumpable(-1) then
+        vim.snippet.jump(-1)
+      end
+    end, { 'i', 's' }),
+  }),
   sources = {
     { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp', max_item_count = 20 },
@@ -130,49 +112,10 @@ cmp.setup({
   formatting = {
     fields = { 'kind', 'abbr', 'menu' },
     format = function(entry, cmp_item)
-      cmp_item.kind = entry.source.name == 'cmdline' and icons.ui.Diamond
-        or entry.source.name == 'calc' and icons.ui.Calculator
+      cmp_item.kind = entry.source.name == 'calc' and icons.ui.Calculator
         or icons.kinds[cmp_item.kind]
         or ''
       return cmp_item
     end,
   },
 })
-
-cmp.setup.cmdline('/', {
-  enabled = true,
-  sources = {
-    { name = 'buffer' },
-  },
-})
-cmp.setup.cmdline('?', {
-  enabled = true,
-  sources = {
-    { name = 'buffer' },
-  },
-})
-cmp.setup.cmdline(':', {
-  enabled = true,
-  sources = {
-    {
-      name = 'path',
-      group_index = 1,
-    },
-    {
-      name = 'cmdline',
-      option = {
-        ignore_cmds = {},
-      },
-      group_index = 2,
-    },
-  },
-})
-
--- cmp does not work with cmdline with type other than `:`, '/', and '?', e.g.
--- it does not respect the completion option of `input()`/`vim.ui.input()`, see
--- https://github.com/hrsh7th/nvim-cmp/issues/1690
--- https://github.com/hrsh7th/nvim-cmp/discussions/1073
-cmp.setup.cmdline('@', { enabled = false })
-cmp.setup.cmdline('>', { enabled = false })
-cmp.setup.cmdline('-', { enabled = false })
-cmp.setup.cmdline('=', { enabled = false })

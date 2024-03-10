@@ -5,9 +5,22 @@ return {
   },
 
   {
-    'Aasim-A/scrollEOF.nvim',
-    event = { 'CursorMoved', 'WinScrolled' },
-    config = C('scroll-eof'),
+    'echasnovski/mini.bracketed',
+    config = load_pkg('mini-bracketed'),
+    keys = { '[', ']' },
+  },
+
+  {
+    'smoka7/hop.nvim',
+    config = load_pkg('hop'),
+    keys = {
+      -- stylua: ignore start
+      { 'f', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR }) end },
+      { 'F', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR }) end },
+      { 't', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR, hint_offset = -1 }) end },
+      { 'T', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR, hint_offset = -1 }) end },
+      -- stylua: ignore end
+    },
   },
 
   {
@@ -26,9 +39,9 @@ return {
     'nvim-telescope/telescope.nvim',
     cmd = 'Telescope',
     event = 'LspAttach',
-    config = C('telescope'),
+    config = load_pkg('telescope'),
     keys = {
-      { '<Leader>ff', '<Cmd>Telescope find_files<CR>' },
+      { '<Leader>ff', '<Cmd>Telescope find_files hidden=true<CR>' },
       { '<Leader>fo', '<Cmd>Telescope oldfiles<CR>' },
       { '<Leader>fw', '<Cmd>Telescope live_grep<CR>' },
       { '<Leader>fb', '<Cmd>Telescope buffers<CR>' },
@@ -60,14 +73,14 @@ return {
   {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
-    config = C('gitsigns'),
+    config = load_pkg('gitsigns'),
   },
 
   {
     'NvChad/nvim-colorizer.lua',
     enabled = vim.g.has_gui,
     event = { 'BufReadPre', 'BufNewFile' },
-    config = C('colorizer'),
+    config = load_pkg('colorizer'),
   },
 
   {

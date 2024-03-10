@@ -1,45 +1,13 @@
 return {
   {
-    'andymass/vim-matchup',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = C('matchup'),
-  },
-
-  {
-    'romainl/vim-cool',
-    keys = { '/', '?', 'n', 'N' },
-  },
-
-  {
-    'chrisgrieser/nvim-spider',
-    keys = {
-      {
-        'w',
-        function()
-          require('spider').motion('w')
-        end,
-        mode = { 'n', 'o', 'x' },
-      },
-      {
-        'e',
-        function()
-          require('spider').motion('e')
-        end,
-        mode = { 'n', 'o', 'x' },
-      },
-      {
-        'b',
-        function()
-          require('spider').motion('b')
-        end,
-        mode = { 'n', 'o', 'x' },
-      },
-    },
+    'echasnovski/mini.surround',
+    event = 'VeryLazy',
+    config = load_pkg('mini-surround'),
   },
 
   {
     'monaqa/dial.nvim',
-    config = C('dial'),
+    config = load_pkg('dial'),
     keys = {
       {
         '<C-a>',
@@ -99,7 +67,7 @@ return {
   {
     'altermo/ultimate-autopair.nvim',
     event = { 'InsertEnter', 'CmdlineEnter' },
-    config = C('ultimate-autopair'),
+    config = load_pkg('ultimate-autopair'),
   },
 
   {
@@ -110,7 +78,7 @@ return {
         dependencies = { 'nvim-treesitter/nvim-treesitter' },
       },
     },
-    config = C('comment'),
+    config = load_pkg('comment'),
     keys = {
       { 'gc', mode = { 'n', 'x' } },
       { 'gb', mode = { 'n', 'x' } },
@@ -120,9 +88,9 @@ return {
   {
     'junegunn/vim-easy-align',
     cmd = { 'EasyAlign', 'LiveEasyAlign' },
-    config = C('easy-align'),
+    config = load_pkg('easy-align'),
     keys = {
-      { '<Leader>l', '<Plug>(LiveEasyAlign)', mode = { 'n', 'x' } },
+      { '<Leader>e', '<Plug>(EasyAlign)', mode = { 'n', 'x' } },
     },
   },
 }
