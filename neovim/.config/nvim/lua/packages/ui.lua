@@ -1,13 +1,7 @@
 return {
   {
-    'rebelot/heirline.nvim',
-    event = 'UIEnter',
-    config = loader_of('heirline'),
-  },
-
-  {
     'Bekaboo/dropbar.nvim',
-    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
+    event = 'VeryLazy',
     config = loader_of('dropbar'),
     keys = {
       {
@@ -31,12 +25,6 @@ return {
     'rainbowhxch/beacon.nvim',
     event = 'UIEnter',
     config = loader_of('beacon'),
-  },
-
-  {
-    'andymass/vim-matchup',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = loader_of('matchup', true),
   },
 
   {

@@ -9,6 +9,7 @@ require('conform').setup({
     css             = { 'prettier' },
     fish            = { 'fish_indent' },
     html            = { 'prettier' },
+    json            = { 'prettier' },
     lua             = { 'stylua' },
     javascript      = { 'prettier' },
     javascriptreact = { 'prettier' },

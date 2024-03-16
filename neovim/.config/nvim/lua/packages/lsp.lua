@@ -1,11 +1,5 @@
 return {
   {
-    'dgagn/diagflow.nvim',
-    event = 'LspAttach',
-    config = loader_of('diagflow'),
-  },
-
-  {
     'Wansmer/symbol-usage.nvim',
     event = 'LspAttach',
     config = loader_of('symbol-usage'),
@@ -13,7 +7,7 @@ return {
 
   {
     'neovim/nvim-lspconfig',
-    event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'BufReadPost', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspStart' },
     config = loader_of('lspconfig', true),
     init = function()
@@ -56,7 +50,10 @@ return {
 
       vim.diagnostic.config({
         update_in_insert = true,
-        virtual_text = false,
+        virtual_text = {
+          spacing = 4,
+          prefix = vim.trim(icons.ui.AngleLeft),
+        },
         signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = icons.diagnostics.DiagnosticSignError,

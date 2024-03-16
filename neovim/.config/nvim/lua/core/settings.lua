@@ -4,7 +4,7 @@ _G.settings = {
   editor = {
     tab_size = 2,
     completion = {
-      copilot = true,
+      copilot = false,
     },
   },
   git = {
@@ -16,28 +16,13 @@ _G.settings = {
     character = '▏',
   },
   lsp = {
-    auto_format = true,
     display_inlay_hints = true,
-  },
-  modules = {
-    all = {
-      'lib',
-      'treesitter',
-      'editing',
-      'themes',
-      'lsp',
-      'completion',
-      'tools',
-      'ui',
-      'markdown',
-    },
-    vscode = { 'lib', 'treesitter', 'editing' },
   },
   ui = {
     border = 'shadow',
     border_preview = 'solid',
     border_input = 'rounded',
-    display_fold = false,
+    display_fold = true,
     theme = 'catppuccin',
   },
 }
