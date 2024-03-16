@@ -23,23 +23,22 @@ return {
   },
 
   {
+    'echasnovski/mini.jump',
+    config = loader_of('mini-jump'),
+    keys = {
+      { 'f', mode = { 'n', 'x' } },
+      { 'F', mode = { 'n', 'x' } },
+      { 't', mode = { 'n', 'x' } },
+      { 'T', mode = { 'n', 'x' } },
+      { ';', mode = { 'n', 'x' } },
+    },
+  },
+
+  {
     'NvChad/nvim-colorizer.lua',
     enabled = vim.g.has_gui,
     event = { 'BufReadPre', 'BufNewFile' },
     config = loader_of('colorizer'),
-  },
-
-  {
-    'smoka7/hop.nvim',
-    config = loader_of('hop'),
-    keys = {
-      -- stylua: ignore start
-      { 'f', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR }) end },
-      { 'F', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR }) end },
-      { 't', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR, hint_offset = -1 }) end },
-      { 'T', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR, hint_offset = -1 }) end },
-      -- stylua: ignore end
-    },
   },
 
   {
