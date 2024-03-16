@@ -13,9 +13,11 @@ o.foldlevelstart = 99
 o.foldmethod     = 'expr'
 o.foldtext       = ''
 o.formatexpr     = 'v:lua.vim.lsp.formatexpr()'
+o.guifont        = 'monospace:h12'
 o.helpheight     = 10
 o.jumpoptions    = 'stack'
 o.laststatus     = 3
+o.mousemoveevent = true
 o.number         = settings.number ~= 'hidden'
 o.pumheight      = 16
 o.relativenumber = settings.number == 'relative'

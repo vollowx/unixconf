@@ -16,6 +16,5 @@ map({ 'i' }, '<Up>',   '<Cmd>norm! g<Up><CR>')
 map('n', '<Esc>', '<Cmd>noh<CR>')
 
 map('n', 'K', vim.lsp.buf.hover)
-map('n', 'gq;', vim.lsp.buf.format)
 map({ 'n', 'x' }, '<Leader>r', vim.lsp.buf.rename)
 map({ 'n', 'x' }, '<Leader>a', vim.lsp.buf.code_action)

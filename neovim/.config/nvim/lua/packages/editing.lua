@@ -1,13 +1,19 @@
 return {
   {
+    'echasnovski/mini.align',
+    config = loader_of('mini-align'),
+    keys = { { 'gl', mode = { 'n', 'x' } }, { 'gL', mode = { 'n', 'x' } } }
+  },
+
+  {
     'echasnovski/mini.surround',
     event = 'VeryLazy',
-    config = load_pkg('mini-surround'),
+    config = loader_of('mini-surround'),
   },
 
   {
     'monaqa/dial.nvim',
-    config = load_pkg('dial'),
+    config = loader_of('dial'),
     keys = {
       {
         '<C-a>',
@@ -67,7 +73,7 @@ return {
   {
     'altermo/ultimate-autopair.nvim',
     event = { 'InsertEnter', 'CmdlineEnter' },
-    config = load_pkg('ultimate-autopair'),
+    config = loader_of('ultimate-autopair'),
   },
 
   {
@@ -78,19 +84,10 @@ return {
         dependencies = { 'nvim-treesitter/nvim-treesitter' },
       },
     },
-    config = load_pkg('comment'),
+    config = loader_of('comment'),
     keys = {
       { 'gc', mode = { 'n', 'x' } },
       { 'gb', mode = { 'n', 'x' } },
-    },
-  },
-
-  {
-    'junegunn/vim-easy-align',
-    cmd = { 'EasyAlign', 'LiveEasyAlign' },
-    config = load_pkg('easy-align'),
-    keys = {
-      { '<Leader>e', '<Plug>(EasyAlign)', mode = { 'n', 'x' } },
     },
   },
 }

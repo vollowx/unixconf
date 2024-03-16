@@ -9,16 +9,6 @@ function vim.lsp.buf_get_clients(bufnr)
   return vim.lsp.get_clients({ buffer = bufnr })
 end
 
-local function has_words_before()
-  local line, col = (unpack or table.unpack)(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0
-    and vim.api
-        .nvim_buf_get_lines(0, line - 1, line, true)[1]
-        :sub(col, col)
-        :match('%s')
-      == nil
-end
-
 cmp.setup({
   performance = {
     async_budget = 64,
@@ -30,44 +20,6 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    -- ['<S-Tab>'] = {
-    --   ['c'] = function()
-    --     if cmp.visible() then
-    --       cmp.select_prev_item()
-    --     else
-    --       cmp.complete()
-    --     end
-    --   end,
-    --   ['i'] = function(fallback)
-    --     if cmp.visible() then
-    --       cmp.select_prev_item()
-    --     elseif vim.snippet.jumpable(-1) then
-    --       vim.snippet.jump(-1)
-    --     else
-    --       fallback()
-    --     end
-    --   end,
-    -- },
-    -- ['<Tab>'] = {
-    --   ['c'] = function()
-    --     if cmp.visible() then
-    --       cmp.select_next_item()
-    --     else
-    --       cmp.complete()
-    --     end
-    --   end,
-    --   ['i'] = function(fallback)
-    --     if cmp.visible() then
-    --       cmp.select_next_item()
-    --     elseif vim.snippet.jumpable(1) then
-    --       vim.snippet.jump(1)
-    --     elseif has_words_before() then
-    --       cmp.complete()
-    --     else
-    --       fallback()
-    --     end
-    --   end,
-    -- },
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -78,12 +30,12 @@ cmp.setup({
     }),
     ['<C-Space>'] = cmp.mapping.complete(),
 
-    ['<Tab>'] = cmp.mapping(function()
+    ['<C-l>'] = cmp.mapping(function()
       if vim.snippet.jumpable(1) then
         vim.snippet.jump(1)
       end
     end, { 'i', 's' }),
-    ['<S-Tab>'] = cmp.mapping(function()
+    ['<C-h>'] = cmp.mapping(function()
       if vim.snippet.jumpable(-1) then
         vim.snippet.jump(-1)
       end

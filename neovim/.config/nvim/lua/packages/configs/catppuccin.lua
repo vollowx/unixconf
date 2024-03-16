@@ -70,6 +70,7 @@ require('catppuccin').setup({
 
     beacon = true,
     cmp = true,
+    dropbar = { enabled = true, color_mode = true },
     gitsigns = true,
     headlines = true,
     hop = true,

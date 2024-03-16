@@ -5,7 +5,7 @@ end
 ---Load configuration for a specified package
 ---@param path string
 ---@param schedule_wrapped boolean|nil
-_G.load_pkg = function(path, schedule_wrapped)
+_G.loader_of = function(path, schedule_wrapped)
   return schedule_wrapped
       and function()
         vim.schedule(function()
@@ -60,5 +60,5 @@ local function bootstrap()
 end
 
 if bootstrap() then
-  load_pkg('lazy')()
+  loader_of('lazy')()
 end

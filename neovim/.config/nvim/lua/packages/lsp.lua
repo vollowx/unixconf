@@ -2,20 +2,20 @@ return {
   {
     'dgagn/diagflow.nvim',
     event = 'LspAttach',
-    config = load_pkg('diagflow'),
+    config = loader_of('diagflow'),
   },
 
   {
     'Wansmer/symbol-usage.nvim',
     event = 'LspAttach',
-    config = load_pkg('symbol-usage'),
+    config = loader_of('symbol-usage'),
   },
 
   {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPre', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspStart' },
-    config = load_pkg('lspconfig', true),
+    config = loader_of('lspconfig', true),
     init = function()
       -- Configure hovering window style
       local opts_override_floating_preview = {
@@ -73,16 +73,6 @@ return {
         },
       })
     end,
-  },
-
-  {
-    'creativenull/efmls-configs-nvim',
-    requires = { 'neovim/nvim-lspconfig' },
-  },
-
-  {
-    'https://git.sr.ht/~p00f/clangd_extensions.nvim',
-    ft = { 'c', 'cpp' },
   },
 
   { 'b0o/schemastore.nvim' },

@@ -6,21 +6,8 @@ return {
 
   {
     'echasnovski/mini.bracketed',
-    config = load_pkg('mini-bracketed'),
+    config = loader_of('mini-bracketed'),
     keys = { '[', ']' },
-  },
-
-  {
-    'smoka7/hop.nvim',
-    config = load_pkg('hop'),
-    keys = {
-      -- stylua: ignore start
-      { 'f', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR }) end },
-      { 'F', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR }) end },
-      { 't', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR, hint_offset = -1 }) end },
-      { 'T', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR, hint_offset = -1 }) end },
-      -- stylua: ignore end
-    },
   },
 
   {
@@ -36,10 +23,62 @@ return {
   },
 
   {
+    'NvChad/nvim-colorizer.lua',
+    enabled = vim.g.has_gui,
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = loader_of('colorizer'),
+  },
+
+  {
+    'smoka7/hop.nvim',
+    config = loader_of('hop'),
+    keys = {
+      -- stylua: ignore start
+      { 'f', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR }) end },
+      { 'F', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR }) end },
+      { 't', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.AFTER_CURSOR, hint_offset = -1 }) end },
+      { 'T', function() require('hop').hint_char1({ direction = require('hop.hint').HintDirection.BEFORE_CURSOR, hint_offset = -1 }) end },
+      -- stylua: ignore end
+    },
+  },
+
+  {
+    'lewis6991/gitsigns.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = loader_of('gitsigns'),
+  },
+
+  {
+    'folke/zen-mode.nvim',
+    cmd = 'ZenMode',
+    keys = {
+      { '<Leader>z', '<Cmd>ZenMode<CR>' },
+    },
+  },
+
+  {
+    'stevearc/conform.nvim',
+    event = 'BufWritePre',
+    cmd = { 'ConformInfo' },
+    config = loader_of('conform'),
+    keys = {
+      {
+        'gq',
+        function()
+          require('conform').format({ async = true, lsp_fallback = false })
+        end,
+      },
+    },
+    init = function()
+      vim.opt.formatexpr = 'v:lua.require"conform".formatexpr()'
+    end,
+  },
+
+  {
     'nvim-telescope/telescope.nvim',
     cmd = 'Telescope',
     event = 'LspAttach',
-    config = load_pkg('telescope'),
+    config = loader_of('telescope'),
     keys = {
       { '<Leader>ff', '<Cmd>Telescope find_files hidden=true<CR>' },
       { '<Leader>fo', '<Cmd>Telescope oldfiles<CR>' },
@@ -52,42 +91,6 @@ return {
       { 'gD', '<Cmd>Telescope lsp_type_definitions<CR>' },
       { 'gi', '<Cmd>Telescope lsp_implementations<CR>' },
       { 'gr', '<Cmd>Telescope lsp_references<CR>' },
-    },
-  },
-
-  {
-    'nvim-telescope/telescope-ui-select.nvim',
-    dependencies = 'nvim-telescope/telescope.nvim',
-    init = function()
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.select = function(...)
-        require('lazy').load({ plugins = { 'telescope-ui-select.nvim' } })
-        return vim.ui.select(...)
-      end
-    end,
-    config = function()
-      require('telescope').load_extension('ui-select')
-    end,
-  },
-
-  {
-    'lewis6991/gitsigns.nvim',
-    event = { 'BufReadPost', 'BufNewFile' },
-    config = load_pkg('gitsigns'),
-  },
-
-  {
-    'NvChad/nvim-colorizer.lua',
-    enabled = vim.g.has_gui,
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = load_pkg('colorizer'),
-  },
-
-  {
-    'folke/zen-mode.nvim',
-    cmd = 'ZenMode',
-    keys = {
-      { '<Leader>z', '<Cmd>ZenMode<CR>' },
     },
   },
 }
