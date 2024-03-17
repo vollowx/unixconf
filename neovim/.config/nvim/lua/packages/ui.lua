@@ -1,29 +1,20 @@
 return {
   {
-    'Bekaboo/dropbar.nvim',
+    'folke/noice.nvim',
+    dependencies = 'MunifTanjim/nui.nvim',
     event = 'VeryLazy',
-    config = loader_of('dropbar'),
-    keys = {
-      {
-        '<Leader>;',
-        function()
-          require('dropbar.api').pick()
-        end,
-      },
-    },
-    init = function()
-      ---@diagnostic disable-next-line: duplicate-set-field
-      vim.ui.select = function(...)
-        require('lazy').load({ plugins = { 'dropbar.nvim' } })
-        vim.ui.select = require('dropbar.utils.menu').select
-        return vim.ui.select(...)
-      end
-    end,
+    config = loader_of('noice'),
+  },
+
+  {
+    'yorickpeterse/nvim-pqf',
+    event = 'VeryLazy',
+    config = loader_of('pqf'),
   },
 
   {
     'rainbowhxch/beacon.nvim',
-    event = 'UIEnter',
+    event = 'VeryLazy',
     config = loader_of('beacon'),
   },
 

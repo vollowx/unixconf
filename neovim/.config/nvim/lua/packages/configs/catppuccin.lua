@@ -112,15 +112,14 @@ require('catppuccin').setup({
         TelescopeResultsTitle = { fg = cp.mantle, bg = cp.mantle },
         TelescopeSelection = { bg = cp.surface0 },
 
-        StatuslineModeNormal = { bg = cp.lavender, fg = cp.base },
-        StatuslineModeInsert = { bg = cp.mauve, fg = cp.base },
-        StatuslineModeVisual = { bg = cp.mauve, fg = cp.base },
-        StatuslineModeReplace = { bg = cp.peach, fg = cp.base },
-        StatuslineModeCommand = { bg = cp.green, fg = cp.base },
-        StatuslineModeOther = { bg = cp.red, fg = cp.base },
-        StatuslineDevinfo = { bg = cp.surface0, fg = cp.overlay2 },
-        StatuslineFilename = { bg = cp.mantle, fg = cp.overlay2 },
-        StatuslineFileinfo = { bg = cp.mantle, fg = cp.overlay2 },
+        StatusNormal = { bg = cp.lavender, fg = cp.base },
+        StatusInsert = { bg = cp.pink, fg = cp.base },
+        StatusVisual = { bg = cp.pink, fg = cp.base },
+        StatusReplace = { bg = cp.peach, fg = cp.base },
+        StatusCommand = { bg = cp.green, fg = cp.base },
+        StatusTerminal = { bg = cp.teal, fg = cp.base },
+        StatusLineDiagnosticWarn = { link = 'DiagnosticWarn' },
+        StatusLineDiagnosticError = { link = 'DiagnosticError' },
 
         -- oxocarbon
         Structure = { fg = cp.pink },
