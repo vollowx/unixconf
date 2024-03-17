@@ -4,7 +4,7 @@ _G.settings = {
   editor = {
     tab_size = 2,
     completion = {
-      copilot = false,
+      copilot = true,
     },
   },
   git = {
