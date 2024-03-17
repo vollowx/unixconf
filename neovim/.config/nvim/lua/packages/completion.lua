@@ -17,6 +17,12 @@ return {
   },
 
   {
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    event = 'InsertEnter',
+    dependencies = 'hrsh7th/nvim-cmp',
+  },
+
+  {
     'hrsh7th/cmp-path',
     event = 'InsertEnter',
     dependencies = 'hrsh7th/nvim-cmp',
@@ -29,10 +35,18 @@ return {
   },
 
   {
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
+    'zbirenbaum/copilot-cmp',
     event = 'InsertEnter',
-    config = loader_of('copilot'),
-    enabled = settings.editor.completion.copilot,
+    dependencies = {
+      'hrsh7th/nvim-cmp',
+      {
+        'zbirenbaum/copilot.lua',
+        cmd = 'Copilot',
+        event = 'InsertEnter',
+        config = loader_of('copilot'),
+        enabled = settings.editor.completion.copilot,
+      },
+    },
   },
+  config = loader_of('copilot-cmp'),
 }

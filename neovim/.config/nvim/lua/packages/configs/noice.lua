@@ -26,6 +26,7 @@ require('noice').setup({
       ['vim.lsp.util.stylize_markdown'] = true,
       ['cmp.entry.get_documentation'] = true,
     },
+    signature = { enabled = false },
   },
   views = {
     cmdline_popup = {

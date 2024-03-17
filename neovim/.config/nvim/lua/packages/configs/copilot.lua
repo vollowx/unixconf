@@ -1,5 +1,4 @@
 require('copilot').setup({
-  suggestion = {
-    auto_trigger = true,
-  },
+  suggestion = { enabled = false },
+  panel = { enabled = false },
 })

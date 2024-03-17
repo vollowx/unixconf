@@ -4,7 +4,7 @@ local g = vim.g
 -- stylua: ignore start
 o.autowriteall   = true
 o.breakindent    = true
-o.completeopt    = 'menuone'
+o.completeopt    = 'menu,menuone,noselect'
 o.cursorline     = true
 o.cursorlineopt  = 'number'
 o.foldcolumn     = settings.ui.display_fold and 'auto' or '0'
