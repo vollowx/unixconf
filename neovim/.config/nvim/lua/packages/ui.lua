@@ -14,7 +14,7 @@ return {
 
   {
     'rainbowhxch/beacon.nvim',
-    event = 'VeryLazy',
+    event = { 'CursorHold', 'CursorHoldI' },
     config = loader_of('beacon'),
   },
 
