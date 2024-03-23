@@ -126,18 +126,31 @@ require('catppuccin').setup({
         GitSignsChange = { fg = cp.peach },
         GitSignsCurrentLineBlame = { link = 'Comment' },
 
-        TelescopePreviewBorder = { bg = cp.crust, fg = cp.crust },
-        TelescopePreviewNormal = { bg = cp.crust },
-        TelescopePreviewTitle = { fg = cp.crust, bg = cp.crust },
-        TelescopePromptBorder = { bg = cp.surface0, fg = cp.surface0 },
-        TelescopePromptCounter = { fg = cp.mauve, style = { 'bold' } },
-        TelescopePromptNormal = { bg = cp.surface0 },
-        TelescopePromptPrefix = { bg = cp.surface0 },
-        TelescopePromptTitle = { fg = cp.surface0, bg = cp.surface0 },
-        TelescopeResultsBorder = { bg = cp.mantle, fg = cp.mantle },
-        TelescopeResultsNormal = { bg = cp.mantle },
-        TelescopeResultsTitle = { fg = cp.mantle, bg = cp.mantle },
         TelescopeSelection = { bg = cp.surface0 },
+        TelescopePromptCounter = { fg = cp.mauve, style = { 'bold' } },
+
+        TelescopePromptPrefix = { bg = cp.surface0 },
+        TelescopePromptNormal = { bg = cp.surface0 },
+        TelescopeResultsNormal = { bg = cp.mantle },
+        TelescopePreviewNormal = { bg = cp.crust },
+
+        TelescopePromptBorder = { bg = cp.surface0, fg = cp.surface0 },
+        TelescopeResultsBorder = { bg = cp.mantle, fg = cp.mantle },
+        TelescopePreviewBorder = { bg = cp.crust, fg = cp.crust },
+        TelescopePreviewMessage = { fg = cp.teal, style = { 'italic' } },
+
+        TelescopePromptTitle = { fg = cp.surface0, bg = cp.surface0 },
+        TelescopeResultsTitle = { fg = cp.mantle, bg = cp.mantle },
+        TelescopePreviewTitle = { fg = cp.crust, bg = cp.crust },
+
+        NoiceConfirm = { bg = cp.mantle, fg = cp.mauve },
+        NoiceCmdlineIconLua = { fg = cp.blue },
+        NoiceConfirmBorder = { bg = cp.mantle, fg = cp.mantle },
+        NoiceMini = { link = 'Comment' },
+        NoiceLspProgressClient = {
+          fg = cp.blue,
+          style = { 'italic', 'bold' },
+        },
 
         StatusNormal = { bg = cp.lavender, fg = cp.base },
         StatusInsert = { bg = cp.pink, fg = cp.base },
