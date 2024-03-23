@@ -9,7 +9,6 @@ box#main {
   background-color: @theme_base_color;
 }
 
-
 entry#entry {
   border-radius: 10px;
   box-shadow: none;
@@ -19,8 +18,12 @@ list#main {
   background-color: transparent;
 }
 
-list#main > row       { padding: 0 }
-list#main > row:hover { box-shadow: none }
+list#main > row {
+  padding: 0;
+}
+list#main > row:hover {
+  box-shadow: none;
+}
 
 row#match {
   border-radius: 10px;
