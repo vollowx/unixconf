@@ -38,7 +38,7 @@ return {
   },
 
   {
-    'visual-whitespace.nvim',
+    'mcauley-penney/visual-whitespace.nvim',
     event = 'ModeChanged',
     config = loader_of('visual-whitespace'),
   },

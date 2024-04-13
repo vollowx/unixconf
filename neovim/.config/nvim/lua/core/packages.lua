@@ -31,8 +31,6 @@ local function bootstrap()
     return true
   end
 
-  local lock_data = utils.json.read(vim.g.package_lock)
-  local commit = lock_data['lazy.nvim'] and lock_data['lazy.nvim'].commit
   local url = 'https://github.com/folke/lazy.nvim.git'
   vim.notify('[packages] installing lazy.nvim...')
   vim.fn.mkdir(vim.g.package_path, 'p')
@@ -47,13 +45,6 @@ local function bootstrap()
     return false
   end
 
-  if commit then
-    utils.git.dir_execute(
-      lazy_path,
-      { 'checkout', commit },
-      vim.log.levels.INFO
-    )
-  end
   vim.notify('[packages] lazy.nvim cloned to ' .. lazy_path)
   vim.opt.rtp:prepend(lazy_path)
   return true

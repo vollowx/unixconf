@@ -1,5 +1,4 @@
 gui:
-  windowSize: 'half'
   scrollOffMargin: 5
   showBottomLine: false
   border: 'single'
