@@ -2,7 +2,7 @@
 [[ $- != *i* ]] && return
 
 eval "$(starship init bash)"
-eval "$(zoxide init bash)"
+eval "$(zoxide init --cmd cd bash)"
 
 alias cp='cp -r'
 alias rm='rm -rf'

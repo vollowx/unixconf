@@ -1,6 +1,3 @@
-// This config is in the KDL format: https://kdl.dev
-// "/-" comments out the following node.
-
 input {
     keyboard {
         xkb {
@@ -32,7 +29,6 @@ input {
         natural-scroll
         accel-speed 0.2
         accel-profile "adaptive"
-        // tap-button-map "left-middle-right"
     }
 
     mouse {
@@ -41,65 +37,22 @@ input {
         // accel-profile "flat"
     }
 
-    trackpoint {
-        // natural-scroll
-        // accel-speed 0.2
-        // accel-profile "flat"
-    }
+    warp-mouse-to-focus
 
-    tablet {
-        // Set the name of the output (see below) which the tablet will map to.
-        // If this is unset or the output doesn't exist, the tablet maps to one of the
-        // existing outputs.
-        map-to-output "eDP-1"
-    }
-
-    touch {
-        // Set the name of the output (see below) which touch input will map to.
-        // If this is unset or the output doesn't exist, touch input maps to one of the
-        // existing outputs.
-        map-to-output "eDP-1"
-    }
-
-    // By default, niri will take over the power button to make it sleep
-    // instead of power off.
-    // Uncomment this if you would like to configure the power button elsewhere
-    // (i.e. logind.conf).
-    // disable-power-key-handling
+    focus-follows-mouse
 }
 
 output "eDP-1" {
-    // off
+    mode "1920x1080@60.008"
     scale 1.0
     transform "normal"
-    mode "1920x1080@60.008"
     position x=0 y=0
 }
 
 layout {
-    // By default focus ring and border are rendered as a solid background rectangle
-    // behind windows. That is, they will show up through semitransparent windows.
-    // This is because windows using client-side decorations can have an arbitrary shape.
-    //
-    // If you don't like that, you should uncomment `prefer-no-csd` below.
-    // Niri will draw focus ring and border *around* windows that agree to omit their
-    // client-side decorations.
+    gaps 16
 
-    focus-ring {
-        // off
-
-        width 4
-        active-color "#be95ff96"
-        inactive-color "#585b7096"
-    }
-
-    border {
-        off
-
-        width 4
-        active-color "#ffc87f"
-        inactive-color "#505050"
-    }
+    center-focused-column "never"
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -119,9 +72,21 @@ layout {
     // If you leave the brackets empty, the windows themselves will decide their initial width.
     // default-column-width {}
 
-    // Set gaps around windows in logical pixels.
-    gaps 16
+    focus-ring {
+        // off
 
+        width 4
+        active-color "#be95ff96"
+        inactive-color "#585b7096"
+    }
+
+    border {
+        off
+
+        width 4
+        active-color "#ffc87f"
+        inactive-color "#505050"
+    }
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
     // Left and right struts will cause the next window to the side to always be visible.
@@ -133,14 +98,6 @@ layout {
         // top 64
         // bottom 64
     }
-
-    // When to center a column when changing focus, options are:
-    // - "never", default behavior, focusing an off-screen column will keep at the left
-    //   or right edge of the screen.
-    // - "on-overflow", focusing a column will center it if it doesn't fit
-    //   together with the previously focused column.
-    // - "always", the focused column will always be centered.
-    center-focused-column "never"
 }
 
 // Add lines like this to spawn processes at startup.
@@ -194,131 +151,8 @@ animations {
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
     // slowdown 3.0
-
-    // You can configure all individual animations.
-    // Available settings are the same for all of them.
-    // - off disables the animation.
-    //
-    // Niri supports two animation types: easing and spring.
-    // You can set properties for only ONE of them.
-    //
-    // Easing has the following settings:
-    // - duration-ms sets the duration of the animation in milliseconds.
-    // - curve sets the easing curve. Currently, available curves
-    //   are "ease-out-cubic" and "ease-out-expo".
-    //
-    // Spring animations work better with touchpad gestures, because they
-    // take into account the velocity of your fingers as you release the swipe.
-    // The parameters are less obvious and generally should be tuned
-    // with trial and error. Notably, you cannot directly set the duration.
-    // You can use this app to help visualize how the spring parameters
-    // change the animation: https://flathub.org/apps/app.drey.Elastic
-    //
-    // A spring animation is configured like this:
-    // - spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
-    //
-    // The damping ratio goes from 0.1 to 10.0 and has the following properties:
-    // - below 1.0: underdamped spring, will oscillate in the end.
-    // - above 1.0: overdamped spring, won't oscillate.
-    // - 1.0: critically damped spring, comes to rest in minimum possible time
-    //        without oscillations.
-    //
-    // However, even with damping ratio = 1.0 the spring animation may oscillate
-    // if "launched" with enough velocity from a touchpad swipe.
-    //
-    // Lower stiffness will result in a slower animation more prone to oscillation.
-    //
-    // Set epsilon to a lower value if the animation "jumps" in the end.
-    //
-    // The spring mass is hardcoded to 1.0 and cannot be changed. Instead, change
-    // stiffness proportionally. E.g. increasing mass by 2x is the same as
-    // decreasing stiffness by 2x.
-
-    // Animation when switching workspaces up and down,
-    // including after the touchpad gesture.
-    workspace-switch {
-        // off
-        // spring damping-ratio=1.0 stiffness=1000 epsilon=0.0001
-    }
-
-    // All horizontal camera view movement:
-    // - When a window off-screen is focused and the camera scrolls to it.
-    // - When a new window appears off-screen and the camera scrolls to it.
-    // - When a window resizes bigger and the camera scrolls to show it in full.
-    // - And so on.
-    horizontal-view-movement {
-        // off
-        // spring damping-ratio=1.0 stiffness=800 epsilon=0.0001
-    }
-
-    // Window opening animation. Note that this one has different defaults.
-    window-open {
-        // off
-        // duration-ms 150
-        // curve "ease-out-expo"
-
-        // Example for a slightly bouncy window opening:
-        // spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
-    }
-
-    // Config parse error and new default config creation notification
-    // open/close animation.
-    config-notification-open-close {
-        // off
-        // spring damping-ratio=0.6 stiffness=1000 epsilon=0.001
-    }
 }
 
-// Window rules let you adjust behavior for individual windows.
-// They are processed in order of appearance in this file.
-// (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    // Match directives control which windows this rule will apply to.
-    // You can match by app-id and by title.
-    // The window must match all properties of the match directive.
-    match app-id="org.myapp.MyApp" title="My Cool App"
-
-    // There can be multiple match directives. A window must match any one
-    // of the rule's match directives.
-    //
-    // If there are no match directives, any window will match the rule.
-    match title="Second App"
-
-    // You can also add exclude directives which have the same properties.
-    // If a window matches any exclude directive, it won't match this rule.
-    //
-    // Both app-id and title are regular expressions.
-    // Raw KDL strings are helpful here.
-    exclude app-id=r#"\.unwanted\."#
-
-    // Here are the properties that you can set on a window rule.
-    // You can override the default column width.
-    default-column-width { proportion 0.75; }
-
-    // You can set the output that this window will initially open on.
-    // If such an output does not exist, it will open on the currently
-    // focused output as usual.
-    open-on-output "eDP-1"
-
-    // Make this window open as a maximized column.
-    open-maximized true
-
-    // Make this window open fullscreen.
-    open-fullscreen true
-    // You can also set this to false to prevent a window from opening fullscreen.
-    // open-fullscreen false
-}
-
-// Here's a useful example. Work around WezTerm's initial configure bug
-// by setting an empty default-column-width.
-window-rule {
-    // This regular expression is intentionally made as specific as possible,
-    // since this is the default config, and we want no false positives.
-    // You can get away with just app-id="wezterm" if you want.
-    // The regular expression can match anywhere in the string.
-    match app-id=r#"^org\.wezfurlong\.wezterm$"#
-    default-column-width {}
-}
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -371,14 +205,20 @@ binds {
     Mod+Shift+J    { move-window-down-or-to-workspace-down; }
     Mod+Shift+K    { move-window-up-or-to-workspace-up; }
     Mod+Shift+L    { move-column-right; }
-    Mod+Shift+Home { move-column-to-first; }
-    Mod+Shift+End  { move-column-to-last; }
 
     Mod+I       { focus-workspace-down; }
     Mod+O       { focus-workspace-up; }
 
     Mod+Shift+I { move-workspace-down; }
     Mod+Shift+O { move-workspace-up; }
+
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+
+    Mod+TouchpadScrollUp         { focus-workspace-up; }
+    Mod+TouchpadScrollDown       { focus-workspace-down; }
 
     Mod+BracketLeft  { consume-or-expel-window-left; }
     Mod+BracketRight { consume-or-expel-window-right; }
@@ -419,39 +259,4 @@ binds {
     // If you want to skip the confirmation dialog, set the flag like so:
     // Mod+Shift+E { quit skip-confirmation=true; }
     Mod+Shift+E { quit; }
-
-    Mod+Shift+Ctrl+T { toggle-debug-tint; }
-}
-
-// Settings for debugging. Not meant for normal use.
-// These can change or stop working at any point with little notice.
-debug {
-    // Make niri take over its DBus services even if it's not running as a session.
-    // Useful for testing screen recording changes without having to relogin.
-    // The main niri instance will *not* currently take back the services; so you will
-    // need to relogin in the end.
-    // dbus-interfaces-in-non-session-instances
-
-    // Wait until every frame is done rendering before handing it over to DRM.
-    // wait-for-frame-completion-before-queueing
-
-    // Enable direct scanout into overlay planes.
-    // May cause frame drops during some animations on some hardware.
-    // enable-overlay-planes
-
-    // Disable the use of the cursor plane.
-    // The cursor will be rendered together with the rest of the frame.
-    // disable-cursor-plane
-
-    // Override the DRM device that niri will use for all rendering.
-    // render-drm-device "/dev/dri/renderD129"
-
-    // Enable the color-transformations capability of the Smithay renderer.
-    // May cause a slight decrease in rendering performance.
-    // enable-color-transformations-capability
-
-    // Emulate zero (unknown) presentation time returned from DRM.
-    // This is a thing on NVIDIA proprietary drivers, so this flag can be
-    // used to test that we don't break too hard on those systems.
-    // emulate-zero-presentation-time
 }

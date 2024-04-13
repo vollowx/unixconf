@@ -1,28 +1,8 @@
 _G.settings = {
-  number = 'normal',
-  scrolloff = 5,
-  editor = {
-    tab_size = 2,
-    completion = {
-      copilot = true,
-    },
-  },
-  git = {
-    display_blame = true,
-    display_signs = true,
-  },
-  indent_guides = {
-    render = true,
-    character = '▏',
-  },
-  lsp = {
-    display_inlay_hints = true,
-  },
   ui = {
-    border = 'shadow',
+    border = 'solid',
     border_preview = 'solid',
     border_input = 'rounded',
-    display_fold = false,
     theme = 'catppuccin',
   },
 }

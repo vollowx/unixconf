@@ -19,7 +19,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 local shared_config = {
   capabilities = capabilities,
   on_attach = function(_, bufnr)
-    vim.lsp.inlay_hint.enable(bufnr, settings.lsp.display_inlay_hints)
+    vim.lsp.inlay_hint.enable(bufnr, true)
   end,
 }
 

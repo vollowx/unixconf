@@ -37,6 +37,7 @@ require('catppuccin').setup({
     numbers = { 'bold' },
     types = { 'bold' },
   },
+  default_integrations = false,
   integrations = {
     treesitter = true,
     native_lsp = {
@@ -53,20 +54,10 @@ require('catppuccin').setup({
         warnings = { 'undercurl' },
         information = { 'undercurl' },
       },
+      inlay_hints = {
+        background = true,
+      },
     },
-
-    alpha = false,
-    dap = false,
-    dap_ui = false,
-    dashboard = false,
-    fidget = false,
-    flash = false,
-    illuminate = { enabled = false },
-    mini = { enabled = false },
-    neogit = false,
-    nvimtree = false,
-    rainbow_delimiters = false,
-    ufo = false,
 
     beacon = true,
     cmp = true,
@@ -76,6 +67,7 @@ require('catppuccin').setup({
     hop = true,
     indent_blankline = { enabled = true, scope_color = 'surface1' },
     markdown = true,
+    mini = { enabled = true },
     noice = true,
     semantic_tokens = true,
     telescope = { enabled = true, style = 'nvchad' },
@@ -85,14 +77,14 @@ require('catppuccin').setup({
       return {
         NormalFloat = { bg = cp.mantle },
         FloatBorder = { bg = cp.mantle, fg = cp.mantle },
-        FloatTitle = { bg = cp.mantle, fg = cp.mantle },
         CursorLineNr = { fg = cp.mauve, style = { 'bold' } },
-        VertSplit = { fg = cp.surface0 },
-        WinSeparator = { fg = cp.surface0 },
+        PmenuSel = { bg = cp.surface0, fg = '' },
         Pmenu = { bg = cp.mantle },
         PmenuSbar = { bg = cp.crust },
-        PmenuSel = { bg = cp.surface0, fg = '' },
         PmenuThumb = { bg = cp.surface0 },
+        WinSeparator = { fg = cp.surface2 },
+
+        VisualWhitespace = { bg = cp.surface1, fg = cp.surface2 },
 
         CmpItemKindSnippet = { bg = cp.mauve, fg = cp.base },
         CmpItemKindKeyword = { bg = cp.red, fg = cp.base },
@@ -120,9 +112,10 @@ require('catppuccin').setup({
         CmpItemKindOperator = { bg = cp.blue, fg = cp.base },
         CmpItemKindTypeParameter = { bg = cp.blue, fg = cp.base },
         CmpItemKindCopilot = { bg = cp.teal, fg = cp.base },
-
         CmpGhostText = { link = 'Comment' },
+
         LspInfoBorder = { link = 'FloatBorder' },
+
         GitSignsChange = { fg = cp.peach },
         GitSignsCurrentLineBlame = { link = 'Comment' },
 
@@ -152,14 +145,15 @@ require('catppuccin').setup({
           style = { 'italic', 'bold' },
         },
 
-        StatusNormal = { bg = cp.lavender, fg = cp.base },
-        StatusInsert = { bg = cp.pink, fg = cp.base },
-        StatusVisual = { bg = cp.pink, fg = cp.base },
-        StatusReplace = { bg = cp.peach, fg = cp.base },
-        StatusCommand = { bg = cp.green, fg = cp.base },
-        StatusTerminal = { bg = cp.teal, fg = cp.base },
-        StatusLineDiagnosticWarn = { link = 'DiagnosticWarn' },
-        StatusLineDiagnosticError = { link = 'DiagnosticError' },
+        StatuslineInsert = { fg = cp.mauve, style = { 'bold' } },
+        StatuslineVisual = { fg = cp.pink, style = { 'bold' } },
+        StatuslineReplace = { fg = cp.yellow, style = { 'bold' } },
+        StatuslineCommand = { fg = cp.green, style = { 'bold' } },
+        StatuslineGitBranch = { bg = cp.mantle, fg = cp.overlay2 },
+        StatuslineDiagnosticWarn = { bg = cp.mantle, fg = cp.yellow },
+        StatuslineDiagnosticError = { bg = cp.mantle, fg = cp.red },
+        StatuslineDiagnosticInfo = { bg = cp.mantle, fg = cp.blue },
+        StatuslineDiagnosticHints = { bg = cp.mantle, fg = cp.teal },
 
         -- oxocarbon
         Structure = { fg = cp.pink },

@@ -2,7 +2,7 @@ set fish_greeting
 
 cat ~/.profile | source
 starship init fish | source
-zoxide init fish | source
+zoxide init --cmd cd fish | source
 
 set fish_greeting
 

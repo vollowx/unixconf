@@ -5,8 +5,9 @@ local config = {
   checker = { enabled = false },
   change_detection = { notify = false },
   ui = {
-    border = settings.ui.border,
     size = { width = 0.7, height = 0.74 },
+    backdrop = 100,
+    border = settings.ui.border,
     icons = {
       cmd = icons.ui.Cmd,
       config = icons.ft.Config,

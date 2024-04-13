@@ -25,4 +25,4 @@ settings:
   qt.highdpi:
     global: true
   tabs.position:
-    global: top
+    global: left

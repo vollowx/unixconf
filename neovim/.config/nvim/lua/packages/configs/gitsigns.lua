@@ -11,7 +11,7 @@ require('gitsigns').setup({
     topdelete = { text = vim.trim(icons.ui.GitSignTopdelete) },
     changedelete = { text = vim.trim(icons.ui.GitSignChangedelete) },
   },
-  signcolumn = settings.git.display_signs,
-  current_line_blame = settings.git.display_blame,
+  signcolumn = true,
+  current_line_blame = true,
   attach_to_untracked = true,
 })

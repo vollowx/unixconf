@@ -56,6 +56,12 @@ return {
   },
 
   {
+    'https://github.com/nacro90/numb.nvim',
+    event = 'CmdlineEnter',
+    config = loader_of('numb'),
+  },
+
+  {
     'stevearc/conform.nvim',
     event = 'BufWritePre',
     cmd = { 'ConformInfo' },

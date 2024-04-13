@@ -12,6 +12,30 @@ local function augroup(group, ...)
   end
 end
 
+augroup('BigFileSettings', {
+  'BufReadPre',
+  {
+    desc = 'Set settings for large files.',
+    callback = function(info)
+      vim.b.bigfile = false
+      local stat = vim.uv.fs_stat(info.match)
+      if stat and stat.size > 524288 then
+        vim.b.bigfile = true
+        vim.opt_local.spell = false
+        vim.opt_local.swapfile = false
+        vim.opt_local.undofile = false
+        vim.opt_local.breakindent = false
+        vim.opt_local.colorcolumn = ''
+        vim.opt_local.statuscolumn = ''
+        vim.opt_local.signcolumn = 'no'
+        vim.opt_local.foldcolumn = '0'
+        vim.opt_local.winbar = ''
+        vim.cmd.syntax('off')
+      end
+    end,
+  },
+})
+
 augroup('YankHighlight', {
   'TextYankPost',
   {
@@ -81,10 +105,22 @@ augroup('AutoCwd', {
             and stat.type == 'directory'
             and current_dir ~= target_dir
           then
-            vim.cmd.lcd(target_dir)
+            pcall(vim.cmd.lcd, target_dir)
           end
         end)
       end)
+    end,
+  },
+})
+
+augroup('PromptBufKeymaps', {
+  'BufEnter',
+  {
+    desc = 'Undo automatic <C-w> remap in prompt buffers.',
+    callback = function(info)
+      if vim.bo[info.buf].buftype == 'prompt' then
+        vim.keymap.set('i', '<C-w>', '<C-S-W>', { buffer = info.buf })
+      end
     end,
   },
 })

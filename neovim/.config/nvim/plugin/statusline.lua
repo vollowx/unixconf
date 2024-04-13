@@ -1,101 +1,92 @@
 local modes = {
-  n = 'RW',
-  no = 'RO',
+  n = '  ',
+  t = '  ',
+  no = '  ',
   v = '**',
   V = '**',
   ['\22'] = '**',
-  s = 'S',
-  S = 'SL',
-  ['\19'] = 'SB',
+  s = '[]',
+  S = '[]',
+  ['\19'] = '[]',
   i = '**',
   ic = '**',
-  R = 'RA',
-  Rv = 'RV',
-  c = 'CO',
-  cv = 'CO',
-  ce = 'VX',
-  r = 'r',
-  rm = 'r',
-  ['r?'] = 'r',
-  ['!'] = '!',
-  t = '\239\132\160',
+  R = '~~',
+  Rv = '~~',
+  c = '::',
+  cv = '::',
+  ce = '::',
+  r = '??',
+  rm = '??',
+  ['r?'] = '??',
 }
 
-local function get_filetype()
-  return ('%#NormalNC#' .. vim.bo.filetype)
-end
-local function get_bufnr()
-  return ('%#Comment#' .. vim.api.nvim_get_current_buf())
-end
-local function color()
-  local mode = vim.api.nvim_get_mode().mode
-  local mode_color = '%#Normal#'
-  if mode == 'n' then
-    mode_color = '%#StatusNormal#'
-  elseif (mode == 'i') or (mode == 'ic') then
-    mode_color = '%#StatusInsert#'
-  elseif ((mode == 'v') or (mode == 'V')) or (mode == '\22') then
-    mode_color = '%#StatusVisual#'
-  elseif mode == 'R' then
-    mode_color = '%#StatusReplace#'
-  elseif mode == 'c' then
-    mode_color = '%#StatusCommand#'
-  elseif mode == 't' then
-    mode_color = '%#StatusTerminal#'
-  else
+local function get_mode()
+  local function get_mode_color()
+    local mode = vim.api.nvim_get_mode().mode
+    local mode_color = '%#NormalNC#'
+
+    if (mode == 'i') or (mode == 'ic') then
+      mode_color = '%#StatuslineInsert#'
+    elseif ((mode == 'v') or (mode == 'V')) or (mode == '\22') then
+      mode_color = '%#StatuslineVisual#'
+    elseif mode == 'R' then
+      mode_color = '%#StatuslineReplace#'
+    elseif mode == 'c' then
+      mode_color = '%#StatuslineCommand#'
+    else
+    end
+
+    return mode_color
   end
-  return mode_color
-end
-local function get_fileinfo()
-  local filename = string.format(
-    ' %s ',
-    (vim.fn.expand('%') == '') and 'F L A K E' or vim.fn.expand('%:t')
-  )
-  return ('%#Normal#' .. filename .. '%#NormalNC#')
-end
-local function get_git_status()
-  local branch = (vim.b.gitsigns_status_dict or { head = '' })
-  local is_head_empty = (branch.head ~= '')
-  return (
-    (is_head_empty and string.format('(λ • #%s) ', (branch.head or '')))
-    or ''
-  )
+
+  return get_mode_color()
+    .. string.format(' %s ', modes[vim.api.nvim_get_mode().mode])
 end
 local function get_lsp_diagnostic()
-  if not rawget(vim, 'lsp') then
-    return ''
-  else
-  end
-  local function get_severity(s)
+  local function get(s)
     return #vim.diagnostic.get(0, { severity = s })
   end
   local result = {
-    errors = get_severity(vim.diagnostic.severity.ERROR),
-    warnings = get_severity(vim.diagnostic.severity.WARN),
-    info = get_severity(vim.diagnostic.severity.INFO),
-    hints = get_severity(vim.diagnostic.severity.HINT),
+    errors = get(vim.diagnostic.severity.ERROR),
+    warnings = get(vim.diagnostic.severity.WARN),
+    info = get(vim.diagnostic.severity.INFO),
+    hints = get(vim.diagnostic.severity.HINT),
   }
-  return string.format(
-    ' %%#StatusLineDiagnosticWarn#%s %%#StatusLineDiagnosticError#%s ',
-    (result.warnings or 0),
-    (result.errors or 0)
+  local output = {
+    result.errors == 0 and ''
+      or string.format('%%#StatuslineDiagnosticError#%s ', result.errors),
+    result.warnings == 0 and ''
+      or string.format('%%#StatuslineDiagnosticWarn#%s ', result.warnings),
+    result.info == 0 and ''
+      or string.format('%%#StatuslineDiagnosticInfo#%s ', result.info),
+    result.info == 0 and ''
+      or string.format('%%#StatuslineDiagnosticHints#%s ', result.hints),
+  }
+  return table.concat(output)
+end
+local function get_git_branch()
+  local branch = (vim.b.gitsigns_status_dict or { head = '' })
+  local is_head_empty = (branch.head ~= '')
+  return (
+    (
+      is_head_empty
+      and string.format('%%#StatuslineGitBranch##%s ', (branch.head or ''))
+    ) or ''
   )
 end
 local function get_location()
-  return '%#Normal# %l:%c '
+  return '%#Statusline#%l:%c '
 end
 
 _G.statusline = {}
 statusline.get = function()
   return table.concat({
-    color(),
-    string.format(' %s ', modes[vim.api.nvim_get_mode().mode]):upper(),
-    get_fileinfo(),
-    get_git_status(),
-    get_bufnr(),
+    get_mode(),
+    '%#NormalNC#',
     '%=',
+    '%#Statusline# ',
     get_lsp_diagnostic(),
-    get_filetype(),
+    get_git_branch(),
     get_location(),
   })
 end

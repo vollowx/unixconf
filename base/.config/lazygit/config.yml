@@ -1,23 +1,26 @@
 gui:
+  windowSize: 'half'
+  scrollOffMargin: 5
+  showBottomLine: false
+  border: 'single'
   theme:
     activeBorderColor:
-      - '#cba6f7'
+      - cyan
       - bold
     inactiveBorderColor:
-      - '#a6adc8'
-    optionsTextColor:
-      - '#89b4fa'
-    selectedLineBgColor:
-      - '#313244'
-    selectedRangeBgColor:
-      - '#313244'
-    cherryPickedCommitBgColor:
-      - '#45475a'
-    cherryPickedCommitFgColor:
-      - '#cba6f7'
-    unstagedChangesColor:
-      - '#f38ba8'
-    defaultFgColor:
-      - '#cdd6f4'
+      - blue
     searchingActiveBorderColor:
-      - '#f9e2af'
+      - cyan
+      - bold
+    optionsTextColor:
+      - blue
+    selectedLineBgColor:
+      - blue # set to `default` to have no background colour
+    cherryPickedCommitBgColor:
+      - cyan
+    cherryPickedCommitFgColor:
+      - blue
+    unstagedChangesColor:
+      - red
+    defaultFgColor:
+      - default

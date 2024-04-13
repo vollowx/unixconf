@@ -7,20 +7,18 @@ o.breakindent    = true
 o.completeopt    = 'menu,menuone,noselect'
 o.cursorline     = true
 o.cursorlineopt  = 'number'
-o.foldcolumn     = settings.ui.display_fold and 'auto' or '0'
 o.foldexpr       = 'nvim_treesitter#foldexpr()'
 o.foldlevelstart = 99
 o.foldmethod     = 'expr'
 o.foldtext       = ''
-o.formatexpr     = 'v:lua.vim.lsp.formatexpr()'
+o.grepprg        = 'rg --hidden --vimgrep --smart-case --'
 o.guifont        = 'monospace:h12'
 o.helpheight     = 10
 o.jumpoptions    = 'stack'
 o.mousemoveevent = true
-o.number         = settings.number ~= 'hidden'
+o.number         = true
 o.pumheight      = 16
-o.relativenumber = settings.number == 'relative'
-o.scrolloff      = settings.scrolloff
+o.scrolloff      = 5
 o.showmode       = false
 o.sidescrolloff  = 5
 o.signcolumn     = 'yes:1'
@@ -28,6 +26,7 @@ o.splitright     = true
 o.splitbelow     = true
 o.swapfile       = false
 o.undofile       = true
+o.updatetime     = 100
 o.wrap           = false
 -- stylua: ignore end
 
@@ -48,8 +47,6 @@ o.gcr = {
   'r-cr:hor20-Curosr/lCursor',
 }
 
-o.shortmess:append('I')
-
 o.list = true
 o.listchars = {
   tab = '→ ',
@@ -62,18 +59,18 @@ o.fillchars = {
 }
 
 if g.has_gui then
-  o.listchars:append({ nbsp = '␣' })
+  o.listchars:append({ nbsp = '·' })
   o.fillchars:append({
-    foldopen = vim.trim(icons.ui.AngleDown),
-    foldclose = vim.trim(icons.ui.AngleRight),
+    foldopen = '',
+    foldclose = '',
     diff = '╱',
   })
 end
 
 -- stylua: ignore start
-o.ts          = settings.editor.tab_size
-o.softtabstop = settings.editor.tab_size
-o.shiftwidth  = settings.editor.tab_size
+o.ts          = 2
+o.softtabstop = 2
+o.shiftwidth  = 2
 o.expandtab   = true
 o.smartindent = true
 o.autoindent  = true
