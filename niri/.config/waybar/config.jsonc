@@ -6,6 +6,9 @@
   "modules-left": [
     "tray"
   ],
+  "modules-center": [
+    "sway/workspaces"
+  ],
   "modules-right": [
     "network",
     "wireplumber",

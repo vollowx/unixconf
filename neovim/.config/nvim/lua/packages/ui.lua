@@ -18,6 +18,18 @@ return {
   },
 
   {
+    'j-hui/fidget.nvim',
+    event = 'VeryLazy',
+    config = loader_of('fidget'),
+  },
+
+  {
+    'nvim-zh/colorful-winsep.nvim',
+    event = 'WinNew',
+    config = loader_of('colorful-winsep'),
+  },
+
+  {
     'lukas-reineke/indent-blankline.nvim',
     branch = 'current-indent',
     main = 'ibl',
