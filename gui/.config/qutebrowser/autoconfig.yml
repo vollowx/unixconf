@@ -8,8 +8,10 @@ config_version: 2
 settings:
   auto_save.session:
     global: true
+  colors.webpage.bg:
+    global: '#ffffff'
   colors.webpage.darkmode.enabled:
-    global: false
+    global: true
   colors.webpage.preferred_color_scheme:
     global: dark
   completion.shrink:
