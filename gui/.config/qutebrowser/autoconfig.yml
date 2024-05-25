@@ -11,7 +11,7 @@ settings:
   colors.webpage.bg:
     global: '#ffffff'
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
   colors.webpage.preferred_color_scheme:
     global: dark
   completion.shrink:

@@ -12,9 +12,9 @@ return {
   },
 
   {
-    'b0o/incline.nvim',
-    event = { 'BufReadPost', 'BufNewFile', 'VeryLazy' },
-    config = loader_of('incline'),
+    'rebelot/heirline.nvim',
+    event = 'VeryLazy',
+    config = loader_of('heirline'),
   },
 
   {
@@ -24,17 +24,30 @@ return {
   },
 
   {
-    'nvim-zh/colorful-winsep.nvim',
-    event = 'WinNew',
-    config = loader_of('colorful-winsep'),
+    'echasnovski/mini.clue',
+    event = { 'CursorHold', 'CursorHoldI' },
+    config = loader_of('mini-clue'),
   },
 
   {
-    'lukas-reineke/indent-blankline.nvim',
-    branch = 'current-indent',
-    main = 'ibl',
-    event = { 'BufReadPost', 'BufNewFile' },
-    config = loader_of('ibl'),
+    'nacro90/numb.nvim',
+    event = 'CmdlineEnter',
+    config = loader_of('numb'),
+  },
+
+  {
+    'winston0410/range-highlight.nvim',
+    dependencies = 'winston0410/cmd-parser.nvim',
+    event = 'CmdlineEnter',
+    opts = {
+      highlight = 'Visual',
+    },
+  },
+
+  {
+    'nvim-zh/colorful-winsep.nvim',
+    event = 'WinNew',
+    config = loader_of('colorful-winsep'),
   },
 
   {

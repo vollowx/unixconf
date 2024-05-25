@@ -35,16 +35,8 @@ return {
   },
 
   {
-    'zbirenbaum/copilot-cmp',
-    event = 'InsertEnter',
-    dependencies = {
-      'hrsh7th/nvim-cmp',
-      {
-        'zbirenbaum/copilot.lua',
-        cmd = 'Copilot',
-        config = loader_of('copilot'),
-      },
-    },
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    config = loader_of('copilot'),
   },
-  config = loader_of('copilot-cmp'),
 }

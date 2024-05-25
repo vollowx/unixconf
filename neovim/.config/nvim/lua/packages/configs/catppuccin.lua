@@ -61,12 +61,12 @@ require('catppuccin').setup({
 
     beacon = true,
     cmp = true,
+    colorful_winsep = { enabled = true, color = 'mauve' },
     dropbar = { enabled = true, color_mode = true },
     fidget = true,
     gitsigns = true,
     headlines = true,
     hop = true,
-    indent_blankline = { enabled = true, scope_color = 'surface1' },
     markdown = true,
     mini = { enabled = true },
     noice = true,
@@ -77,7 +77,7 @@ require('catppuccin').setup({
     all = function(cp)
       return {
         NormalFloat = { bg = cp.mantle },
-        FloatBorder = { bg = cp.mantle, fg = cp.mantle },
+        FloatBorder = { bg = cp.mantle, fg = cp.surface2 },
         CursorLineNr = { fg = cp.mauve, style = { 'bold' } },
         PmenuSel = { bg = cp.surface0, fg = '' },
         Pmenu = { bg = cp.mantle },
@@ -136,25 +136,6 @@ require('catppuccin').setup({
         TelescopePromptTitle = { fg = cp.surface0, bg = cp.surface0 },
         TelescopeResultsTitle = { fg = cp.mantle, bg = cp.mantle },
         TelescopePreviewTitle = { fg = cp.crust, bg = cp.crust },
-
-        NoiceConfirm = { bg = cp.mantle, fg = cp.mauve },
-        NoiceCmdlineIconLua = { fg = cp.blue },
-        NoiceConfirmBorder = { bg = cp.mantle, fg = cp.mantle },
-        NoiceMini = { link = 'Comment' },
-        NoiceLspProgressClient = {
-          fg = cp.blue,
-          style = { 'italic', 'bold' },
-        },
-
-        StatuslineInsert = { fg = cp.mauve, style = { 'bold' } },
-        StatuslineVisual = { fg = cp.pink, style = { 'bold' } },
-        StatuslineReplace = { fg = cp.yellow, style = { 'bold' } },
-        StatuslineCommand = { fg = cp.green, style = { 'bold' } },
-        StatuslineGitBranch = { bg = cp.mantle, fg = cp.overlay2 },
-        StatuslineDiagnosticWarn = { bg = cp.mantle, fg = cp.yellow },
-        StatuslineDiagnosticError = { bg = cp.mantle, fg = cp.red },
-        StatuslineDiagnosticInfo = { bg = cp.mantle, fg = cp.blue },
-        StatuslineDiagnosticHints = { bg = cp.mantle, fg = cp.teal },
 
         -- oxocarbon
         Structure = { fg = cp.pink },

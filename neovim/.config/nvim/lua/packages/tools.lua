@@ -1,5 +1,10 @@
 return {
   {
+    'wakatime/vim-wakatime',
+    event = { 'BufReadPre', 'BufNewFile' },
+  },
+
+  {
     'tpope/vim-sleuth',
     event = { 'BufReadPre', 'BufNewFile' },
   },
@@ -45,20 +50,6 @@ return {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     config = loader_of('gitsigns'),
-  },
-
-  {
-    'folke/zen-mode.nvim',
-    cmd = 'ZenMode',
-    keys = {
-      { '<Leader>z', '<Cmd>ZenMode<CR>' },
-    },
-  },
-
-  {
-    'https://github.com/nacro90/numb.nvim',
-    event = 'CmdlineEnter',
-    config = loader_of('numb'),
   },
 
   {

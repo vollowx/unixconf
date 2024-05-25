@@ -9,8 +9,6 @@ end
 local eventignore = vim.go.eventignore
 vim.go.eventignore = 'all'
 
-local logo = vim.g.has_gui and 'F L Λ K E' or 'F L A K E'
-
 ---@class intro_chunk_t
 ---@field text string
 ---@field hl string
@@ -28,14 +26,96 @@ local logo = vim.g.has_gui and 'F L Λ K E' or 'F L A K E'
 local lines = {
   {
     chunks = {
-      { text = string.format('Neovim :: %s', logo), hl = 'Normal' },
-      { text = ' - Beautiful yet powerful', hl = 'NonText' },
+      {
+        text = '⣿⣿⣿⠟⠛⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢋⣩⣉⢻⣿⣿',
+        hl = 'NonText',
+      },
     },
   },
   {
     chunks = {
       {
-        text = string.format('Copyright (c) 2024 - %s developers', logo),
+        text = '⣿⣿⣿⠀⣿⣶⣕⣈⠹⠿⠿⠿⠿⠟⠛⣛⢋⣰⠣⣿⣿⠀⣿⣿',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⡀⣿⣿⣿⣧⢻⣿⣶⣷⣿⣿⣿⣿⣿⣿⠿⠶⡝⠀⣿⣿',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⣷⠘⣿⣿⣿⢏⣿⣿⣋⣀⣈⣻⣿⣿⣷⣤⣤⣿⡐⢿⣿',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⣿⣆⢩⣝⣫⣾⣿⣿⣿⣿⡟⠿⠿⠦⠀⠸⠿⣻⣿⡄⢻',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⠇⣼',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⣿⣿⣿⡄⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣰⣿',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⣿⣿⣿⠇⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢀⣿⣿',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⣿⣿⠏⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⣿⠟⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⣿⠋⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⣿⣿',
+        hl = 'NonText',
+      },
+    },
+  },
+  {
+    chunks = {
+      {
+        text = '⣿⣿⠋⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢸⣿',
         hl = 'NonText',
       },
     },
