@@ -147,6 +147,10 @@ animations {
     // slowdown 3.0
 }
 
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -167,6 +171,8 @@ binds {
     Mod+Return { spawn "alacritty"; }
     Mod+D { spawn "anyrun"; }
     Mod+Escape { spawn "swaylock"; }
+
+    Mod+Tab { spawn "togglebg"; }
 
     // Check https://cgit.freedesktop.org/xorg/proto/x11proto/tree/XF86keysym.h
     XF86AudioMute         { spawn "swayosd-client" "--output-volume=mute-toggle"; }
@@ -218,6 +224,7 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { reset-window-height; }
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }

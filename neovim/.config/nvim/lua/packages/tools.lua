@@ -23,6 +23,7 @@ return {
         function()
           require('mini.bufremove').delete()
         end,
+        desc = 'Close current buffer',
       },
     },
   },
@@ -50,6 +51,19 @@ return {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     config = loader_of('gitsigns'),
+    keys = {
+      { '<Leader>g', '<Nop>', desc = 'Git...' },
+      {
+        '<Leader>gd',
+        '<Cmd>Gitsigns diffthis<CR>',
+        desc = 'Diff',
+      },
+      {
+        '<Leader>gl',
+        '<Cmd>Gitsigns blame_line<CR>',
+        desc = 'Line blame',
+      },
+    },
   },
 
   {
@@ -63,6 +77,7 @@ return {
         function()
           require('conform').format({ async = true, lsp_fallback = false })
         end,
+        desc = 'Format',
       },
     },
     init = function()
@@ -76,17 +91,55 @@ return {
     event = 'LspAttach',
     config = loader_of('telescope'),
     keys = {
-      { '<Leader>ff', '<Cmd>Telescope find_files hidden=true<CR>' },
-      { '<Leader>fo', '<Cmd>Telescope oldfiles<CR>' },
-      { '<Leader>fw', '<Cmd>Telescope live_grep<CR>' },
-      { '<Leader>fb', '<Cmd>Telescope buffers<CR>' },
-      { '<Leader>fc', '<Cmd>Telescope colorscheme<CR>' },
-      { '<Leader>fh', '<Cmd>Telescope highlights<CR>' },
+      { '<Leader>f', '<Nop>', desc = 'Find...' },
+      {
+        '<Leader>ff',
+        '<Cmd>Telescope find_files hidden=true<CR>',
+        desc = 'Find file',
+      },
+      {
+        '<Leader>fo',
+        '<Cmd>Telescope oldfiles<CR>',
+        desc = 'Find recent file',
+      },
+      { '<Leader>fw', '<Cmd>Telescope live_grep<CR>', desc = 'Find word' },
+      {
+        '<Leader>fb',
+        '<Cmd>Telescope buffers<CR>',
+        desc = 'Find buffer',
+      },
+      {
+        '<Leader>fc',
+        '<Cmd>Telescope colorscheme<CR>',
+        desc = 'Find colorschemes',
+      },
+      {
+        '<Leader>fh',
+        '<Cmd>Telescope highlights<CR>',
+        desc = 'Find highlight',
+      },
 
-      { 'gd', '<Cmd>Telescope lsp_definitions<CR>' },
-      { 'gD', '<Cmd>Telescope lsp_type_definitions<CR>' },
-      { 'gi', '<Cmd>Telescope lsp_implementations<CR>' },
-      { 'gr', '<Cmd>Telescope lsp_references<CR>' },
+      {
+        'gd',
+        '<Cmd>Telescope lsp_definitions<CR>',
+        desc = 'Go to definitions',
+      },
+      {
+        'gD',
+        '<Cmd>Telescope lsp_type_definitions<CR>',
+        desc = 'Go to type definitions',
+      },
+      {
+        'gi',
+        '<Cmd>Telescope lsp_implementations<CR>',
+        desc = 'Go to implementations',
+      },
+
+      {
+        'grr',
+        '<Cmd>Telescope lsp_references<CR>',
+        desc = 'Go to references',
+      },
     },
   },
 }

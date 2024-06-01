@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ "$(dconf read /org/gnome/desktop/interface/color-scheme)" = "'prefer-dark'" ]; then
+	setbg light
+else
+	setbg dark
+fi

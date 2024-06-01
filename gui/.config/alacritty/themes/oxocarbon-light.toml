@@ -1,0 +1,27 @@
+[colors.primary]
+background = "#f2f4f8"
+foreground = "#525252"
+
+[colors.search.matches]
+foreground = "CellBackground"
+background = "#FF6F00"
+
+[colors.normal]
+black = "#dde1e6"
+magenta = "#673AB7"
+green = "#42be65"
+yellow = "#ffe97b"
+blue = "#0f62fe"
+red = "#FF6F00"
+cyan = "#ff7eb6"
+white = "#262626"
+
+[colors.bright]
+black = "#525252"
+magenta = "#673AB7"
+green = "#42be65"
+yellow = "#ffe97b"
+blue = "#0f62fe"
+red = "#FF6F00"
+cyan = "#ff7eb6"
+white = "#525252"

@@ -10,6 +10,54 @@ return {
     event = { 'BufReadPost', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspStart' },
     config = loader_of('lspconfig', true),
+    keys = {
+      {
+        '<Leader>l',
+        '<Nop>',
+        desc = 'LSP...',
+      },
+      {
+        '<Leader>la',
+        '<Cmd>LspStart<CR>',
+        desc = 'Start servers',
+      },
+      {
+        '<Leader>li',
+        '<Cmd>LspInfo<CR>',
+        desc = 'Server information',
+      },
+      {
+        '<Leader>ll',
+        '<Cmd>LspLog<CR>',
+        desc = 'Open log',
+      },
+      {
+        '<Leader>lr',
+        '<Cmd>LspRestart<CR>',
+        desc = 'Restart servers',
+      },
+      {
+        '<Leader>ls',
+        '<Cmd>LspStop<CR>',
+        desc = 'Stop servers',
+      },
+
+      {
+        'gr',
+        '<Nop>',
+        desc = 'LSP Actions...',
+      },
+      {
+        'gra',
+        vim.lsp.buf.code_action,
+        desc = 'Code action',
+      },
+      {
+        'grn',
+        vim.lsp.buf.rename,
+        desc = 'Rename',
+      },
+    },
     init = function()
       -- Configure hovering window style
       local opts_override_floating_preview = {
