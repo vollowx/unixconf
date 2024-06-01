@@ -42,13 +42,6 @@ return {
   },
 
   {
-    'NvChad/nvim-colorizer.lua',
-    enabled = vim.g.has_gui,
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = loader_of('colorizer'),
-  },
-
-  {
     'tpope/vim-fugitive',
     cmd = { 'Git', 'G' },
   },

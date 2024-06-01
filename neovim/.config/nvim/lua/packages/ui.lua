@@ -12,6 +12,13 @@ return {
   },
 
   {
+    'brenoprata10/nvim-highlight-colors',
+    enabled = vim.g.has_gui,
+    event = 'VeryLazy',
+    config = loader_of('highlight-colors'),
+  },
+
+  {
     'rebelot/heirline.nvim',
     event = 'VeryLazy',
     config = loader_of('heirline'),
