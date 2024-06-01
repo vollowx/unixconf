@@ -1,41 +1,31 @@
-@import "oxocarbon.css";
+@import "mocha.css";
 
 window#waybar {
-  background-color: @mantle;
+  background-color: alpha(@mantle, 1);
   border-radius: 0px;
-  color: @overlay0;
+  color: @overlay2;
 }
 
-#tray {
-  margin-left: 16px;
+#taskbar {
+  margin-top: 10px; /* 16 - 6px of button */
 }
 
-#clock {
-  margin-right: 16px;
-}
-
-button {
+#taskbar button {
+  padding: 0px 8px;
+  padding-top: 8px;
   border: none;
   border-radius: 0;
 }
 
-button:hover {
+#taskbar button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
   background: inherit;
 }
 
-#workspaces button {
-  padding: 0 6px;
-  color: @overlay0;
-  background-color: transparent;
-  border: none;
-}
-
-#workspaces button.focused {
-  color: @mauve;
-  font-weight: 900;
-  background-color: @mantle;
+#taskbar button.active {
+  box-shadow: inset -1px 0px 0px @mauve;
+  background: @surface0;
 }
 
 #tray > .passive {
@@ -44,4 +34,9 @@ button:hover {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
+}
+
+#clock {
+  margin-bottom: 16px;
+  font-weight: bold;
 }

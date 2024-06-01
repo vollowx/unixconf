@@ -1,44 +1,32 @@
 {
   "position": "right",
   "layer": "top",
-  "height": 24,
   "spacing": 8,
   "modules-left": [
+    "wlr/taskbar",
+    "custom/separator",
     "tray"
   ],
-  "modules-center": [
-    "sway/workspaces"
-  ],
   "modules-right": [
-    "network",
     "wireplumber",
     "backlight",
     "battery",
+    "custom/separator",
     "clock"
   ],
+  "custom/separator": {
+    "format": "ƛ"
+  },
+  "wlr/taskbar": {
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
   "tray": {
     "icon-size": 14,
     "spacing": 4
   },
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "disable-click": true,
-    "format": "{name}",
-    "persistent-workspaces": {
-      "1": [],
-      "2": [],
-      "3": [],
-      "4": [],
-      "5": [],
-      "6": [],
-      "7": [],
-      "8": [],
-      "9": []
-    }
-  },
   "clock": {
-    "format": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff' text_transform='lowercase'>{:%A, %d %B %H:%M}</span>",
-    "rotate": 270
+    "format": "{:%H\n%M}"
   },
   "battery": {
     "format": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>bat</span> {capacity}%",
@@ -48,14 +36,6 @@
       "critical": 30
     },
     "interval": 5,
-    "tooltip": false,
-    "rotate": 270
-  },
-  "network": {
-    "format-wifi": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>net</span> {essid}",
-    "format-ethernet": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>net [eth]</span> connected",
-    "format-linked": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>net [linked]</span> {ifname}",
-    "format-disconnected": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>net</span> disconnected",
     "tooltip": false,
     "rotate": 270
   },
