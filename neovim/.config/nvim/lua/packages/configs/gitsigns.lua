@@ -14,6 +14,9 @@ require('gitsigns').setup({
   signcolumn = true,
   current_line_blame = true,
   current_line_blame_opts = { delay = 0 },
-  current_line_blame_formatter = '<author>, <author_time:%R>',
+  current_line_blame_formatter = ' '
+    .. icons.ui.Branch
+    .. '<author>, <author_time:%R>',
+  current_line_blame_formatter_nc = ' ' .. icons.ui.Branch .. '<author>',
   attach_to_untracked = true,
 })

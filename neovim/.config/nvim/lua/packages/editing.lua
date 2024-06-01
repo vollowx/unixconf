@@ -2,7 +2,7 @@ return {
   {
     'echasnovski/mini.align',
     config = loader_of('mini-align'),
-    keys = { { 'gl', mode = { 'n', 'x' } }, { 'gL', mode = { 'n', 'x' } } }
+    keys = { { 'gl', mode = { 'n', 'x' } }, { 'gL', mode = { 'n', 'x' } } },
   },
 
   {
@@ -74,20 +74,5 @@ return {
     'altermo/ultimate-autopair.nvim',
     event = { 'InsertEnter', 'CmdlineEnter' },
     config = loader_of('ultimate-autopair'),
-  },
-
-  {
-    'numToStr/Comment.nvim',
-    dependencies = {
-      {
-        'JoosepAlviste/nvim-ts-context-commentstring',
-        dependencies = { 'nvim-treesitter/nvim-treesitter' },
-      },
-    },
-    config = loader_of('comment'),
-    keys = {
-      { 'gc', mode = { 'n', 'x' } },
-      { 'gb', mode = { 'n', 'x' } },
-    },
   },
 }

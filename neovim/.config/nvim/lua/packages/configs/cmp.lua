@@ -1,14 +1,5 @@
 local cmp = require('cmp')
 
----HACK: `nvim_lsp` and `nvim_lsp_signature_help` source still use
----deprecated `vim.lsp.buf_get_clients()`, which is slower due to
----the deprecation and version check in that function. Overwrite
----it using `vim.lsp.get_clients()` to improve performance.
----@diagnostic disable-next-line: duplicate-set-field
-function vim.lsp.buf_get_clients(bufnr)
-  return vim.lsp.get_clients({ buffer = bufnr })
-end
-
 cmp.setup({
   experimental = { ghost_text = true },
   performance = {
@@ -45,7 +36,6 @@ cmp.setup({
   sources = {
     { name = 'nvim_lsp_signature_help' },
     { name = 'nvim_lsp', max_item_count = 20 },
-    { name = 'copilot' },
     {
       name = 'buffer',
       max_item_count = 8,

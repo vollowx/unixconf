@@ -5,7 +5,8 @@ return {
   },
 
   {
-    'tpope/vim-sleuth',
+    'NMAC427/guess-indent.nvim',
+    cmd = { 'GuessIndent' },
     event = { 'BufReadPre', 'BufNewFile' },
   },
 
@@ -48,6 +49,11 @@ return {
   },
 
   {
+    'tpope/vim-fugitive',
+    cmd = { 'Git', 'G' },
+  },
+
+  {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     config = loader_of('gitsigns'),
@@ -83,6 +89,11 @@ return {
     init = function()
       vim.opt.formatexpr = 'v:lua.require"conform".formatexpr()'
     end,
+  },
+
+  {
+    'ibhagwan/fzf-lua',
+    cmd = 'FzfLua',
   },
 
   {

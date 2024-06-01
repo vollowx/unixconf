@@ -31,15 +31,12 @@ require('catppuccin').setup({
 
     beacon = true,
     cmp = true,
-    colorful_winsep = { enabled = true, color = 'mauve' },
-    dropbar = { enabled = true, color_mode = true },
     fidget = true,
     gitsigns = true,
     headlines = true,
     hop = true,
     markdown = true,
     mini = { enabled = true },
-    noice = true,
     semantic_tokens = true,
     telescope = { enabled = true, style = 'nvchad' },
   },
@@ -48,6 +45,7 @@ require('catppuccin').setup({
       return {
         NormalFloat = { bg = cp.mantle },
         FloatBorder = { bg = cp.mantle, fg = cp.surface2 },
+        FloatTitle = { bg = cp.mantle, fg = cp.subtext0 },
         CursorLineNr = { fg = cp.mauve, style = { 'bold' } },
         PmenuSel = { bg = cp.surface0, fg = '' },
         Pmenu = { bg = cp.mantle },

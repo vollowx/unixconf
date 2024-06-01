@@ -170,7 +170,7 @@ augroup('AutoCreateDir', {
       if info.match:match('^%w%w+://') then
         return
       end
-      local file = vim.loop.fs_realpath(info.match) or info.match
+      local file = vim.uv.fs_realpath(info.match) or info.match
       vim.fn.mkdir(vim.fn.fnamemodify(file, ':p:h'), 'p')
     end,
   },

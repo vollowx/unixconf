@@ -45,12 +45,6 @@ return {
   },
 
   {
-    'nvim-zh/colorful-winsep.nvim',
-    event = 'WinNew',
-    config = loader_of('colorful-winsep'),
-  },
-
-  {
     'tzachar/local-highlight.nvim',
     event = 'VeryLazy',
     config = loader_of('local-highlight'),

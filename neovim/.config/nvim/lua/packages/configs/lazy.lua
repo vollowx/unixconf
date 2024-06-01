@@ -28,7 +28,7 @@ local config = {
       list = { '' },
     },
   },
-  install = { colorscheme = { 'catppuccin' } },
+  install = { colorscheme = { settings.ui.colorscheme } },
   performance = {
     rtp = {
       disabled_plugins = {

@@ -49,12 +49,16 @@ return {
       },
       {
         'gra',
-        vim.lsp.buf.code_action,
+        function()
+          vim.lsp.buf.code_action()
+        end,
         desc = 'Code action',
       },
       {
         'grn',
-        vim.lsp.buf.rename,
+        function()
+          vim.lsp.buf.rename()
+        end,
         desc = 'Rename',
       },
     },
