@@ -10,9 +10,3 @@ require('core.keymaps')
 require('core.commands')
 require('core.autocmds')
 require('core.packages')
-
-if vim.g.has_gui then
-  vim.cmd.colorscheme(settings.ui.colorscheme)
-else
-  vim.o.termguicolors = false
-end

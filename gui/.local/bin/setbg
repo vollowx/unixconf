@@ -19,6 +19,10 @@ get-theme-variant() {
 setbg-gtk() {
 	# $1: 'light' or 'dark'
 	dconf write /org/gnome/desktop/interface/color-scheme "'prefer-$1'"
+	theme="'adw-gtk3$([ "$1" == "light" ] && echo "" || echo "-dark")'"
+	dconf write /org/gnome/desktop/interface/gtk-theme $theme
+	icon="'Papirus-$([ "$1" == "light" ] && echo "Light" || echo "Dark")'"
+	dconf write /org/gnome/desktop/interface/icon-theme $icon
 }
 
 setbg-alacritty() {
@@ -95,7 +99,7 @@ main() {
 	niri msg action do-screen-transition
 	setbg-gtk "$bg" &
 	setbg-alacritty "$bg" &
-	# setbg-nvim "$bg" &
+	setbg-nvim "$bg" &
 	# setbg-fish "$bg" &
 	return 0
 }

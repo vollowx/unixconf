@@ -4,5 +4,5 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/swaybg --mode fill --image "/home/vollowx/Pictures/Wallpapers/CherryBlossoms.png"
+ExecStart=/usr/bin/swaybg --mode fill --image "/home/vollowx/Pictures/Wallpapers/BeachAndGirl.jpg"
 Restart=on-failure

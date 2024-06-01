@@ -37,7 +37,8 @@
     }
   },
   "clock": {
-    "format": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff' text_transform='lowercase'>{:%A, %d %B %H:%M}</span>"
+    "format": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff' text_transform='lowercase'>{:%A, %d %B %H:%M}</span>",
+    "rotate": 270
   },
   "battery": {
     "format": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>bat</span> {capacity}%",
@@ -47,22 +48,26 @@
       "critical": 30
     },
     "interval": 5,
-    "tooltip": false
+    "tooltip": false,
+    "rotate": 270
   },
   "network": {
     "format-wifi": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>net</span> {essid}",
     "format-ethernet": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>net [eth]</span> connected",
     "format-linked": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>net [linked]</span> {ifname}",
     "format-disconnected": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>net</span> disconnected",
-    "tooltip": false
+    "tooltip": false,
+    "rotate": 270
   },
   "wireplumber": {
     "format": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>vol</span> {volume}%",
     "format-muted": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>vol</span> muted",
-    "tooltip": false
+    "tooltip": false,
+    "rotate": 270
   },
   "backlight": {
     "format": "<span font_desc='RobotoMono Nerd Font Bold Italic' color='#be95ff'>bri</span> {percent}%",
-    "tooltip": false
+    "tooltip": false,
+    "rotate": 270
   }
 }

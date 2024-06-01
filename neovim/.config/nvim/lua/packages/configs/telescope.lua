@@ -66,7 +66,10 @@ telescope.setup({
     preview = { msg_bg_fillchar = ' ' },
   },
   pickers = {
-    colorscheme = { enable_preview = true },
+    colorscheme = {
+      colors = { 'catppuccin-mocha', 'catppuccin-latte' },
+      enable_preview = true,
+    },
     live_grep = { additional_args = { '--hidden' } },
     lsp_references = { include_current_line = true, jump_type = 'never' },
     lsp_definitions = { jump_type = 'never' },

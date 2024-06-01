@@ -3,7 +3,6 @@ _G.settings = {
     border = 'solid',
     border_preview = 'solid',
     border_input = 'rounded',
-    colorscheme = 'catppuccin-mocha',
   },
 }
 
