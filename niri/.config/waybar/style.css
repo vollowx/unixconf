@@ -15,6 +15,7 @@ window#waybar {
   padding-top: 8px;
   border: none;
   border-radius: 0;
+  transition: none;
 }
 
 #taskbar button:hover {

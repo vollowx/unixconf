@@ -1,6 +1,7 @@
 {
   "position": "right",
   "layer": "top",
+  "width": 48,
   "spacing": 8,
   "modules-left": [
     "wlr/taskbar",
