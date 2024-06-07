@@ -90,58 +90,58 @@ return {
   },
 
   {
-    'nvim-telescope/telescope.nvim',
+    'ibhagwan/fzf-lua',
     cmd = 'Telescope',
     event = 'LspAttach',
-    config = loader_of('telescope'),
+    config = loader_of('fzf'),
     keys = {
       { '<Leader>f', '<Nop>', desc = 'Find...' },
       {
         '<Leader>ff',
-        '<Cmd>Telescope find_files hidden=true<CR>',
+        '<Cmd>FzfLua files hidden=true<CR>',
         desc = 'Find file',
       },
       {
         '<Leader>fo',
-        '<Cmd>Telescope oldfiles<CR>',
+        '<Cmd>FzfLua oldfiles<CR>',
         desc = 'Find recent file',
       },
-      { '<Leader>fw', '<Cmd>Telescope live_grep<CR>', desc = 'Find word' },
+      { '<Leader>fw', '<Cmd>FzfLua live_grep<CR>', desc = 'Find word' },
       {
         '<Leader>fb',
-        '<Cmd>Telescope buffers<CR>',
+        '<Cmd>FzfLua buffers<CR>',
         desc = 'Find buffer',
       },
       {
         '<Leader>fc',
-        '<Cmd>Telescope colorscheme<CR>',
-        desc = 'Find colorschemes',
+        '<Cmd>FzfLua colorscheme<CR>',
+        desc = 'Find colorschemes hidden=true',
       },
       {
         '<Leader>fh',
-        '<Cmd>Telescope highlights<CR>',
+        '<Cmd>FzfLua highlights<CR>',
         desc = 'Find highlight',
       },
 
       {
         'gd',
-        '<Cmd>Telescope lsp_definitions<CR>',
+        '<Cmd>FzfLua lsp_definitions<CR>',
         desc = 'Go to definitions',
       },
       {
         'gD',
-        '<Cmd>Telescope lsp_type_definitions<CR>',
+        '<Cmd>FzfLua lsp_type_definitions<CR>',
         desc = 'Go to type definitions',
       },
       {
         'gi',
-        '<Cmd>Telescope lsp_implementations<CR>',
+        '<Cmd>FzfLua lsp_implementations<CR>',
         desc = 'Go to implementations',
       },
 
       {
         'grr',
-        '<Cmd>Telescope lsp_references<CR>',
+        '<Cmd>FzfLua lsp_references<CR>',
         desc = 'Go to references',
       },
     },
