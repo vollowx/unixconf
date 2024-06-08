@@ -1,6 +1,3 @@
-require('nvim-highlight-colors').setup({
-  render = 'virtual',
-  exclude_buftypes = { 'lazy' },
-})
+require('nvim-highlight-colors').setup({ render = 'virtual' })
 
 -- Test: #ffffff, rgb(255, 255, 0)

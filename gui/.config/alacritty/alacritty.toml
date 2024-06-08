@@ -17,3 +17,7 @@ TERM = "alacritty"
 [window]
 padding = { x = 16, y = 16 }
 dynamic_padding = true
+
+[font]
+offset = { x = 0, y = 8 }
+glyph_offset = { x = 0, y = 4 }

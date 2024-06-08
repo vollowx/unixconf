@@ -4,7 +4,7 @@ local g = vim.g
 -- stylua: ignore start
 o.autowriteall   = true
 o.breakindent    = true
-o.completeopt    = 'menu,menuone,noselect'
+o.completeopt    = 'menuone,noselect,popup'
 o.cursorline     = true
 o.cursorlineopt  = 'both'
 o.foldexpr       = 'nvim_treesitter#foldexpr()'
@@ -20,6 +20,7 @@ o.number         = true
 o.pumheight      = 16
 o.relativenumber = true
 o.scrolloff      = 5
+o.showcmd        = false
 o.showmode       = false
 o.sidescrolloff  = 5
 o.signcolumn     = 'yes:1'

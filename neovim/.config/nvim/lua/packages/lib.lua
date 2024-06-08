@@ -1,5 +1,10 @@
 return {
   { 'nvim-lua/plenary.nvim' },
 
-  { 'vollowx/nvim-web-devicons' },
+  {
+    'rachartier/tiny-devicons-auto-colors.nvim',
+    dependencies = 'vollowx/nvim-web-devicons',
+    event = 'VeryLazy',
+    config = loader_of('devicons-auto-colors'),
+  },
 }

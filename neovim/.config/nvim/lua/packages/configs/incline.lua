@@ -2,7 +2,7 @@ require('incline').setup({
   window = {
     margin = { horizontal = 0, vertical = 0 },
     winhighlight = {
-      active = { Normal = 'WinSeparator' },
+      active = { Normal = 'WinSeparatorFocused' },
       inactive = { Normal = 'WinSeparator' },
     },
   },
@@ -26,13 +26,18 @@ require('incline').setup({
         end
       end
       if #labels > 0 then
-        table.insert(labels, { '@ ' })
+        table.insert(labels, { '• ', group = 'WinSeparator' })
       end
       return labels
     end
 
     local function get_diagnostic_label()
-      local icons = { error = '', warn = '', info = '', hint = '' }
+      local icons = {
+        error = icons.diagnostics.DiagnosticSignError,
+        warn = icons.diagnostics.DiagnosticSignWarn,
+        info = icons.diagnostics.DiagnosticSignInfo,
+        hint = icons.diagnostics.DiagnosticSignHint,
+      }
       local label = {}
 
       for severity, icon in pairs(icons) do
@@ -48,7 +53,7 @@ require('incline').setup({
         end
       end
       if #label > 0 then
-        table.insert(label, { '@ ' })
+        table.insert(label, { '• ', group = 'WinSeparator' })
       end
       return label
     end
@@ -58,7 +63,7 @@ require('incline').setup({
       { get_git_diff() },
       {
         filename,
-        gui = vim.bo[props.buf].modified and 'bold,italic' or 'bold',
+        gui = vim.bo[props.buf].modified and 'italic' or '',
       },
     }
   end,

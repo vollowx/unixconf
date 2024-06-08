@@ -47,6 +47,17 @@ return {
   },
 
   {
+    'NeogitOrg/neogit',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'sindrets/diffview.nvim',
+      'ibhagwan/fzf-lua', -- optional
+    },
+    cmd = 'Neogit',
+    config = loader_of('neogit'),
+  },
+
+  {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
     config = loader_of('gitsigns'),
@@ -98,13 +109,13 @@ return {
       { '<Leader>f', '<Nop>', desc = 'Find...' },
       {
         '<Leader>ff',
-        '<Cmd>FzfLua files hidden=true<CR>',
+        '<Cmd>FzfLua files<CR>',
         desc = 'Find file',
       },
       {
         '<Leader>fo',
         '<Cmd>FzfLua oldfiles<CR>',
-        desc = 'Find recent file',
+        desc = 'Find old file',
       },
       { '<Leader>fw', '<Cmd>FzfLua live_grep<CR>', desc = 'Find word' },
       {
@@ -114,13 +125,8 @@ return {
       },
       {
         '<Leader>fc',
-        '<Cmd>FzfLua colorscheme<CR>',
+        '<Cmd>FzfLua colorschemes<CR>',
         desc = 'Find colorschemes hidden=true',
-      },
-      {
-        '<Leader>fh',
-        '<Cmd>FzfLua highlights<CR>',
-        desc = 'Find highlight',
       },
 
       {

@@ -20,8 +20,14 @@ return {
 
   {
     'rebelot/heirline.nvim',
-    event = 'VeryLazy',
+    event = 'UIEnter',
     config = loader_of('heirline'),
+  },
+
+  {
+    'b0o/incline.nvim',
+    event = { 'BufReadPost', 'BufNewFile', 'VeryLazy' },
+    config = loader_of('incline'),
   },
 
   {
