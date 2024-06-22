@@ -74,4 +74,10 @@ return {
     event = 'ModeChanged',
     config = loader_of('visual-whitespace'),
   },
+
+  {
+    'dstein64/nvim-scrollview',
+    event = 'UIEnter',
+    config = loader_of('scrollview'),
+  },
 }
