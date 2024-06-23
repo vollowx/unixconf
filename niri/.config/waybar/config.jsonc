@@ -1,27 +1,18 @@
 {
   "position": "right",
   "layer": "top",
-  "width": 48,
+  "width": 8,
+  "height": 8,
   "spacing": 8,
   "modules-left": [
-    "wlr/taskbar",
-    "custom/separator",
     "tray"
   ],
   "modules-right": [
     "wireplumber",
     "backlight",
     "battery",
-    "custom/separator",
     "clock"
   ],
-  "custom/separator": {
-    "format": "ƛ"
-  },
-  "wlr/taskbar": {
-    "on-click": "activate",
-    "on-click-middle": "close"
-  },
   "tray": {
     "icon-size": 14,
     "spacing": 4

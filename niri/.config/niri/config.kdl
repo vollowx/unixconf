@@ -37,7 +37,7 @@ input {
 
 output "eDP-1" {
     mode "1920x1080@60.008"
-    // scale 1.00
+    scale 1.00
     transform "normal"
     position x=0 y=0
 }
@@ -69,8 +69,8 @@ layout {
         // off
 
         width 4
-        active-color "#be95ff96"
-        inactive-color "#585b7096"
+        active-color "#be95ff"
+        inactive-color "#585b70"
     }
 
     border {
@@ -105,7 +105,7 @@ spawn-at-startup "wl-clip-persist" "-c" "both"
 
 // You can override environment variables for processes spawned by niri.
 environment {
-    // Set a variable like this:
+    DISPLAY ":0" // For xwayland-satellite
     QT_QPA_PLATFORM "wayland"
 
     // Remove a variable by using null as the value:
