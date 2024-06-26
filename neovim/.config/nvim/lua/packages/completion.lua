@@ -1,7 +1,7 @@
 return {
   {
     'hrsh7th/nvim-cmp',
-    config = loader_of('cmp'),
+    config = load_pkg('cmp'),
   },
 
   {
@@ -38,6 +38,6 @@ return {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
     event = 'InsertEnter',
-    config = loader_of('copilot'),
+    config = load_pkg('copilot'),
   },
 }

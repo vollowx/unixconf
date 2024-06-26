@@ -2,14 +2,14 @@ return {
   {
     'Wansmer/symbol-usage.nvim',
     event = 'LspAttach',
-    config = loader_of('symbol-usage'),
+    config = load_pkg('symbol-usage'),
   },
 
   {
     'neovim/nvim-lspconfig',
     event = { 'BufReadPost', 'BufNewFile' },
     cmd = { 'LspInfo', 'LspStart' },
-    config = loader_of('lspconfig', true),
+    config = load_pkg('lspconfig', true),
     keys = {
       {
         '<Leader>l',

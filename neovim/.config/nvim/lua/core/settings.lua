@@ -1,7 +1,7 @@
 _G.settings = {
   ui = {
-    border = 'shadow',
-    border_preview = 'shadow',
+    border = 'solid',
+    border_preview = 'solid',
     border_input = 'rounded',
   },
 }

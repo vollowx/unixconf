@@ -8,13 +8,14 @@ return {
     components.padding(1),
     components.filepath,
     components.file_flags,
+    components.lsp,
   },
   components.spacer,
   { -- center
   },
   components.spacer,
   { -- right
-    components.ruler,
+    components.pos,
     components.padding(1),
   },
 

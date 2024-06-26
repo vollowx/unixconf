@@ -1,0 +1,8 @@
+[Unit]
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/mpvpaper -o "no-audio loop" "*" "/home/vollowx/Pictures/Wallpapers/Fireflies in The Forest.mp4"
+Restart=on-failure

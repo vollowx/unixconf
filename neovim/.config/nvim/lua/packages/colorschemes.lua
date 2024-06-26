@@ -1,8 +1,8 @@
 return {
   {
-    'catppuccin/nvim',
+    'vollowx/catppuccin.nvim',
     name = 'catppuccin',
-    config = loader_of('catppuccin'),
+    config = load_pkg('catppuccin'),
     priority = 1000,
   },
 }

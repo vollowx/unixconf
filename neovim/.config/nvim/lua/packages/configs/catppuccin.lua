@@ -1,4 +1,5 @@
 require('catppuccin').setup({
+  term_colors = true,
   styles = {
     comments = { 'italic' },
     conditionals = { 'italic' },
@@ -42,7 +43,7 @@ require('catppuccin').setup({
   highlight_overrides = {
     all = function(cp)
       return {
-        WinSeparator = { fg = cp.surface2 },
+        WinSeparator = { fg = cp.surface1 },
         WinSeparatorFocused = { fg = cp.mauve },
         VisualWhitespace = { bg = cp.surface1, fg = cp.surface2 },
         CmpGhostText = { link = 'Comment' },

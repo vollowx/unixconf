@@ -2,50 +2,50 @@ return {
   {
     'yorickpeterse/nvim-pqf',
     event = 'VeryLazy',
-    config = loader_of('pqf'),
+    config = load_pkg('pqf'),
   },
 
   {
     'rainbowhxch/beacon.nvim',
     event = { 'CursorHold', 'CursorHoldI' },
-    config = loader_of('beacon'),
+    config = load_pkg('beacon'),
   },
 
   {
     'brenoprata10/nvim-highlight-colors',
     enabled = vim.g.has_gui,
     event = 'VeryLazy',
-    config = loader_of('highlight-colors'),
+    config = load_pkg('highlight-colors'),
   },
 
   {
     'rebelot/heirline.nvim',
     event = 'UIEnter',
-    config = loader_of('heirline'),
+    config = load_pkg('heirline'),
   },
 
   {
     'b0o/incline.nvim',
     event = { 'BufReadPost', 'BufNewFile', 'VeryLazy' },
-    config = loader_of('incline'),
+    config = load_pkg('incline'),
   },
 
   {
     'j-hui/fidget.nvim',
     event = 'VeryLazy',
-    config = loader_of('fidget'),
+    config = load_pkg('fidget'),
   },
 
   {
     'echasnovski/mini.clue',
     event = { 'CursorHold', 'CursorHoldI' },
-    config = loader_of('mini-clue'),
+    config = load_pkg('mini-clue'),
   },
 
   {
     'nacro90/numb.nvim',
     event = 'CmdlineEnter',
-    config = loader_of('numb'),
+    config = load_pkg('numb'),
   },
 
   {
@@ -60,24 +60,18 @@ return {
   {
     'tzachar/local-highlight.nvim',
     event = 'VeryLazy',
-    config = loader_of('local-highlight'),
+    config = load_pkg('local-highlight'),
   },
 
   {
     'Aasim-A/scrollEOF.nvim',
     event = { 'CursorMoved', 'WinScrolled' },
-    config = loader_of('scroll-eof'),
+    config = load_pkg('scroll-eof'),
   },
 
   {
     'mcauley-penney/visual-whitespace.nvim',
     event = 'ModeChanged',
-    config = loader_of('visual-whitespace'),
-  },
-
-  {
-    'dstein64/nvim-scrollview',
-    event = 'UIEnter',
-    config = loader_of('scrollview'),
+    config = load_pkg('visual-whitespace'),
   },
 }

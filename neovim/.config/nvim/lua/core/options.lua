@@ -80,3 +80,11 @@ o.autoindent  = true
 o.ignorecase  = true
 o.smartcase   = true
 -- stylua: ignore end
+
+if vim.g.neovide then
+  g.neovide_padding_top = 16
+  g.neovide_padding_bottom = 16
+  g.neovide_padding_right = 16
+  g.neovide_padding_left = 16
+  g.neovide_floating_shadow = false
+end

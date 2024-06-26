@@ -9,7 +9,7 @@ end
 M.mode = function()
   return {
     init = function(self)
-      self.mode = vim.fn.mode(1)
+      self.mode = vim.fn.mode()
 
       if not self.once then
         vim.api.nvim_create_autocmd(
@@ -21,26 +21,41 @@ M.mode = function()
     end,
     static = {
       mode_labels = {
-        n = 'NO',
-        i = 'IN',
-        v = 'VI',
-        [''] = 'VB',
-        V = 'VL',
-        c = 'CO',
-        no = 'red',
-        s = 'SE',
-        S = 'SL',
-        [''] = 'SB',
-        ic = 'yellow',
-        R = 'RE',
-        Rv = 'red',
-        cv = 'red',
-        ce = 'red',
-        r = 'red',
-        rm = 'red',
-        ['r?'] = 'cyan',
-        ['!'] = 'red',
-        t = 'TE',
+        ['n'] = 'NO',
+        ['no'] = 'OP',
+        ['nov'] = 'OC',
+        ['noV'] = 'OL',
+        ['no\x16'] = 'OB',
+        ['\x16'] = 'VB',
+        ['niI'] = 'IN',
+        ['niR'] = 'RE',
+        ['niV'] = 'RV',
+        ['nt'] = 'NT',
+        ['ntT'] = 'TM',
+        ['v'] = 'VI',
+        ['vs'] = 'VI',
+        ['V'] = 'VL',
+        ['Vs'] = 'VL',
+        ['\x16s'] = 'VB',
+        ['s'] = 'SE',
+        ['S'] = 'SL',
+        ['\x13'] = 'SB',
+        ['i'] = 'IN',
+        ['ic'] = 'IC',
+        ['ix'] = 'IX',
+        ['R'] = 'RE',
+        ['Rc'] = 'RC',
+        ['Rx'] = 'RX',
+        ['Rv'] = 'RV',
+        ['Rvc'] = 'RC',
+        ['Rvx'] = 'RX',
+        ['c'] = 'CO',
+        ['cv'] = 'CV',
+        ['r'] = 'PR',
+        ['rm'] = 'PM',
+        ['r?'] = 'P?',
+        ['!'] = 'SH',
+        ['t'] = 'TE',
       },
       mode_colors = {
         n = 'blue',
@@ -85,22 +100,34 @@ M.filepath = {
       return 'LSP Information'
     end
 
-    local filepath = vim.fn.expand('%t')
-
-    if filepath == '' then
-      filepath = '[No Name]'
-    end
-
-    return filepath
+    return '%t'
   end,
 }
 
 M.file_flags = {
+  condition = function()
+    return vim.bo.buftype == ''
+  end,
+  {
+    condition = function()
+      local filename = vim.fn.expand('%')
+      return filename ~= ''
+        and vim.bo.buftype == ''
+        and vim.fn.filereadable(filename) == 0
+    end,
+    provider = ' [New]',
+  },
   {
     condition = function()
       return vim.bo.modified
     end,
     provider = ' [+]',
+  },
+  {
+    condition = function()
+      return vim.bo.modifiable == false
+    end,
+    provider = ' [-]',
   },
   {
     condition = function()
@@ -116,8 +143,29 @@ M.file_flags = {
   },
 }
 
-M.ruler = {
-  provider = '%5(%3l:%-2c%)',
+M.lsp = {
+  provider = function()
+    local clients = vim.lsp.get_clients({ bufnr = 0 })
+    if next(clients) == nil then
+      return ''
+    end
+
+    local client_names = {}
+    local excluded_clients = {
+      copilot = true,
+    }
+    for _, client in pairs(clients) do
+      if not excluded_clients[client.name] then
+        table.insert(client_names, client.name)
+      end
+    end
+
+    return string.format(' [%s]', table.concat(client_names, ', '))
+  end,
+}
+
+M.pos = {
+  provider = '%{%&ru?"%l:%c ":""%}',
 }
 
 return M

@@ -13,6 +13,8 @@ map({ 'i' }, '<Down>', '<Cmd>norm! g<Down><CR>')
 map({ 'i' }, '<Up>',   '<Cmd>norm! g<Up><CR>')
 -- stylua: ignore end
 
+map({ 'i', 'c' }, '<M-Backspace>', '<C-w>')
+
 map('n', '<Esc>', '<Cmd>noh<CR>')
 map('n', 'q', '<Cmd>fclose<CR>')
 

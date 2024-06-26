@@ -1,19 +1,19 @@
 return {
   {
     'echasnovski/mini.align',
-    config = loader_of('mini-align'),
+    config = load_pkg('mini-align'),
     keys = { { 'gl', mode = { 'n', 'x' } }, { 'gL', mode = { 'n', 'x' } } },
   },
 
   {
     'echasnovski/mini.surround',
     event = 'VeryLazy',
-    config = loader_of('mini-surround'),
+    config = load_pkg('mini-surround'),
   },
 
   {
     'monaqa/dial.nvim',
-    config = loader_of('dial'),
+    config = load_pkg('dial'),
     keys = {
       {
         '<C-a>',
@@ -73,6 +73,6 @@ return {
   {
     'altermo/ultimate-autopair.nvim',
     event = { 'InsertEnter', 'CmdlineEnter' },
-    config = loader_of('ultimate-autopair'),
+    config = load_pkg('ultimate-autopair'),
   },
 }

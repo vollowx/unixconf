@@ -12,7 +12,7 @@ return {
 
   {
     'echasnovski/mini.bracketed',
-    config = loader_of('mini-bracketed'),
+    config = load_pkg('mini-bracketed'),
     keys = { '[', ']' },
   },
 
@@ -31,7 +31,7 @@ return {
 
   {
     'echasnovski/mini.jump',
-    config = loader_of('mini-jump'),
+    config = load_pkg('mini-jump'),
     keys = {
       { 'f', mode = { 'n', 'x' } },
       { 'F', mode = { 'n', 'x' } },
@@ -51,16 +51,16 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'sindrets/diffview.nvim',
-      'ibhagwan/fzf-lua', -- optional
+      'ibhagwan/fzf-lua',
     },
     cmd = 'Neogit',
-    config = loader_of('neogit'),
+    config = load_pkg('neogit'),
   },
 
   {
     'lewis6991/gitsigns.nvim',
     event = { 'BufReadPost', 'BufNewFile' },
-    config = loader_of('gitsigns'),
+    config = load_pkg('gitsigns'),
     keys = {
       { '<Leader>g', '<Nop>', desc = 'Git...' },
       {
@@ -80,7 +80,7 @@ return {
     'stevearc/conform.nvim',
     event = 'BufWritePre',
     cmd = { 'ConformInfo' },
-    config = loader_of('conform'),
+    config = load_pkg('conform'),
     keys = {
       {
         'gq',
@@ -104,7 +104,7 @@ return {
     'ibhagwan/fzf-lua',
     cmd = 'Telescope',
     event = 'LspAttach',
-    config = loader_of('fzf'),
+    config = load_pkg('fzf'),
     keys = {
       { '<Leader>f', '<Nop>', desc = 'Find...' },
       {
