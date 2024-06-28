@@ -6,8 +6,8 @@ return {
   },
 
   {
-    'rainbowhxch/beacon.nvim',
-    event = { 'CursorHold', 'CursorHoldI' },
+    'DanilaMihailov/beacon.nvim',
+    event = { 'CursorMoved', 'WinEnter', 'FocusGained' },
     config = load_pkg('beacon'),
   },
 
@@ -22,12 +22,6 @@ return {
     'rebelot/heirline.nvim',
     event = 'UIEnter',
     config = load_pkg('heirline'),
-  },
-
-  {
-    'b0o/incline.nvim',
-    event = { 'BufReadPost', 'BufNewFile', 'VeryLazy' },
-    config = load_pkg('incline'),
   },
 
   {

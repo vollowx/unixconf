@@ -38,9 +38,4 @@ map('t', '<M-k>', '<Cmd>wincmd k<CR>', { replace_keycodes = false })
 map('t', '<M-l>', '<Cmd>wincmd l<CR>', { replace_keycodes = false })
 -- stylua: ignore end
 
-map(
-  'n',
-  '<Leader>e',
-  vim.diagnostic.open_float,
-  { desc = 'Open diagnostic window' }
-)
+map('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Open diagnostic window' })

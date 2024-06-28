@@ -7,10 +7,10 @@ local function load_colors()
   return {
     bg = hl('StatusLine').bg,
     fg = hl('StatusLine').fg,
+    fg_nc = hl('StatusLineNC').fg,
     surface_bg = hl('CursorLine').bg,
 
     red = hl('DiagnosticError').fg,
-    dark_red = hl('DiffDelete').bg,
     green = hl('String').fg,
     blue = hl('Function').fg,
     gray = hl('NonText').fg,
@@ -24,9 +24,9 @@ local function load_colors()
     diag_hint = hl('DiagnosticHint').fg,
     diag_info = hl('DiagnosticInfo').fg,
 
-    git_del = hl('diffDeleted').fg,
-    git_add = hl('diffAdded').fg,
-    git_change = hl('diffChanged').fg,
+    git_del = hl('GitSignsDelete').fg,
+    git_add = hl('GitSignsAdd').fg,
+    git_change = hl('GitSignsChange').fg,
   }
 end
 

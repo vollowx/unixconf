@@ -1,3 +1,5 @@
+local conds = require('heirline.conditions')
+
 local M = {}
 
 M.spacer = { provider = '%=' }
@@ -6,16 +8,17 @@ M.padding = function(n)
   return { provider = string.rep(' ', n) }
 end
 
+M.pos = {
+  provider = '%{%&ru?"%l:%c ":""%}',
+}
+
 M.mode = function()
   return {
     init = function(self)
       self.mode = vim.fn.mode()
 
       if not self.once then
-        vim.api.nvim_create_autocmd(
-          'ModeChanged',
-          { pattern = '*:*o', command = 'redrawstatus' }
-        )
+        vim.api.nvim_create_autocmd('ModeChanged', { pattern = '*:*o', command = 'redrawstatus' })
         self.once = true
       end
     end,
@@ -57,50 +60,35 @@ M.mode = function()
         ['!'] = 'SH',
         ['t'] = 'TE',
       },
-      mode_colors = {
-        n = 'blue',
-        i = 'green',
-        v = 'purple',
-        [''] = 'purple',
-        V = 'purple',
-        c = 'orange',
-        no = 'red',
-        s = 'orange',
-        S = 'orange',
-        [''] = 'orange',
-        ic = 'yellow',
-        R = 'red',
-        Rv = 'red',
-        cv = 'red',
-        ce = 'red',
-        r = 'red',
-        rm = 'red',
-        ['r?'] = 'cyan',
-        ['!'] = 'red',
-        t = 'yellow',
-      },
     },
     provider = function(self)
-      return ' ' .. self.mode_labels[self.mode] .. ' '
+      return conds.is_active() and (' ' .. self.mode_labels[self.mode] .. ' ') or '    '
     end,
-    hl = function(self)
-      return { fg = self.mode_colors[self.mode], bg = 'surface_bg' }
+    hl = function()
+      return { fg = 'purple', bg = conds.is_active() and 'surface_bg' or 'bg', bold = true }
     end,
-    update = { 'ModeChanged' },
+    update = { 'ModeChanged', 'WinEnter' },
   }
 end
 
 M.filepath = {
   provider = function()
+    if vim.bo.filetype == 'oil' then
+      return require('oil').get_current_dir()
+    end
+
     if vim.bo.filetype == 'lazy' then
-      return 'Package Manager'
+      return 'Packages'
     end
 
     if vim.bo.filetype == 'lspinfo' then
-      return 'LSP Information'
+      return 'LSP Servers'
     end
 
     return '%t'
+  end,
+  hl = function()
+    return { bold = conds.is_active() }
   end,
 }
 
@@ -111,9 +99,7 @@ M.file_flags = {
   {
     condition = function()
       local filename = vim.fn.expand('%')
-      return filename ~= ''
-        and vim.bo.buftype == ''
-        and vim.fn.filereadable(filename) == 0
+      return filename ~= '' and vim.bo.buftype == '' and vim.fn.filereadable(filename) == 0
     end,
     provider = ' [New]',
   },
@@ -160,12 +146,88 @@ M.lsp = {
       end
     end
 
-    return string.format(' [%s]', table.concat(client_names, ', '))
+    return string.format('[%s]', table.concat(client_names, ', '))
   end,
 }
 
-M.pos = {
-  provider = '%{%&ru?"%l:%c ":""%}',
+M.lsp_message = {}
+
+M.diag = {
+  init = function(self)
+    self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+    self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+    self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+    self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+  end,
+
+  update = { 'DiagnosticChanged', 'BufEnter' },
+
+  {
+    provider = '[',
+  },
+  {
+    provider = function(self)
+      return self.errors .. ' '
+    end,
+    hl = { fg = 'diag_error' },
+  },
+  {
+    provider = function(self)
+      return self.warnings .. ' '
+    end,
+    hl = { fg = 'diag_warn' },
+  },
+  {
+    provider = function(self)
+      return self.info .. ' '
+    end,
+    hl = { fg = 'diag_info' },
+  },
+  {
+    provider = function(self)
+      return self.hints
+    end,
+    hl = { fg = 'diag_hint' },
+  },
+  {
+    provider = ']',
+  },
+}
+
+M.git = {
+  condition = conds.is_git_repo,
+
+  init = function(self)
+    self.status_dict = vim.b.gitsigns_status_dict
+    self.has_changes = self.status_dict.added ~= 0 or self.status_dict.removed ~= 0 or self.status_dict.changed ~= 0
+  end,
+
+  {
+    provider = function(self)
+      return self.status_dict.head
+    end,
+  },
+  {
+    provider = function(self)
+      local count = self.status_dict.added or 0
+      return count > 0 and ('+' .. count)
+    end,
+    hl = { fg = 'git_add' },
+  },
+  {
+    provider = function(self)
+      local count = self.status_dict.removed or 0
+      return count > 0 and ('-' .. count)
+    end,
+    hl = { fg = 'git_del' },
+  },
+  {
+    provider = function(self)
+      local count = self.status_dict.changed or 0
+      return count > 0 and ('~' .. count)
+    end,
+    hl = { fg = 'git_change' },
+  },
 }
 
 return M

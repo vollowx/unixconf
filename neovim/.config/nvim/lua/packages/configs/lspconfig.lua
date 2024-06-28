@@ -13,11 +13,12 @@ vim.api.nvim_create_autocmd('VimResized', {
 
 local lc = require('lspconfig')
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-local shared_config = {
-  capabilities = capabilities,
+local default_opts = {
+  capabilities = vim.tbl_deep_extend(
+    'force',
+    vim.lsp.protocol.make_client_capabilities(),
+    require('cmp_nvim_lsp').default_capabilities()
+  ),
   on_attach = function(_, bufnr)
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
   end,
@@ -28,11 +29,7 @@ local servers = vim.fn.readdir(server_conf_path)
 
 for _, server in ipairs(servers) do
   local server_name = server:gsub('%.lua$', '')
-  local server_conf = vim.tbl_deep_extend(
-    'force',
-    shared_config,
-    require('packages.ls-configs.' .. server_name)
-  )
+  local server_conf = vim.tbl_deep_extend('force', default_opts, require('packages.ls-configs.' .. server_name))
   lc[server_name].setup(server_conf)
 end
 

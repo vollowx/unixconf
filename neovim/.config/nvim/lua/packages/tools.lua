@@ -47,14 +47,14 @@ return {
   },
 
   {
-    'NeogitOrg/neogit',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'sindrets/diffview.nvim',
-      'ibhagwan/fzf-lua',
+    'stevearc/oil.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    event = 'VeryLazy',
+    cmd = { 'Oil' },
+    config = load_pkg('oil'),
+    keys = {
+      { '-', '<Cmd>Oil<CR>', desc = 'Open parent directory' },
     },
-    cmd = 'Neogit',
-    config = load_pkg('neogit'),
   },
 
   {

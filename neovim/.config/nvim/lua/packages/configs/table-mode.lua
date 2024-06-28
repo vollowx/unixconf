@@ -12,10 +12,7 @@ vim.api.nvim_create_augroup('TableModeFormatOnSave', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePre', {
   group = 'TableModeFormatOnSave',
   callback = function(info)
-    if
-      vim.bo[info.buf].ft == 'markdown'
-      and vim.api.nvim_get_current_line():match('^%s*|')
-    then
+    if vim.bo[info.buf].ft == 'markdown' and vim.api.nvim_get_current_line():match('^%s*|') then
       vim.cmd.TableModeRealign({
         mods = { emsg_silent = true },
       })

@@ -78,10 +78,8 @@ return {
         desc = 'Update LSP floating window maximum size on VimResized.',
         group = vim.api.nvim_create_augroup('LspUpdateFloatingWinMaxSize', {}),
         callback = function()
-          opts_override_floating_preview.max_width =
-            math.max(80, math.ceil(vim.go.columns * 0.75))
-          opts_override_floating_preview.max_height =
-            math.max(20, math.ceil(vim.go.lines * 0.4))
+          opts_override_floating_preview.max_width = math.max(80, math.ceil(vim.go.columns * 0.75))
+          opts_override_floating_preview.max_height = math.max(20, math.ceil(vim.go.lines * 0.4))
         end,
       })
       -- Hijack LSP floating window function to use custom options
@@ -92,10 +90,8 @@ return {
       ---@returns bufnr,winnr buffer and window number of the newly created floating preview window
       ---@diagnostic disable-next-line: duplicate-set-field
       function vim.lsp.util.open_floating_preview(contents, syntax, opts)
-        opts =
-          vim.tbl_deep_extend('force', opts, opts_override_floating_preview)
-        local floating_bufnr, floating_winnr =
-          _open_floating_preview(contents, syntax, opts)
+        opts = vim.tbl_deep_extend('force', opts, opts_override_floating_preview)
+        local floating_bufnr, floating_winnr = _open_floating_preview(contents, syntax, opts)
         vim.wo[floating_winnr].concealcursor = 'nc'
         return floating_bufnr, floating_winnr
       end

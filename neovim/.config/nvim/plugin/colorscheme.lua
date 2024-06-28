@@ -62,8 +62,7 @@ utils.json = {
   end,
 }
 
-local colors_file =
-  vim.fs.joinpath(vim.fn.stdpath('state') --[[@as string]], 'colors.json')
+local colors_file = vim.fs.joinpath(vim.fn.stdpath('state') --[[@as string]], 'colors.json')
 
 -- 1. Restore dark/light background and colorscheme from json so that nvim
 --    "remembers" the background and colorscheme when it is restarted.
@@ -102,8 +101,8 @@ vim.api.nvim_create_autocmd('Colorscheme', {
         end
       end
 
-      pcall(vim.system, { 'setbg', vim.go.bg })
-      pcall(vim.system, { 'setcolor', vim.g.colors_name })
+      -- pcall(vim.system, { 'setbg', vim.go.bg })
+      -- pcall(vim.system, { 'setcolor', vim.g.colors_name })
     end)
   end,
 })

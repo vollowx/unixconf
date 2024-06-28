@@ -1,11 +1,8 @@
 require('catppuccin').setup({
   term_colors = true,
   styles = {
-    comments = { 'italic' },
-    conditionals = { 'italic' },
     functions = { 'italic' },
-    keywords = { 'italic' },
-    numbers = { 'bold' },
+    keywords = { 'bold' },
     types = { 'bold' },
   },
   default_integrations = false,
@@ -47,10 +44,10 @@ require('catppuccin').setup({
         WinSeparatorFocused = { fg = cp.mauve },
         VisualWhitespace = { bg = cp.surface1, fg = cp.surface2 },
         CmpGhostText = { link = 'Comment' },
-        LspInfoBorder = { link = 'FloatBorder' },
         FzfLuaBorder = { link = 'WinSeparator' },
         GitSignsChange = { fg = cp.peach },
         GitSignsCurrentLineBlame = { link = 'Comment' },
+        Beacon = { bg = cp.text },
       }
     end,
   },

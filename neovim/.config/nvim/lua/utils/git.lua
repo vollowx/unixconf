@@ -7,13 +7,7 @@ local M = {}
 ---@return nil
 function M.error(cmd, msg, lev)
   lev = lev or vim.log.levels.WARN
-  vim.notify(
-    '[git] failed to execute git command: '
-      .. table.concat(cmd, ' ')
-      .. '\n'
-      .. msg,
-    lev
-  )
+  vim.notify('[git] failed to execute git command: ' .. table.concat(cmd, ' ') .. '\n' .. msg, lev)
 end
 
 ---Execute git command in given directory synchronously
