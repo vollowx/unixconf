@@ -1,7 +1,6 @@
 local cmp = require('cmp')
 
 cmp.setup({
-  experimental = { ghost_text = true },
   performance = {
     async_budget = 64,
     max_view_entries = 64,

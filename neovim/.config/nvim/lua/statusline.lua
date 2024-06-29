@@ -27,6 +27,26 @@ local function get_diag_sign_text(severity)
     or (diag_signs_default_text[severity] or diag_signs_default_text[diag_severity_map[severity]])
 end
 
+---From `vim.lsp.status()`
+---@return string
+local function get_lsp_status()
+  local messages = {} --- @type string[]
+  for _, client in ipairs(vim.lsp.get_clients()) do
+    --- @diagnostic disable-next-line:no-unknown
+    for progress in client.progress do
+      --- @cast progress {token: lsp.ProgressToken, value: lsp.LSPAny}
+      local value = progress.value
+      if type(value) == 'table' and value.kind then
+        local message = value.message and (value.title .. ': ' .. value.message) or value.title
+        messages[#messages + 1] = message
+      end
+      -- else: Doesn't look like work done progress and can be in any format
+      -- Just ignore it as there is no sensible way to display it
+    end
+  end
+  return table.concat(messages, ', ')
+end
+
 -- stylua: ignore start
 local modes = {
   ['n']      = 'NO',
@@ -210,6 +230,8 @@ spinner_icons = {
 ---Id and additional info of language servers in progress
 ---@type table<integer, { name: string, timestamp: integer, type: 'begin'|'report'|'end' }>
 local server_info_in_progress = {}
+---@type string
+local server_last_status = ''
 
 vim.api.nvim_create_autocmd('LspProgress', {
   desc = 'Update LSP progress info for the status line.',
@@ -221,11 +243,13 @@ vim.api.nvim_create_autocmd('LspProgress', {
 
     local id = info.data.client_id
     local now = vim.uv.now()
+    -- Update LSP progress data
     server_info_in_progress[id] = {
       name = vim.lsp.get_client_by_id(id).name,
       timestamp = now,
       type = info.data.result and info.data.result.value.kind,
-    } -- Update LSP progress data
+    }
+    server_last_status = get_lsp_status()
     -- Clear client message after a short time if no new message is received
     vim.defer_fn(function()
       -- No new report since the timer was set
@@ -294,10 +318,9 @@ function statusline.lsp_progress()
     end
   end
 
-  -- lsp name, progress message, icon
   return string.format(
     '%s %s %s ',
-    utils.stl.hl(vim.lsp.status(), 'StatusLineLspProgressMsg'),
+    utils.stl.hl(server_last_status, 'StatusLineLspProgressMsg'),
     utils.stl.hl(vim.b.spinner_icon, 'StatusLineLspProgressIcon'),
     table.concat(client_names, ', ')
   )
