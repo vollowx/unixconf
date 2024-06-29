@@ -260,7 +260,7 @@ local type_hlgroups = setmetatable({
   end,
 })
 
-local border = vim.g.modern_ui and 'solid' or 'single'
+local border = settings.ui.border
 
 oil.setup({
   columns = {

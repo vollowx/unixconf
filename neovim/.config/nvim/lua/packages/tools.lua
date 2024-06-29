@@ -46,8 +46,10 @@ return {
     cmd = { 'Git', 'G' },
     keys = {
       { '<Leader>gg', '<Cmd>G<CR>', desc = 'Open Fugitive panel' },
-      { '<Leader>gaa', '<Cmd>G add --all<CR>', desc = 'Add all' },
+      { '<Leader>ga', '<Cmd>G add %', desc = 'Add current file' },
+      { '<Leader>gA', '<Cmd>G add --all<CR>', desc = 'Add all files' },
       { '<Leader>gc', '<Cmd>G commit<CR>', desc = 'Commit' },
+      { '<Leader>gm', '<Cmd>G merge<CR>', desc = 'Merge' },
       { '<Leader>gp', '<Cmd>G pull<CR>', desc = 'Pull from remote' },
       { '<Leader>gP', '<Cmd>G push<CR>', desc = 'Push to remote' },
     },
@@ -55,7 +57,7 @@ return {
 
   {
     'stevearc/oil.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'nvim-web-devicons' },
     event = 'VeryLazy',
     cmd = { 'Oil' },
     config = load_pkg('oil'),
