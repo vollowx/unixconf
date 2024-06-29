@@ -44,6 +44,13 @@ return {
   {
     'tpope/vim-fugitive',
     cmd = { 'Git', 'G' },
+    keys = {
+      { '<Leader>gg', '<Cmd>G<CR>', desc = 'Open Fugitive panel' },
+      { '<Leader>gaa', '<Cmd>G add --all<CR>', desc = 'Add all' },
+      { '<Leader>gc', '<Cmd>G commit<CR>', desc = 'Commit' },
+      { '<Leader>gp', '<Cmd>G pull<CR>', desc = 'Pull from remote' },
+      { '<Leader>gP', '<Cmd>G push<CR>', desc = 'Push to remote' },
+    },
   },
 
   {
