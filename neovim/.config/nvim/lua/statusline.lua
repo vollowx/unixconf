@@ -93,7 +93,7 @@ function statusline.fname()
     str = 'LSP Servers'
   end
 
-  return utils.stl.hl(str, 'StatusLineFileName')
+  return str
 end
 
 ---Get diff stats for current buffer
@@ -369,7 +369,6 @@ local function set_default_hlgroups()
     local merged_attr = vim.tbl_deep_extend('keep', attr, default_attr)
     utils.hl.set_default(0, hlgroup_name, merged_attr)
   end
-  sethl('StatusLineFileName', { bold = true })
   sethl('StatusLineGitAdded', { fg = 'GitSignsAdd' })
   sethl('StatusLineGitChanged', { fg = 'GitSignsChange' })
   sethl('StatusLineGitRemoved', { fg = 'GitSignsDelete' })

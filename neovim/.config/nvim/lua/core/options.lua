@@ -4,7 +4,6 @@ local g = vim.g
 -- stylua: ignore start
 o.autowriteall   = true
 o.breakindent    = true
-o.cmdheight      = 0
 o.completeopt    = 'menuone,noselect,popup'
 o.cursorline     = true
 o.cursorlineopt  = 'both'
@@ -16,7 +15,6 @@ o.grepprg        = 'rg --hidden --vimgrep --smart-case --'
 o.guifont        = 'monospace:h12'
 o.helpheight     = 10
 o.jumpoptions    = 'stack'
-o.laststatus     = 3
 o.mousemoveevent = true
 o.number         = true
 o.pumheight      = 16
