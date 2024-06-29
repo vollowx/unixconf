@@ -87,4 +87,5 @@ if vim.g.neovide then
   g.neovide_padding_right = 16
   g.neovide_padding_left = 16
   g.neovide_floating_shadow = false
+  g.neovide_scale_factor = 1.0
 end
