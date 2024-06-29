@@ -19,18 +19,6 @@ return {
   },
 
   {
-    'rebelot/heirline.nvim',
-    event = 'UIEnter',
-    config = load_pkg('heirline'),
-  },
-
-  {
-    'j-hui/fidget.nvim',
-    event = 'VeryLazy',
-    config = load_pkg('fidget'),
-  },
-
-  {
     'echasnovski/mini.clue',
     event = { 'CursorHold', 'CursorHoldI' },
     config = load_pkg('mini-clue'),
