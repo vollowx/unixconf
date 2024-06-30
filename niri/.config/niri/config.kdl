@@ -37,7 +37,7 @@ input {
 
 output "eDP-1" {
     mode "1920x1080@60.008"
-    scale 1.00
+    // scale 1.00
     transform "normal"
     position x=0 y=0
 }
@@ -140,7 +140,7 @@ hotkey-overlay {
 
 // Animation settings.
 animations {
-    // Uncomment to turn off all animations.
+    // Ucomment to turn off all animations.
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
@@ -153,7 +153,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id=r#"^firefox-nightly$"#
+    match app-id=r#"^firefox$"#
 
     open-maximized true
 }
