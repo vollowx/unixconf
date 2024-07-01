@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local unmap = vim.keymap.del
 
 map({ 'n', 'x' }, '<Space>', '<Ignore>')
 vim.g.mapleader = ' '
@@ -38,6 +39,10 @@ map('t', '<M-k>', '<Cmd>wincmd k<CR>', { replace_keycodes = false })
 map('t', '<M-l>', '<Cmd>wincmd l<CR>', { replace_keycodes = false })
 -- stylua: ignore end
 
+unmap('n', 'gra')
+unmap('n', 'grn')
+unmap('n', 'grr')
+map('n', 'gr', vim.lsp.buf.rename, { desc = 'Rename' })
 map('n', '<Leader>e', vim.diagnostic.open_float, { desc = 'Open diagnostic window' })
 
 if vim.g.neovide then

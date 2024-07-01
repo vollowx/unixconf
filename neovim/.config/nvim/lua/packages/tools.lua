@@ -105,13 +105,14 @@ return {
   },
 
   {
-    'ibhagwan/fzf-lua',
-    cmd = 'FzfLua',
+    'bekaboo/dropbar.nvim',
+    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile', 'BufEnter' },
+    config = load_pkg('dropbar'),
   },
 
   {
     'ibhagwan/fzf-lua',
-    cmd = 'Telescope',
+    cmd = 'FzfLua',
     event = 'LspAttach',
     config = load_pkg('fzf'),
     keys = {
@@ -135,29 +136,43 @@ return {
       {
         '<Leader>fc',
         '<Cmd>FzfLua colorschemes<CR>',
-        desc = 'Find colorschemes hidden=true',
+        desc = 'Find colorschemes',
       },
 
       {
         'gd',
         '<Cmd>FzfLua lsp_definitions<CR>',
-        desc = 'Go to definitions',
+        desc = 'Definitions',
       },
       {
         'gD',
         '<Cmd>FzfLua lsp_type_definitions<CR>',
-        desc = 'Go to type definitions',
+        desc = 'Type definitions',
       },
       {
         'gi',
         '<Cmd>FzfLua lsp_implementations<CR>',
-        desc = 'Go to implementations',
+        desc = 'Implementations',
       },
-
       {
-        'grr',
+        'ga',
         '<Cmd>FzfLua lsp_references<CR>',
-        desc = 'Go to references',
+        desc = 'Code action',
+      },
+      {
+        'g.',
+        '<Cmd>FzfLua lsp_references<CR>',
+        desc = 'References',
+      },
+      {
+        'gs',
+        '<Cmd>FzfLua lsp_workspace_symbols<CR>',
+        desc = 'Workspace symbols',
+      },
+      {
+        'gS',
+        '<Cmd>FzfLua lsp_document_symbols<CR>',
+        desc = 'Document symbols',
       },
     },
   },

@@ -1,11 +1,5 @@
 return {
   {
-    'yorickpeterse/nvim-pqf',
-    event = 'VeryLazy',
-    config = load_pkg('pqf'),
-  },
-
-  {
     'DanilaMihailov/beacon.nvim',
     event = { 'CursorMoved', 'WinEnter', 'FocusGained' },
     config = load_pkg('beacon'),

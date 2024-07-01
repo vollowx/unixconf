@@ -41,26 +41,6 @@ return {
         '<Cmd>LspStop<CR>',
         desc = 'Stop servers',
       },
-
-      {
-        'gr',
-        '<Nop>',
-        desc = 'LSP Actions...',
-      },
-      {
-        'gra',
-        function()
-          vim.lsp.buf.code_action()
-        end,
-        desc = 'Code action',
-      },
-      {
-        'grn',
-        function()
-          vim.lsp.buf.rename()
-        end,
-        desc = 'Rename',
-      },
     },
     init = function()
       -- Configure hovering window style

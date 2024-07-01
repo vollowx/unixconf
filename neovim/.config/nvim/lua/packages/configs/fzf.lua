@@ -47,7 +47,7 @@ end
 fzf.setup({
   dir_icon = vim.trim(icons.kinds.Folder),
   winopts = {
-    height = 24,
+    height = 0.4,
     width = 1,
     row = 1,
     col = 0,
