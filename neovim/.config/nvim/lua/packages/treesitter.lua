@@ -24,7 +24,6 @@ return {
 
   {
     'Eandrju/cellular-automaton.nvim',
-    dependencies = 'nvim-treesitter/nvim-treesitter',
     cmd = 'CellularAutomaton',
   },
 }

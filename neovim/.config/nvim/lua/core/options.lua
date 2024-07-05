@@ -18,7 +18,6 @@ o.jumpoptions    = 'stack'
 o.mousemoveevent = true
 o.number         = true
 o.pumheight      = 16
-o.relativenumber = true
 o.scrolloff      = 5
 o.showcmd        = false
 o.showmode       = false
