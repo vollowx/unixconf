@@ -9,11 +9,11 @@ application/x-extension-shtml=firefox-nightly.desktop
 application/xhtml+xml=firefox-nightly.desktop
 application/x-extension-xhtml=firefox-nightly.desktop
 application/x-extension-xht=firefox-nightly.desktop
-application/pdf=org.pwmt.zathura.desktop
+application/pdf=firefox-nightly.desktop
 text/plain=neovide.desktop
 application/json=neovide.desktop
-image/png=org.gnome.Loupe.desktop
-image/jpeg=org.gnome.eog.desktop
+image/png=imv-dir.desktop
+image/jpeg=imv-dir.desktop
 font/otf=org.gnome.font-viewer.desktop
 
 [Added Associations]
@@ -29,6 +29,8 @@ application/x-extension-xhtml=firefox-nightly.desktop
 application/x-extension-xht=firefox-nightly.desktop
 text/plain=neovide.desktop;
 application/json=neovide.desktop;
-image/png=org.gnome.Loupe.desktop;
-image/jpeg=org.gnome.Loupe.desktop;
+image/png=org.gnome.Loupe.desktop;imv-dir.desktop;
+image/jpeg=org.gnome.Loupe.desktop;imv-dir.desktop;
 font/otf=org.gnome.font-viewer.desktop;
+application/pdf=firefox-nightly.desktop;
+application/octet-stream=neovide.desktop;

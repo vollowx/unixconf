@@ -12,7 +12,7 @@
 - `swaylock` - Screen locker
 - `anyrun` - Application launcher
 - `alacritty` - Terminal emulator
-- `qutebrowser` - Web browser
+- `firefox` - Web browser
 - `neovim` - Text editor
 - `pfetch` - System info
 - `mpd` - Music server
@@ -20,3 +20,13 @@
 - `mpv` - Video player
 - `cava` - Audio visualizer
 - `zathura` - PDF viewer
+
+Sub-folders:
+
+- `cli` - CLI stuffs
+- `neovim` - Neovim configurations
+- `gui` - GUI stuffs that applies to all WMs
+- `niri` - Stuffs for Niri WM
+- `sway` - Stuffs for Sway WM (inactive)
+- `wayfire` - Stuffs for Wayfire WM (inactive)
+- `deprecated` - Deprecated stuffs (inactive)
