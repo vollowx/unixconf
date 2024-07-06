@@ -30,7 +30,7 @@ require('catppuccin').setup({
     dropbar = { enabled = true, color_mode = true },
     gitsigns = true,
     headlines = true,
-    hop = true,
+    indent_blankline = { enabled = true, scope_color = 'surface1' },
     markdown = true,
     mini = { enabled = true },
     semantic_tokens = true,
@@ -40,11 +40,9 @@ require('catppuccin').setup({
     all = function(cp)
       return {
         CmpGhostText = { link = 'Comment' },
-        VisualWhitespace = { bg = cp.surface1, fg = cp.surface2 },
         FzfLuaBorder = { link = 'WinSeparator' },
         GitSignsChange = { fg = cp.peach },
         GitSignsCurrentLineBlame = { link = 'Comment' },
-        Beacon = { bg = cp.text },
       }
     end,
   },

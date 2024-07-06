@@ -46,8 +46,9 @@ return {
   },
 
   {
-    'mcauley-penney/visual-whitespace.nvim',
-    event = 'ModeChanged',
-    config = load_pkg('visual-whitespace'),
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    event = 'UIEnter',
+    config = load_pkg('ibl'),
   },
 }

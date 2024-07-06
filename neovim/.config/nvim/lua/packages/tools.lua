@@ -43,6 +43,7 @@ return {
 
   {
     'tpope/vim-fugitive',
+    dependencies = 'tpope/vim-rhubarb',
     cmd = { 'Git', 'G' },
     keys = {
       { '<Leader>gg', '<Cmd>G<CR>', desc = 'Open Fugitive panel' },
