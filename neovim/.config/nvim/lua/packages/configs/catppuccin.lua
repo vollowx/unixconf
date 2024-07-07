@@ -39,6 +39,7 @@ require('catppuccin').setup({
   highlight_overrides = {
     all = function(cp)
       return {
+        FloatBorder = { fg = cp.blue, bg = cp.mantle },
         CmpGhostText = { link = 'Comment' },
         FzfLuaBorder = { link = 'WinSeparator' },
         GitSignsChange = { fg = cp.peach },
