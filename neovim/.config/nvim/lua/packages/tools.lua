@@ -1,5 +1,10 @@
 return {
   {
+    'rafcamlet/nvim-luapad',
+    cmd = { 'Luapad' },
+  },
+
+  {
     'wakatime/vim-wakatime',
     event = { 'BufReadPre', 'BufNewFile' },
   },

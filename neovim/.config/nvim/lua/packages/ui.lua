@@ -48,7 +48,7 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
-    event = 'UIEnter',
+    event = { 'BufReadPost', 'BufNewFile' },
     config = load_pkg('ibl'),
   },
 }

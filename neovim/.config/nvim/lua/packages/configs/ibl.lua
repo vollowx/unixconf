@@ -462,7 +462,7 @@ local nodes = {
 }
 
 ibl.setup({
-  indent = { char = '│' },
+  indent = { char = '│', tab_char = '│' },
   scope = {
     char = '│',
     show_start = false,
