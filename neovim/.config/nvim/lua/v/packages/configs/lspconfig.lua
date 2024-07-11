@@ -24,7 +24,7 @@ local default_opts = {
   end,
 }
 
-local server_conf_path = vim.fn.stdpath('config') .. '/lua/packages/ls-configs'
+local server_conf_path = vim.fn.stdpath('config') .. '/lua/v/packages/ls-configs'
 local servers = vim.fn.readdir(server_conf_path)
 
 for _, server in ipairs(servers) do
