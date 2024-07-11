@@ -462,10 +462,11 @@ local nodes = {
 }
 
 ibl.setup({
-  indent = { char = '│', tab_char = '│' },
+  indent = { char = '▏', tab_char = '▏' },
   scope = {
-    char = '│',
+    char = '▏',
     show_start = false,
+    show_end = false,
     include = {
       node_type = {
         angular = nodes.html,

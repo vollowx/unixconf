@@ -1,5 +1,5 @@
 local statusline = {}
-local utils = require('utils')
+local utils = require('v.utils')
 local groupid = vim.api.nvim_create_augroup('StatusLine', {})
 
 local diag_signs_default_text = { 'E', 'W', 'I', 'H' }

@@ -95,7 +95,7 @@ augroup('AutoCwd', {
         end
         vim.api.nvim_win_call(win, function()
           local current_dir = vim.fn.getcwd(0)
-          local target_dir = require('utils').fs.proj_dir(info.file) or vim.fs.dirname(info.file)
+          local target_dir = require('v.utils').fs.proj_dir(info.file) or vim.fs.dirname(info.file)
           local stat = target_dir and vim.uv.fs_stat(target_dir)
           -- Prevent unnecessary directory change, which triggers
           -- DirChanged autocmds that may update winbar unexpectedly

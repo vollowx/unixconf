@@ -43,4 +43,4 @@ local config = {
   },
 }
 
-require('lazy').setup({ import = 'packages' }, config)
+require('lazy').setup({ import = 'v.packages' }, config)

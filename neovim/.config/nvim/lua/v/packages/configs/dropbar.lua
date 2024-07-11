@@ -1,4 +1,4 @@
-local utils = require('utils')
+local utils = require('v.utils')
 
 require('dropbar').setup({
   icons = {

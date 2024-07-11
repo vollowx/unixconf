@@ -29,7 +29,7 @@ local servers = vim.fn.readdir(server_conf_path)
 
 for _, server in ipairs(servers) do
   local server_name = server:gsub('%.lua$', '')
-  local server_conf = vim.tbl_deep_extend('force', default_opts, require('packages.ls-configs.' .. server_name))
+  local server_conf = vim.tbl_deep_extend('force', default_opts, require('v.packages.ls-configs.' .. server_name))
   lc[server_name].setup(server_conf)
 end
 

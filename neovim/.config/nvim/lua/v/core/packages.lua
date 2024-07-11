@@ -9,15 +9,15 @@ _G.load_pkg = function(path, schedule_wrapped)
   return schedule_wrapped
       and function()
         vim.schedule(function()
-          require('packages.configs.' .. path)
+          require('v.packages.configs.' .. path)
         end)
       end
     or function()
-      require('packages.configs.' .. path)
+      require('v.packages.configs.' .. path)
     end
 end
 
-local utils = require('utils')
+local utils = require('v.utils')
 local conf_path = vim.fn.stdpath('config') --[[@as string]]
 local data_path = vim.fn.stdpath('data') --[[@as string]]
 
