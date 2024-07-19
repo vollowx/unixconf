@@ -1,4 +1,4 @@
-# .unix
+# unixconf
 
 _Dotfiles for *nix systems. Use at your own risks._
 
