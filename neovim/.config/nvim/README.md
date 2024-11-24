@@ -1,3 +1,0 @@
-# nvim
-
-The Neovim configurations.
